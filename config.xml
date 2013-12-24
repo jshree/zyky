@@ -1,60 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="se.zyky" version="2.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.wiredelta.zyky" version="1.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Zyky</name>
     <description>
-        Zyky App
+        Zyky is Music App, which allows local artists to sell their music through the app.
     </description>
-    <author email="wd.staff@wiredelta.com" href="http://www.wiredelta.com/"></author>
+    <author email="contact@wiredelta.com" href="http://wiredelta.com/">
+        WireDelta
+    </author>
+    
     <feature name="http://api.phonegap.com/1.0/device" />
-        <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
     
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.SplashScreen" />
         <param name="ios-package" value="CDVSplashScreen" />
     </feature>        
-    <feature name="Geolocation">
-        <param name="android-package" value="org.apache.cordova.GeoBroker" />
+
+    <feature name="File">
+                <param name="android-package" value="org.apache.cordova.FileUtils" />
+                <param name="ios-package" value="CDVFile" />
+    </feature>
+        
+    <feature name="FileTransfer">
+                <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+                <param name="ios-package" value="CDVFileTransfer" />
     </feature>
 
-    <gap:plugin name="com.phonegap.plugins.PushPlugin"/>
+    <!--feature name="Geolocation">
+      <param name="android-package" value="org.apache.cordova.GeoBroker" />
+    </feature-->
+
+    <!--gap:plugin name="com.phonegap.plugins.PushPlugin"/-->
 
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
-
     <preference name="DisallowOverscroll" value="true" />
     <preference name="webviewbounce" value="false" />
-
+    <preference name="stay-in-webview" value="false" />
     <preference name="prerendered-icon" value="true" />
-    <preference name="stay-in-webview" value="true" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
+    <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
-
     <preference name="show-splash-screen-spinner" value="false" />
-    <preference name="auto-hide-splash-screen" value="true" />
 
-    <plugin name="Notification" value="org.apache.cordova.Notification"/>
-    <plugin name="Notification" value="CDVNotification" />
+        <gap:splash gap:density="ldpi" gap:platform="android" src="res/screen/android/screen-320x426.png" />
+        <gap:splash gap:density="mdpi" gap:platform="android" src="res/screen/android/screen-320x470.png" />
+        <gap:splash gap:density="hdpi" gap:platform="android" src="res/screen/android/screen-480x640.png" />
+        <gap:splash gap:density="xhdpi" gap:platform="android" src="res/screen/android/screen-720x960.png" />
 
-    <!-- Testing -->
-    <!-- <gap:splash gap:platform="ios" height="480"  src="res/screen/ios/screen-xhdpi-portrait1.png" width="320" />
-    <gap:splash gap:platform="ios" height="960"  src="res/screen/ios/screen-xhdpi-portrait1.png" width="640" />
-    <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-xhdpi-portrait1.png" width="768" />
- -->
-    <gap:splash gap:platform="ios" height="480" src="res/screen/ios/screen-hdpi-landscape1.png" width="800" />
-    <gap:splash gap:platform="ios" height="800"  src="res/screen/ios/screen-hdpi-portrait1.png" width="480" />
-    <gap:splash gap:platform="ios" height="720" src="res/screen/ios/screen-xhdpi-landscape1.png" width="1280" />
-    <gap:splash gap:platform="ios" height="1280" src="res/screen/ios/screen-xhdpi-portrait1.png" width="720" />
 
-    <gap:splash gap:platform="ios" width="2048" height="1496" src="res/screen/ios/screen-2048x1536.png" />
-    <gap:splash gap:platform="ios" width="1536" height="2008" src="res/screen/ios/screen-1536x2048.png" />
-    <gap:splash gap:platform="ios" width="2048" height="1536" src="res/screen/ios/screen-2048x1536.png" />
-    <gap:splash gap:platform="ios" width="1536" height="2048" src="res/screen/ios/screen-1536x2048.png" />
+        <gap:splash gap:platform="ios" height="480" src="res/screen/ios/screen-320x480.png" width="320" />
+        <gap:splash gap:platform="ios" height="640"  src="res/screen/ios/screen-640x960.png" width="960" />
+        <gap:splash gap:platform="ios" height="640" src="res/screen/ios/screen-640x1136.png" width="1136" />
+        <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-768x1024.png" width="1024" />
+        
+        <gap:splash gap:platform="ios" height="1024"  src="res/screen/ios/screen-1024x768.png" width="768" />
+        <gap:splash gap:platform="ios" height="1530" src="res/screen/ios/screen-1530x2008.png" width="2008" />
+        <gap:splash gap:platform="ios" height="2048" src="res/screen/ios/screen-2048x1496.png" width="1496" />
+        
+        <icon src="icon/ios/classic.png" gap:platform="ios" width="57" height="57" />
+        <icon src="icon/ios/ipad.png" gap:platform="ios" width="72" height="72" />
+        <icon src="icon/ios/retina.png" gap:platform="ios" width="114" height="114" />
+        <icon src="icon/ios/retina_ipad.png" gap:platform="ios" width="144" height="144" />
 
     <icon src="icon.png" />
     <access origin="*" />
