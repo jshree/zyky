@@ -1,0 +1,1694 @@
+@font-face {
+	font-family: novecento-Light;
+	src: url(../fonts/Novecentowide-Light.otf);
+}
+@font-face {
+	font-family: quicksand-Light;
+	src: url(../fonts/Quicksand_Light.otf);
+}
+@font-face {
+	font-family: quicksand-Book;
+	src: url(../fonts/Quicksand_Book.otf);
+}
+@font-face {
+	font-family: Lao;
+	src: url(../fonts/Lao%20UI.ttf);
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+/*============================================= Login page styles ===================================*/
+#login, #signup {
+	background: url(../images/background.png)no-repeat !important;
+	background-size: cover !important;
+}
+.header h3 {
+	font-family: novecento-Light;
+	color: #fff;
+	font-weight: normal;
+	font-size: 13pt !important;
+	margin-top: 0px;
+	line-height: 68px;
+	margin-bottom: 0px;
+	text-shadow: none !important;
+	font-smooth: always;
+	text-transform: uppercase;
+	margin-top: 0px !important;
+}
+.header {
+	height: 72px;
+	border-bottom: 1px solid rgba(252,252,253,0.5);
+}
+.more {
+	background: url(../images/moreBtn.png) no-repeat !important;
+	top: 20px !important;
+	min-width: 32px;
+	min-height: 32px;
+	border: 0px;
+	border-radius: 0px !important;
+	-webkit-border-radius:0px !important;
+	-moz-border-radius:0px !important;
+	left: 38px !important;
+	outline: none;
+}
+.ui-shadow {
+	outline: none;
+	box-shadow: none !important;
+}
+.ui-btn-active {
+	border: 0px !important;
+}
+.ui-btn-inner {
+	border: 0px !important;
+}
+.loginContent {
+	padding: 69px 0 0 0 !important;
+}
+.facebook_sign_up {
+	width: 274px;
+	height: 62px;
+	margin: 0 auto !important;
+	padding: 0px !important;
+	border-radius: 8px !important;
+	-webkit-border-radius:8px !important;
+	-moz-border-radius:8px !important;
+	background: url(../images/facebook_icon.png) no-repeat right center #3a5a96 !important;
+	border: 0px !important;
+	color: #fff !important;
+	font-weight: normal !important;
+	font-family: Arial, Helvetica, sans-serif !important;
+	text-shadow: none !important;
+	text-align: left !important;
+	line-height: 38px;
+	font-size: 11pt !important;
+}
+.facebook_sign_up span {
+	font-size: 18px !important;
+}
+.loginContent h3 {
+	font-family: novecento-Light;
+	color: #fff;
+	text-shadow: none;
+	font-size: 17pt;
+	text-align: center !important;
+	font-smooth: always;
+}
+.email {
+	width: 76% !important;
+	height: 57px;
+	background: url(../images/email_icon.png) no-repeat right 20px center !important;
+	padding: 0px 18% 0 6% !important;
+	border-radius: 8px !important;
+	-webkit-border-radius:8px !important;
+	-moz-border-radius:8px !important;
+	text-shadow: none !important;
+	color: #fff !important;
+	font-family: quicksand-Light !important;
+	font-size: 13pt !important;
+}
+.loginform::-webkit-input-placeholder {
+color:#fff !important;
+}
+.password {
+	width: 76% !important;
+	height: 57px;
+	background: url(../images/lock_icon.png) no-repeat right 20px center !important;
+	padding: 0px 18% 0 6% !important;
+	border-radius: 8px !important;
+	-webkit-border-radius:8px !important;
+	-moz-border-radius:8px !important;
+	text-shadow: none !important;
+	color: #fff !important;
+	font-family: quicksand-Light !important;
+	font-size: 13pt !important;
+}
+.loginform {
+	text-align: center;
+	padding-bottom: 160px;
+}
+.loginform .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text {
+	height: 58px;
+	background: rgba(255,255,255,0.5) !important;
+	padding: 0px;
+	border-radius: 8px !important;
+	-webkit-border-radius:8px !important;
+	-moz-border-radius:8px !important;
+	border: 0px !important;
+}
+.loginform .ui-field-contain, fieldset.ui-field-contain {
+	padding: 0.8em 1em;
+	border: 0px;
+	margin: 0px;
+}
+input:-moz-placeholder {
+color:white;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+ color:    #fff;
+ font-family:quicksand-Light;
+ font-size:12pt;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:    #fff !important;
+ font-family:quicksand-Light;
+ font-size:12pt;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+ color:    #fff;
+ font-family:quicksand-Light;
+ font-size:12pt;
+}
+.loginform .ui-btn {
+	width: 90px;
+	height: 90px;
+	border-radius: 100px;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	border: 0px;
+}
+.signup {
+	background: url(../images/sign_up_icon.png) center left 27px no-repeat rgba(252,252,253,0.5) !important;
+	z-index: 9 !important;
+	width: 90px !important;
+	height: 90px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	outline: none !important;
+	float: right;
+	margin: 5% 20% 0 50% !important;
+	border: 0px !important;
+}
+.signin {
+	background: url(../images/sign_in_icon.png) center left 23px no-repeat rgba(252,252,253,0.5) !important;
+	z-index: 9 !important;
+	width: 90px !important;
+	height: 90px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	outline: none !important;
+	margin: 5% 50% 0 20% !important;
+	border: 0px !important;
+}
+.loginform .ui-btn-hidden {
+	opacity: 1 !important;
+}
+.loginform label {
+	color: #fff;
+	text-shadow: none;
+	font-size: 14pt;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+.signupbox, .signinbox {
+	width: 50%;
+	float: left;
+	font-family: novecento-Light;
+}
+.signupbox label {
+	float: right;
+	margin: 1% 22% 0 0;
+}
+.signinbox label {
+	float: left;
+	margin: 1% 0 0 24%;
+}
+/*============================================= Sign Up Page styles ===================================*/
+.signupform {
+	text-align: center;
+	margin: 35px 0 192 px 0;
+}
+.signupform .ui-field-contain {
+	padding: 0 6% 0 6%;
+	margin: 1.5em 0;
+	border: 0px;
+}
+.textbox {
+	width: 76% !important;
+	height: 60px;
+	padding: 0px 18% 0 6% !important;
+	border-radius: 8px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	text-shadow: none !important;
+	color: #fff !important;
+	font-family: quicksand-Light !important;
+	font-size: 13pt !important;
+}
+.signupform label {
+	color: #fff;
+	text-shadow: none;
+	font-size: 14pt;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+.confirm {
+	background: url(../images/confirm_icon.png) center left 20px no-repeat rgba(252,252,253,0.5) !important;
+	z-index: 9 !important;
+	width: 90px !important;
+	height: 90px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	outline: none !important;
+	float: right;
+	margin: 5% 20% 0 50% !important;
+	border: 0px !important;
+}
+.cancel {
+	background: url(../images/cancel_icon.png) center left 23px no-repeat rgba(252,252,253,0.5) !important;
+	z-index: 9 !important;
+	width: 90px !important;
+	height: 90px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	outline: none !important;
+	margin: 5% 50% 0 20% !important;
+	border: 0px !important;
+}
+.signupbox label {
+	float: right;
+	margin: 1% 24% 0 0;
+}
+.signinbox label {
+	float: left;
+	margin: 1% 0 0 24%;
+}
+/*========================================  Background for all after login page styles ======================================*/
+
+#songsLibrary, #purchase, #visa, #masterCard, #mobileMoney, #mPesa, #download {
+	background: url(../images/background2.png)no-repeat !important;
+	background-size: cover !important;
+	padding-bottom: 25px;
+	min-width: 300px;
+}
+/*========================================  Songs Library styles ======================================*/
+#songsLibrary .ui-content {
+	overflow-x: visible !important;
+}
+#songsLibrary .header {
+/*	border: 0px;*/
+}
+.song {
+	width: 96%;
+	height: auto;
+	text-align: center;
+	position: relative;
+	padding: 2%;
+}
+.songOverlay {
+	position: absolute;
+	width: 96%;
+	float: left;
+	background: rgba(0,0,0,0.7);
+	/*margin-top:-150px;*/
+	top: 1.7em;
+}
+.artistandSong {
+	float: left;
+	width: 61%;
+	height: auto;
+	position: relative;
+	color: #fff;
+	text-shadow: none;
+	font-family: quicksand-Book;
+	text-align: left !important;
+	text-indent: 20%;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	font-size: 12pt;
+	margin-top: 12%;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	font-size: 14pt;
+}
+.artistImg {
+	width: 39%;
+	float: right;
+	text-align: center;
+	height: auto;
+}
+/*============================================= Swipe Panel Styles ===================================*/
+.ui-body-c, .ui-overlay-c {
+	background: none !important;
+}
+.ui-panel {
+	width: 18em !important;
+	z-index: 9999 !important;
+	background: url(../images/background.png) no-repeat !important;
+	background-size: cover !important;
+	text-align: center;
+}
+.ui-panel h3 {
+	font-family: novecento-Light;
+	font-weight: normal;
+}
+.ui-panel .header2 {
+	border-bottom: 1px solid rgba(252,252,253,0.5) !important;
+}
+.ui-panel-inner {
+	padding: 0px !important;
+}
+.ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal, .ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push, .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal, .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
+	left: 1em !important;
+}
+.profileImage {
+	width: 107px;
+	height: 107px;
+	background: #fff;
+	border: inset 1px #000;
+	border-radius: 200px;
+	-webkit-border-radius:200px ;
+	-moz-border-radius:200px;
+	margin: 10px 80px 0 75px;
+}
+.profileImage img {
+	border-radius: 200px;
+	-webkit-border-radius:200px ;
+	-moz-border-radius:200px;
+}
+.ui-panel .ui-content {
+	text-align: center;
+}
+.profileName h4 {
+	font-family: quicksand-Book;
+	color: #fff;
+	font-weight: normal;
+	font-size: 12pt;
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+.profileName h5 {
+	font-weight: normal;
+	color: #fff;
+	font-size: 10pt;
+	margin-top: 0px;
+}
+.profileFeatures {
+	text-align: left;
+}
+.profileFeatures p {
+	margin-bottom: 10px;
+	float: left;
+}
+.profileFeatures p a {
+	width: 100%;
+	float: left;
+	text-decoration: none;
+	color: #fff !important;
+	font-size: 14pt;
+	font-family: quicksand-Book;
+	font-weight: normal !important;
+	line-height: 40px;
+	outline: none !important;
+}
+.profileFeatures p img {
+	float: left;
+	margin-right: 30px;
+	margin-left: 20px;
+}
+/*============================================= Purchase Page Styles ===================================*/
+.purchase h4 {
+	text-align: center;
+	color: #fff;
+	font-family: novecento-Light;
+	font-weight: normal;
+	font-size: 12pt;
+	text-shadow: none;
+	margin-bottom: 12px;
+}
+.purchase h5 {
+	text-align: center;
+	color: #fff;
+	font-family: quicksand-Light;
+	font-weight: normal;
+	font-size: 16pt;
+	text-shadow: none;
+	margin-top: 0px;
+}
+.visa {
+	width: 100%;
+	text-align: center;
+}
+.visaBtn {
+	width: 7em;
+	height: 7em;
+	background: url(../images/visa_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+}
+.others {
+	width: 100%;
+}
+.mobileMoney {
+	width: 50%;
+	float: left;
+}
+.mobileM {
+	float: right;
+	width: 7em;
+	height: 7em;
+	background: url(../images/mobileMoney_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	margin-right: 2em !important;
+}
+.visabt {
+	float: right;
+	width: 7em;
+	height: 7em;
+	background: url(../images/visa.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	margin-right: 2em !important;
+}
+.mobileMoney h4 {
+	width: 100%;
+	float: right;
+	text-align: right;
+	margin-right: 1.2em;
+}
+.mpesa h4 {
+	width: 66%;
+	float: left;
+	text-align: left;
+	margin-left: 4.0em;
+}
+.mpesa {
+	width: 50%;
+	float: left;
+}
+.pesaM {
+	float: left;
+	width: 7em;
+	height: 7em;
+	background: url(../images/mpesa_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	margin-left: 2.0em !important;
+}
+.master {
+	float: left;
+	width: 7em;
+	height: 7em;
+	background: url(../images/mastercard.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+	margin-left: 2.0em !important;
+}
+.others p {
+	text-align: center;
+	margin-top: 30px;
+	float: left;
+	width: 100%;
+}
+.others p img {
+	margin-right: 2px;
+	height: 37px;
+}
+#purchase {
+	padding-bottom: 0px !important;
+}
+.visabtn h4 {
+	width: 100% !important;
+	margin-right: 4.5em !important;
+	margin-top: 20px !important;
+}
+.masterbtn h4 {
+	margin-left: 2.25em !important;
+	width: 84% !important;
+	margin-top: 20px !important;
+}
+/*============================================= Visa Page Styles ===================================*/
+.visaform {
+	min-height: 500px !important;
+}
+.visaform .ui-field-contain {
+	text-align: center !important;
+	height: 59px !important;
+	border: 0px !important;
+	margin-bottom: 30px !important;
+}
+.visaform .ui-field-contain div.ui-input-text {
+	height: 49px !important;
+	box-shadow: none !important;
+}
+.textboxvisa {
+	width: 76% !important;
+	height: 49px;
+	padding: 0px 18% 0 6% !important;
+	border-radius: 8px !important;
+	-webkit-border-radius:8px !important;
+	-moz-border-radius:8px !important;
+	text-shadow: none !important;
+	color: #fff !important;
+	font-family: quicksand-Light !important;
+	font-size: 15pt !important;
+}
+.expiryDate {
+	width: 79% !important;
+	margin: 28px auto;
+}
+.expiryDate label {
+	float: left;
+	color: #fff;
+	text-shadow: none;
+	font-family: quicksand-Light !important;
+	margin-bottom: 20px;
+	width: 100%;
+	text-align: left;
+}
+.expiryDate div {
+	float: left;
+	width: 95px !important;
+	margin-right: 60px !important;
+}
+.month, .date {
+	width: 100%;
+	height: 49px;
+	padding: 0px !important;
+	border-radius: 8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	text-align: center;
+	font-family: quicksand-Light !important;
+	text-shadow: none !important;
+	color: #fff !important;
+}
+#visa .proceed {
+	margin-top: 50px;
+}
+/*============================================= Visa Page Styles ===================================*/
+.masterCardform {
+	min-height: 500px !important;
+}
+.masterCardform .ui-field-contain {
+	text-align: center !important;
+	height: 59px !important;
+	border: 0px !important;
+	margin-bottom: 10px !important;
+}
+.masterCardform .ui-field-contain div.ui-input-text {
+	height: 49px !important;
+	box-shadow: none !important;
+}
+.textboxvisa {
+	width: 76% !important;
+	height: 49px;
+	padding: 0px 18% 0 6% !important;
+	border-radius: 8px !important;
+	-webkit-border-radius:8px !important;
+	-moz-border-radius:8px !important;
+	text-shadow: none !important;
+	color: #fff !important;
+	font-family: quicksand-Light !important;
+	font-size: 15pt !important;
+}
+.expiryDate {
+	width: 79% !important;
+	margin: 18px auto;
+}
+.expiryDate label {
+	float: left;
+	color: #fff;
+	text-shadow: none;
+	font-family: quicksand-Light !important;
+	margin-bottom: 20px;
+	width: 100%;
+	text-align: left;
+}
+.expiryDate div {
+	float: left;
+	width: 95px !important;
+	margin-right: 60px !important;
+}
+.month, .date {
+	width: 100%;
+	height: 49px;
+	padding: 0px !important;
+	border-radius: 8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	text-align: center;
+	font-family: quicksand-Light !important;
+	text-shadow: none !important;
+	color: #fff !important;
+}
+#masterCard .proceed {
+	margin-top: 50px;
+}
+/*============================================= Mobile Money Page Styles ===================================*/
+
+.mobileMoneyForm, .mPesaForm {
+	text-align: center;
+}
+.mobileMoneyForm .ui-field-contain, .mPesaForm .ui-field-contain {
+	text-align: center !important;
+	height: 49px !important;
+	border: 0px !important;
+	margin-bottom: 29px;
+}
+.mobileMoneyForm .ui-field-contain div.ui-input-text, .mPesaForm .ui-field-contain div.ui-input-text {
+	height: 49px !important;
+}
+.proceed {
+	width: 93px;
+	height: 93px;
+	background: url(../images/cart_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+}
+.ui-field-contain .ui-select .ui-btn {
+	background: rgba(252,252,253,0.5) !important;
+	border: 0px !important;
+	border-radius: 8px !important;
+	-webkit-border-radius:8px !important;
+	-moz-border-radius:8px !important;
+	height: 49px !important;
+	text-align: left;
+	color: #fff;
+	text-shadow: none;
+	font-weight: normal;
+	font-family: quicksand-Light !important;
+	line-height: 27px;
+}
+.ui-select .ui-btn-icon-right .ui-icon {
+	background: url(../images/dropdown_arrow.png) no-repeat right center !important;
+	width: 45px !important;
+	height: 25px !important;
+	border-radius: 0px !important;
+	-webkit-border-radius:0px !important;
+	-moz-border-radius:0px !important;
+	box-shadow: none !important;
+}
+.ui-selectmenu {
+	background: rgba(252,252,253,0.7) !important;
+	font-family: quicksand-Light !important;
+}
+.ui-li {
+	font-weight: normal !important;
+	font-family: quicksand-Light !important;
+	background: url(../images/background2.png) !important;
+	background-size: cover !important;
+}
+.ui-li a {
+	text-shadow: none;
+	color: #fff !important;
+}
+.ui-focus {
+	box-shadow: #fff !important;
+}
+.ui-btn-active a {
+	background: rgba(252,252,252,0.3);
+	color: #fff!important;
+	font-weight: bold;
+}
+.ui-btn-active {
+	box-shadow: none !important;
+}
+.ui-overlay-a {
+	background: url(../images/background2.png) !important;
+	background-size: cover !important;
+}
+.ui-corner-all > .ui-header:first-child {
+	background: rgba(252,252,253,0.4) !important;
+}
+.ui-dialog-contain .ui-header > .ui-btn {
+	background: url(../images/close.png) no-repeat !important;
+	border: 0px !important;
+}
+/*============================================= M-Pesa Page Styles ===================================*/
+
+.pay {
+	width: 93px;
+	height: 93px;
+	background: url(../images/pay_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+}
+.cancelpay {
+	width: 93px;
+	height: 93px;
+	background: url(../images/cancel_icon.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+}
+.payBtn {
+	float: left;
+	width: 50%;
+}
+.cancelBrn {
+	float: left;
+	width: 50%;
+}
+/*============================================= Download Page Styles ===================================*/
+#download .purchase h4 {
+	text-transform: none !important;
+	font-family: quicksand-Light !important;
+}
+.downloadBtn {
+	width: 273px;
+	height: 218px;
+	background: url(../images/download_image.png) no-repeat !important;
+	border: 0px !important;
+	margin-top: 100px !important;
+	margin-bottom: 88px !important;
+}
+.purchase {
+	text-align: center;
+}
+.home {
+	width: 93px;
+	height: 93px;
+	background: url(../images/home_icon.png) no-repeat center rgba(255,255,255,0.3) !important;
+	border: 0px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius:100px !important;
+	-moz-border-radius:100px !important;
+}
+/*============================================= Media Player Page Styles ===================================*/
+#mediaPlayer {
+	background: url(../images/background3.png) no-repeat !important;
+	background-size: cover !important;
+	min-height: 964px !important;
+}
+#mediaPlayer .header {
+	border: 0px !important;
+	height: 76px !important;
+	background: #fff;
+	width: 92%;
+	margin: 3% 4% 1% 4%;
+}
+#mediaPlayer .ui-content {
+	padding: 0px !important;
+	min-height: 660px;
+	overflow-x: visible !important;
+}
+.playerHead {
+	width: 88%;
+	height: 76px;
+	background: #fff !important;
+	margin: 0 auto 0 auto;
+	text-align: center;
+}
+.playerHead h4 {
+	font-size: 13pt;
+	color: #011e2b;
+	font-family: quicksand-Book !important;
+	font-weight: normal;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+.playerHead h5 {
+	font-size: 11pt;
+	color: #011e2b;
+	font-family: quicksand-Book !important;
+	font-weight: normal;
+	margin-top: 0px !important;
+	line-height: 20px;
+}
+.playerHead h5 img {
+	float: left;
+}
+.profiledetails {
+	float: left;
+	height: 76px;
+}
+.profileImg {
+	width: 70px;
+	height: 70px;
+	background: #011e2b;
+	float: right;
+	border-radius: 100px;
+	-webkit-border-radius:100px;
+	-moz-border-radius:100px;
+	margin: 3px 0 0 13px;
+}
+.playerHeadinner {
+	width: 46%;
+	margin: 0 auto;
+	height: 76px;
+}
+.playerMain {
+	background: #fff;
+	width: 86%;
+	min-height: 320px;
+	padding: 3% 3% 0% 3%;
+	margin: 3% auto 0;
+}
+.tri {
+	width: 92%;
+	margin: 0% 0% 1% 4%;
+}
+.tri img {
+	width: 100%;
+}
+.coverArt {
+	text-align: center;
+}
+.playerControls {
+	width: 100%;
+	margin-top: 10px;
+}
+.controls {
+	width: 50%;
+	margin: 3% auto;
+	height: 40px !important;
+	margin-bottom: 0px;
+}
+.controls div {
+	background: none !important;
+	border: 0px !important;
+	float: left;
+}
+.controls div:nth-child(1) {
+	float: left !important;
+	margin: 0 0 0 0%;
+	width: 40px !important;
+}
+.controls div:nth-child(2) {
+	float: left !important;
+	margin: 0 0 0 31%;
+	width: 25px !important;
+}
+.controls div:nth-child(3) {
+	float: right !important;
+	margin: 0px !important;
+	width: 40px !important;
+}
+.previous {
+	width: 40px !important;
+	height: 30px !important;
+	background: url(../images/controlBtns/Prev.png) no-repeat !important;
+	opacity: 1 !important;
+	border: 0 !important;
+	outline: none;
+}
+.next {
+	width: 40px !important;
+	height: 30px !important;
+	background: url(../images/controlBtns/Next.png) no-repeat !important;
+	opacity: 1 !important;
+	border: 0 !important;
+	outline: none;
+}
+.play {
+	width: 25px !important;
+	height: 30px !important;
+	/*background: url(../images/playBtn.png) no-repeat !important;*/
+	opacity: 1 !important;
+	border: 0 !important;
+	outline: none;
+}
+.pause {
+	width: 25px !important;
+	height: 30px !important;
+	background: url(../images/Pause.png) no-repeat !important;
+	opacity: 1 !important;
+	border: 0 !important;
+	outline: none;
+}
+.suffle{
+	width: 40px !important;
+	height: 30px !important;
+	background: url(../images/controlBtns/Shuffle.png) no-repeat !important;
+	opacity: 1 !important;
+	border: 0 !important;
+	outline: none;
+	}
+.replay{
+	width: 40px !important;
+	height: 30px !important;
+	background: url(../images/controlBtns/repeat.png) no-repeat !important;
+	opacity: 1 !important;
+	border: 0 !important;
+	outline: none;
+	}
+.controls1 div:nth-child(1) {
+	background: none !important;
+	border: 0px !important;
+	float: left;
+	margin-left:2%;
+}
+.controls1 div:nth-child(2) {
+	background: none !important;
+	border: 0px !important;
+	float: right;
+}
+.controls1{ 
+width: 82%;
+margin: 2% auto;
+height: 55px;
+margin-bottom: 0px;
+	}
+.songDetails {
+	text-align: center;
+	font-family: quicksand-Book !important;
+	font-weight: normal !important;
+	margin-top: 10px;
+}
+.songDetails h4 {
+	font-weight: normal !important;
+	margin: 0 !important;
+	font-size: 14pt;
+}
+.knobControls {
+	position: relative;
+	width: 92%;
+	margin: 3% 4% 1% 4%;
+	height: 100px;
+}
+.knobControls div div {
+	float: left !important;
+	height: 100px !important;
+}
+.knobControls div div canvas {
+}
+.knobControls div div:nth-child(3) {
+	float: right !important;
+}
+.knobControls div div div {
+	float: left !important;
+	position: absolute;
+	top: 30px;
+	width: 30px;
+	height: 30px !important;
+	left: 43px;
+	text-align: center;
+	border: 0px !important;
+	box-shadow: none !important;
+}
+.knobControls div div:nth-child(2) div {
+	left: 153px;
+}
+.knobControls div div:nth-child(3) div {
+	left: inherit !important;
+	right: 54px;
+}
+.knobControls div div div input {
+	width: 44px !important;
+	height: 33px !important;
+	margin: 0px !important;
+	font-family: Lao !important;
+	color: #fff !important;
+	font-size: 16pt !important;
+	text-shadow: none !important;
+	font-weight: normal !important;
+	outline: none !important;
+}
+.knobControls div div div input[data-width] {
+	width: 100px;
+}
+.knobs p {
+	float: left;
+}
+.knobs {
+	margin: 0 auto;
+	width: 95%;
+	height: 100px;
+}
+.knobs div {
+	position: absolute;
+}
+.knobs div:nth-child(1) {
+	left: 0% !important;
+}
+.knobs div:nth-child(2) {
+	left: 39% !important;
+}
+.knobs div:nth-child(3) {
+	right: 0% !important;
+}
+input[disabled='disabled'] {
+	color: #fff !important;
+}
+.equalizer {
+	text-align: center;
+	margin-top: -70px !important;
+	width: 92%;
+	margin: 3% 4% 1% 4%;
+}
+.equalizer h4 {
+	color: #fff;
+	text-shadow: none;
+	font-family: quicksand-Light !important;
+	font-weight: normal;
+}
+.sliders {
+	padding-top: 5%;
+	width: 88%;
+	margin: 0 auto !important;
+	height: 140px;
+}
+.sliders div.leftControl, .sliders div.centerControl, .sliders div.rightControl {
+	width: 99%;
+	margin: 3% 4% 1% 0%;
+	text-align: left !important;
+	height: 30px;
+}
+.sliders h5 {
+	color: #fff;
+	text-shadow: none;
+	font-family: quicksand-Light !important;
+	font-weight: normal;
+	font-size: 8pt;
+	float: left;
+	margin-top: 3px;
+	margin-right: 20px;
+}
+.ui-slider {
+	float: left;
+	width: 100%;
+}
+.ui-slider-track {
+	background: url(../images/equalizer.png) repeat-x !important;
+	height: 10px !important;
+	border: 0px !important;
+	border-radius: 0px !important;
+	-webkit-border-radius:0px !important;
+	-moz-border-radius:0px !important;
+}
+.ui-slider-bg {
+	background: url(../images/slider_over.png) repeat-x !important;
+	border-radius: 0px !important;
+	-webkit-border-radius:0px !important;
+	-moz-border-radius:0px !important;
+}
+.ui-slider-track .ui-btn.ui-slider-handle {
+	opacity: 0;
+}
+input.ui-input-text.ui-slider-input {
+	display: none !important;
+}
+div.ui-slider {
+	float: left;
+	width: 67%;
+	margin: 0px !important;
+	float: right;
+}
+.ui-slider-track, .ui-slider-switch {
+	margin: 0px !important;
+}
+.knobText {
+	height: 50px;
+	float: left;
+	width: 100%;
+}
+.knobText p {
+	position: absolute;
+	float: left;
+	font-family: quicksand-Light !important;
+	font-weight: normal;
+	color: #fff;
+	text-shadow: none;
+	font-size: 10pt;
+}
+.knobText p:first-child {
+	left: 8px;
+}
+.knobText p:nth-child(2) {
+	left: 37%;
+}
+.knobText p:last-child {
+	right: 22px;
+}
+.songHover {
+	width: 96.1%;
+	position: absolute;
+	top: 0.4em;
+	background: #022535;
+	height: 100px;
+	display: none;
+}
+.songHover .artistandSong {
+	width: 57%;
+	text-indent: 10%;
+}
+.songHover .artistImg {
+	width: 20%;
+	float: left;
+	margin-top: 4.5%;
+}
+.songFeatures {
+	float: right;
+	background: #fff;
+	width: 20%;
+}
+.playSmall {
+	width: 100%;
+	position: relative;
+	background: #79a7d9;
+	cursor: pointer;
+}
+.cart {
+	width: 100%;
+	position: relative;
+	background: #146ea0;
+	cursor: pointer;
+}
+.ui-btn-hidden{ outline:none !important;}
+/*============================================= Media Queries ===================================*/
+@media (min-width:320px) and (max-width:400px) {
+.playerHeadinner {
+	width: 90% !important;
+	margin: 0 auto;
+	height: 76px;
+}
+.controls {
+	width: 82%;
+	margin: 6% auto;
+	height: 50px;
+	margin-bottom: 0px;
+}
+.playerMain {
+	background: #fff;
+	width: 86%;
+	margin: 3% 4% 0% 4%;
+	min-height: 250px;
+	padding: 3%;
+	padding-bottom: 0px !important;
+}
+#mediaPlayer {
+	min-height: 804px !important;
+}
+.knobControls div div canvas {
+	width: 95px !important;
+	height: 110px !important;
+}
+.knobControls div div {
+	width: 95px !important;
+	height: 110px !important;
+}
+.knobControls div div div {
+	top: 23px !important;
+}
+.knobControls div div:nth-child(1) div {
+	left: 17px !important;
+}
+.knobControls div div:nth-child(2) div {
+	left: 21px !important;
+}
+.knobControls div div:nth-child(3) div {
+	right: -34px;
+	left: inherit !important;
+}
+.knobs div:nth-child(2) {
+	left: 35% !important;
+}
+.sliders {
+	padding-top: 5%;
+	width: 88%;
+	margin: 0 auto !important;
+	height: 220px;
+}
+.sliders div.leftControl, .sliders div.centerControl, .sliders div.rightControl {
+	width: 92%;
+	margin: 3% 4% 1% 4%;
+	text-align: left !important;
+	height: 60px;
+}
+.sliders h5 {
+	color: #fff;
+	text-shadow: none;
+	font-family: quicksand-Light !important;
+	font-weight: normal;
+	font-size: 8pt;
+	float: left;
+	margin-top: 3px;
+	margin-right: 22px;
+}
+.ui-slider {
+	float: left;
+	width: 100%;
+}
+.ui-slider-track {
+	background: url(../images/equalizer.png) repeat-x !important;
+	height: 10px !important;
+	border: 0px !important;
+	border-radius: 0px !important;
+	-webkit-border-radius:0px !important;
+	-moz-border-radius:0px !important;
+}
+.ui-slider-bg {
+	background: url(../images/slider_over.png) repeat-x !important;
+	border-radius: 0px !important;
+	-webkit-border-radius:0px !important;
+	-moz-border-radius:0px !important;
+}
+.ui-slider-track .ui-btn.ui-slider-handle {
+	opacity: 0;
+}
+input.ui-input-text.ui-slider-input {
+	display: none !important;
+}
+div.ui-slider {
+	float: left;
+	width: 100%;
+	margin: 0px !important;
+}
+.ui-slider-track, .ui-slider-switch {
+	margin: 0px !important;
+}
+.songOverlay {
+	top: 0.7em !important;
+}
+.artistImg img {
+	height: 60px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	font-size: 11pt;
+	margin-top: 6%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	font-size: 12pt;
+	margin: 0 0 0 0;
+}
+.artistandSong {
+	text-indent: 10%;
+	width:61%;
+}
+.artistImg{ width:39%;}
+.songOverlay .artistandSong h5{ font-size:9pt !important;}
+.songOverlay .artistandSong h4{ font-size:10pt;}
+.songHover .artistandSong h5{ font-size:9pt !important; margin-top:22px;}
+.songHover .artistandSong h4{ font-size:10pt;}
+}
+@media( min-width:331px) and (max-width:350px) {
+.songOverlay {
+	top: 0.75em !important;
+}
+.artistImg img {
+	height: 60px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	margin-top: 6%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	margin: 0 0 0 0;
+}
+.artistandSong {
+	text-indent: 20%;
+}
+}
+ @media( min-width:351px) and (max-width:380px) {
+.songOverlay {
+	top: 0.9em !important;
+}
+.artistImg img {
+	height: 60px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	margin-top: 6%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	margin: 0 0 0 0;
+}
+.artistandSong {
+	text-indent: 20%;
+}
+}
+ @media( min-width:381px) and (max-width:400px) {
+#songsLibrary {
+min-height: 613px !important;
+}
+.songOverlay {
+	top: 1.3em !important;
+}
+.artistImg img {
+	height: 60px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	margin-top: 6%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	margin: 0 0 0 0;
+}
+.artistandSong {
+	text-indent: 20%;
+}
+}
+@media (min-width:401px) and (max-width:500px) {
+#mediaPlayer {
+	min-height: 844px !important;
+}
+.playerHeadinner {
+	width: 74% !important;
+	margin: 0 auto;
+	height: 76px;
+}
+.controls {
+	width: 67%;
+	margin: 6% auto;
+	height: 50px;
+	margin-bottom: 0px;
+}
+.playerMain {
+	background: #fff;
+	width: 86%;
+	margin: 3% 4% 0% 4%;
+	min-height: 305px;
+	padding: 3%;
+	padding-bottom: 0px !important;
+}
+.knobs div:nth-child(2) {
+	left: 36% !important;
+}
+.knobControls div div:nth-child(1) div {
+	left: 27px !important;
+}
+.knobControls div div:nth-child(2) div {
+	left: 27px !important;
+}
+.knobControls div div:nth-child(3) div {
+	left: inherit !important;
+	right: 41px !important;
+}
+.knobText p:first-child {
+	left: 4.5% !important;
+}
+.knobText p:nth-child(2) {
+	left: 40%;
+}
+.knobText p:last-child {
+	right: 8%;
+}
+.artistImg img {
+	height: 90px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	font-size: 11pt;
+	margin-top: 12%;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	font-size: 13pt;
+}
+}
+@media (min-width:401px) and (max-width:410px) {
+.songOverlay {
+	top: 0.75em !important;
+}
+.artistImg img {
+	height: 80px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	margin-top: 12%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	margin: 0 0 0 0;
+}
+}
+@media (min-width:411px) and (max-width:430px) {
+.songOverlay {
+	top: 0.8em !important;
+}
+.artistImg img {
+	height: 80px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	margin-top: 12%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	margin: 0 0 0 0;
+}
+}
+@media (min-width:419px) and (max-width:499px){
+	.controls div:nth-child(2){ margin-left:29% !important;}
+	#songsLibrary{ min-height:650px !important;}
+	}
+@media (min-width:431px) and (max-width:450px) {
+.songOverlay {
+	top: 0.85em !important;
+}
+.artistImg img {
+	height: 80px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	margin-top: 12%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	margin: 0 0 0 0;
+}
+}
+@media (min-width:451px) and (max-width:480px) {
+.songOverlay {
+	top: 1em !important;
+}
+.artistImg img {
+	height: 80px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	margin-top: 12%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	margin: 0 0 0 0;
+}
+}
+@media screen and (max-width:447px) {
+.expiryDate {
+	width: 100% !important;
+	margin: 0 auto;
+}
+.expiryDate div {
+	margin-right: 40px !important;
+}
+}
+@media (min-width:481px) and (max-width:499px) {
+.songOverlay {
+	top: 1.2em !important;
+}
+.artistImg img {
+	height: 80px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	margin-top: 12%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	margin: 0 0 0 0;
+}
+}
+ @media (min-width:501px) and (max-width:600px) {
+.playerHeadinner {
+	width: 58%;
+	margin: 0 auto;
+	height: 76px;
+}
+.knobText p:first-child {
+	left: 3.8%
+}
+.knobText p:nth-child(2) {
+	left: 42.2%;
+}
+.knobText p:last-child {
+	right: 6.4%;
+}
+.songOverlay {
+	top: 1.4em;
+}
+.artistImg img {
+	height: 100px;
+}
+.artistandSong h5 {
+	font-weight: normal;
+	font-size: 12pt;
+	margin-top: 12%;
+	margin-bottom: 10px;
+}
+.artistandSong h4 {
+	font-weight: normal;
+	font-size: 14pt;
+	margin-top: 0px;
+}
+}
+@media (min-width:501px) and (max-width:631px) {
+.playerHeadinner {
+	width: 58%;
+	margin: 0 auto;
+	height: 76px;
+}
+.knobControls div div:nth-child(1) div {
+	left: 27px !important;
+}
+.knobControls div div:nth-child(2) div {
+	left: 27px !important;
+}
+.knobControls div div:nth-child(3) div {
+	left: inherit !important;
+	right: 41px !important;
+}
+.knobText p:first-child {
+	left: 3.8%
+}
+.knobText p:nth-child(2) {
+	left: 42.2%;
+}
+.knobText p:last-child {
+	right: 5.4%;
+}
+.songHover {
+	width: 96.1%;
+	position: absolute;
+	top: 0.56em;
+	background: #022535;
+	height: 100px;
+	display: none;
+}
+}
+@media( min-width:501px) and (max-width:530px) {
+.songOverlay {
+	top: 0.9em !important;
+}
+}
+@media screen and (max-width:551px) {
+.controls div:nth-child(1) {
+	float: left !important;
+	margin: 0px !important;
+	width: 40px !important;
+}
+.controls div:nth-child(2) {
+	float: left !important;
+	margin: 0 0 0 29%;
+	width: 25px !important;
+}
+.controls div:nth-child(3) {
+	float: right !important;
+	margin: 0px !important;
+	width: 40px !important;
+}
+}
+@media (min-width:632px) and (max-width:640px) {
+.knobControls div div:nth-child(1) div {
+	left: 27px !important;
+}
+.knobControls div div:nth-child(2) div {
+	left: 27px !important;
+}
+.knobControls div div:nth-child(3) div {
+	left: inherit !important;
+	right: 41px !important;
+}
+.knobText p:first-child {
+	left: 3.2%
+}
+.knobText p:nth-child(2) {
+	left: 41.2%;
+}
+.knobText p:last-child {
+	right: 5.4%;
+}
+.songHover {
+	width: 96.1%;
+	position: absolute;
+	top: 0.6em;
+	background: #022535;
+	height: 100px;
+	display: none;
+}
+}
+@media (min-width:641px) and (max-width:720px) {
+.knobControls div div:nth-child(1) div {
+	left: 27px !important;
+}
+.knobControls div div:nth-child(2) div {
+	left: 27px !important;
+}
+.knobControls div div:nth-child(3) div {
+	left: inherit !important;
+	right: 41px !important;
+}
+#mediaPlayer {
+	min-height: 1100px !important;
+}
+.knobText p:first-child {
+	left: 3.2%
+}
+.knobText p:nth-child(2) {
+	left: 41.2%;
+}
+.knobText p:last-child {
+	right: 5.4%;
+}
+}
+@media (min-width:530px) and (max-width:550px) {
+.songOverlay {
+	top: 1em !important;
+}
+.artistImg img {
+	height: 100px;
+}
+}
+@media (min-width:551px) and (max-width:580px) {
+.songOverlay {
+	top: 1.2em !important;
+}
+.artistImg img {
+	height: 100px;
+}
+}
+@media (min-width:581px) and (max-width:600px) {
+.songOverlay {
+	top: 1.3em !important;
+}
+.artistImg img {
+	height: 110px;
+}
+}
+@media (min-width:601px) and (max-width:620px) {
+	.songOverlay {
+	top: 0.85em !important;
+}
+	}
+@media (min-width:621px) and (max-width:640px) {
+	.songOverlay {
+	top: 1.1em !important;
+}
+	}
