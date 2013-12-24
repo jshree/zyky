@@ -1,1 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
+<widget id="se.zyky" version="2.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Zyky</name>
+    <description>
+        Zyky App
+    </description>
+    <author email="wd.staff@wiredelta.com" href="http://www.wiredelta.com/"></author>
+    <feature name="http://api.phonegap.com/1.0/device" />
+        <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.SplashScreen" />
+        <param name="ios-package" value="CDVSplashScreen" />
+    </feature>        
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.GeoBroker" />
+    </feature>
+
+    <gap:plugin name="com.phonegap.plugins.PushPlugin"/>
+
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="webviewbounce" value="false" />
+
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="true" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+
+    <preference name="show-splash-screen-spinner" value="false" />
+    <preference name="auto-hide-splash-screen" value="true" />
+
+    <plugin name="Notification" value="org.apache.cordova.Notification"/>
+    <plugin name="Notification" value="CDVNotification" />
+
+    <!-- Testing -->
+    <!-- <gap:splash gap:platform="ios" height="480"  src="res/screen/ios/screen-xhdpi-portrait1.png" width="320" />
+    <gap:splash gap:platform="ios" height="960"  src="res/screen/ios/screen-xhdpi-portrait1.png" width="640" />
+    <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-xhdpi-portrait1.png" width="768" />
+ -->
+    <gap:splash gap:platform="ios" height="480" src="res/screen/ios/screen-hdpi-landscape1.png" width="800" />
+    <gap:splash gap:platform="ios" height="800"  src="res/screen/ios/screen-hdpi-portrait1.png" width="480" />
+    <gap:splash gap:platform="ios" height="720" src="res/screen/ios/screen-xhdpi-landscape1.png" width="1280" />
+    <gap:splash gap:platform="ios" height="1280" src="res/screen/ios/screen-xhdpi-portrait1.png" width="720" />
+
+    <gap:splash gap:platform="ios" width="2048" height="1496" src="res/screen/ios/screen-2048x1536.png" />
+    <gap:splash gap:platform="ios" width="1536" height="2008" src="res/screen/ios/screen-1536x2048.png" />
+    <gap:splash gap:platform="ios" width="2048" height="1536" src="res/screen/ios/screen-2048x1536.png" />
+    <gap:splash gap:platform="ios" width="1536" height="2048" src="res/screen/ios/screen-1536x2048.png" />
+
+    <icon src="icon.png" />
+    <access origin="*" />
+</widget>
