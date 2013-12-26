@@ -168,7 +168,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	border: 0px;
 }
 .signup {
-	background: url(../images/sign_up_icon.png) center left 27px no-repeat rgba(252,252,253,0.5) !important;
+	background: url(../images/sign_in_icon.png) center left 23px no-repeat rgba(252,252,253,0.5) !important;
 	z-index: 9 !important;
 	width: 90px !important;
 	height: 90px !important;
@@ -181,7 +181,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	border: 0px !important;
 }
 .signin {
-	background: url(../images/sign_in_icon.png) center left 23px no-repeat rgba(252,252,253,0.5) !important;
+	background: url(../images/sign_up_icon.png) center left 27px no-repeat rgba(252,252,253,0.5) !important;
 	z-index: 9 !important;
 	width: 90px !important;
 	height: 90px !important;
