@@ -181,7 +181,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	border: 0px !important;
 }
 .signin {
-	background: url(../images/sign_up_icon.png) center left 27px no-repeat rgba(252,252,253,0.5) !important;
+	background: url(../images/controlBtns/sign_up_icon.png) center left 27px no-repeat rgba(252,252,253,0.5) !important;
 	z-index: 9 !important;
 	width: 90px !important;
 	height: 90px !important;
@@ -301,7 +301,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 }
 .songOverlay {
 	position: absolute;
-	width: 96%;
+	width: 96.1%;
 	float: left;
 	background: rgba(0,0,0,0.7);
 	/*margin-top:-150px;*/
@@ -1342,7 +1342,7 @@ div.ui-slider {
 min-height: 613px !important;
 }
 .songOverlay {
-	top: 1.3em !important;
+	top: 1.1em !important;
 }
 .artistImg img {
 	height: 60px;
