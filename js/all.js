@@ -164,10 +164,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 //	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
-    playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-}
-
-function playAudio(src) {
+ function playAudio(src) {
             if (my_media == null) {
                 // Create Media object from src
                 my_media = new Media(src, onSuccess, onError);
@@ -194,5 +191,6 @@ function playAudio(src) {
                     );
                 }, 1000);
             }
-        }
+ }
+}
 
