@@ -10,27 +10,18 @@
     
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/media">
     
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.SplashScreen" />
         <param name="ios-package" value="CDVSplashScreen" />
-    </feature>        
-
-    <feature name="File">
-                <param name="android-package" value="org.apache.cordova.FileUtils" />
-                <param name="ios-package" value="CDVFile" />
     </feature>
-        
-    <feature name="FileTransfer">
-                <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
-                <param name="ios-package" value="CDVFileTransfer" />
+	
+	<feature name="Media">
+         <param name="android-package" value="org.apache.cordova.AudioHandler" />
+		 <param name="ios-package" value="CDVSound" />
     </feature>
 
-    <!--feature name="Geolocation">
-      <param name="android-package" value="org.apache.cordova.GeoBroker" />
-    </feature-->
-
-    <!--gap:plugin name="com.phonegap.plugins.PushPlugin"/-->
 	<preference name="phonegap-version" value="3.0.0" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
