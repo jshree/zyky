@@ -160,11 +160,10 @@ $(document).ready(function(){
 
 //=============================================================================
 
-document.addEventListener("deviceready", onDeviceReady, true);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
-
 // Update media position every second
 var mediaTimer = setInterval(function () {
     // get media position
