@@ -137,6 +137,32 @@ $(document).ready(function(){
 		 $('.cart img').css({'height': songHover1 +'px'});
 	});
 	
+//	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
+//
+//// Update media position every second
+//var mediaTimer = setInterval(function () {
+//    // get media position
+//    my_media.getCurrentPosition(
+//        // success callback
+//        function (position) {
+//            if (position > -1) {
+//                console.log((position) + " sec");
+//            }
+//        },
+//        // error callback
+//        function (e) {
+//            console.log("Error getting pos=" + e);
+//        }
+//    );
+//}, 1000);
+//
+});
+
+//=============================================================================
+
+document.addEventListener("deviceready", onDeviceReady, true);
+
+function onDeviceReady() {
 	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
 
 // Update media position every second
@@ -155,14 +181,5 @@ var mediaTimer = setInterval(function () {
         }
     );
 }, 1000);
-});
-
-//=============================================================================
-
-//document.addEventListener("deviceready", onDeviceReady, true);
-//
-//function onDeviceReady() {
-//  var media = new Media('http://dev.wiredelta.com:12001/sample.mp3', mediaSuccess, mediaError, mediaStatus);
-//  media.play();
-//}
+}
 
