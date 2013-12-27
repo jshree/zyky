@@ -47,8 +47,8 @@ img {
 	min-height: 32px;
 	border: 0px;
 	border-radius: 0px !important;
-	-webkit-border-radius:0px !important;
-	-moz-border-radius:0px !important;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
 	left: 38px !important;
 	outline: none;
 }
@@ -71,8 +71,8 @@ img {
 	margin: 0 auto !important;
 	padding: 0px !important;
 	border-radius: 8px !important;
-	-webkit-border-radius:8px !important;
-	-moz-border-radius:8px !important;
+	-webkit-border-radius: 8px !important;
+	-moz-border-radius: 8px !important;
 	background: url(../images/facebook_icon.png) no-repeat right center #3a5a96 !important;
 	border: 0px !important;
 	color: #fff !important;
@@ -100,8 +100,8 @@ img {
 	background: url(../images/email_icon.png) no-repeat right 20px center !important;
 	padding: 0px 18% 0 6% !important;
 	border-radius: 8px !important;
-	-webkit-border-radius:8px !important;
-	-moz-border-radius:8px !important;
+	-webkit-border-radius: 8px !important;
+	-moz-border-radius: 8px !important;
 	text-shadow: none !important;
 	color: #fff !important;
 	font-family: quicksand-Light !important;
@@ -116,8 +116,8 @@ color:#fff !important;
 	background: url(../images/lock_icon.png) no-repeat right 20px center !important;
 	padding: 0px 18% 0 6% !important;
 	border-radius: 8px !important;
-	-webkit-border-radius:8px !important;
-	-moz-border-radius:8px !important;
+	-webkit-border-radius: 8px !important;
+	-moz-border-radius: 8px !important;
 	text-shadow: none !important;
 	color: #fff !important;
 	font-family: quicksand-Light !important;
@@ -132,8 +132,8 @@ color:#fff !important;
 	background: rgba(255,255,255,0.5) !important;
 	padding: 0px;
 	border-radius: 8px !important;
-	-webkit-border-radius:8px !important;
-	-moz-border-radius:8px !important;
+	-webkit-border-radius: 8px !important;
+	-moz-border-radius: 8px !important;
 	border: 0px !important;
 }
 .loginform .ui-field-contain, fieldset.ui-field-contain {
@@ -163,21 +163,21 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	width: 90px;
 	height: 90px;
 	border-radius: 100px;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	border: 0px;
 }
 .signup {
 	background-image: url(../images/sign_up_icon.png)!important;
 	background-color: rgba(252,252,253,0.5) !important;
 	background-position: center /*left 27px*/ !important;
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	z-index: 9 !important;
 	width: 90px !important;
 	height: 90px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	outline: none !important;
 	float: right;
 	margin: 5% 20% 0 50% !important;
@@ -185,15 +185,15 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 }
 .signin {
 	background-image: url(../images/sign_in_icon.png) !important;
-	background-position:center /*left 23px*/ !important;
+	background-position: center /*left 23px*/ !important;
 	background-repeat: no-repeat !important;
 	background-color: rgba(252,252,253,0.5) !important;
 	z-index: 9 !important;
 	width: 90px !important;
 	height: 90px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	outline: none !important;
 	margin: 5% 50% 0 20% !important;
 	border: 0px !important;
@@ -236,8 +236,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	height: 60px;
 	padding: 0px 18% 0 6% !important;
 	border-radius: 8px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	text-shadow: none !important;
 	color: #fff !important;
 	font-family: quicksand-Light !important;
@@ -259,8 +259,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	width: 90px !important;
 	height: 90px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	outline: none !important;
 	float: right;
 	margin: 5% 20% 0 50% !important;
@@ -269,14 +269,14 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 .cancel {
 	background-image: url(../images/cancel_icon.png) !important;
 	background-position: center /*left 23px*/ !important;
-	background-repeat:no-repeat !important;
+	background-repeat: no-repeat !important;
 	background-color: rgba(252,252,253,0.5) !important;
 	z-index: 9 !important;
 	width: 90px !important;
 	height: 90px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	outline: none !important;
 	margin: 5% 50% 0 20% !important;
 	border: 0px !important;
@@ -375,14 +375,14 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: #fff;
 	border: inset 1px #000;
 	border-radius: 200px;
-	-webkit-border-radius:200px ;
-	-moz-border-radius:200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
 	margin: 10px 80px 0 75px;
 }
 .profileImage img {
 	border-radius: 200px;
-	-webkit-border-radius:200px ;
-	-moz-border-radius:200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
 }
 .ui-panel .ui-content {
 	text-align: center;
@@ -453,8 +453,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/visa_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 }
 .others {
 	width: 100%;
@@ -470,8 +470,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/mobileMoney_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	margin-right: 2em !important;
 }
 .visabt {
@@ -481,8 +481,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/visa.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	margin-right: 2em !important;
 }
 .mobileMoney h4 {
@@ -508,8 +508,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/mpesa_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	margin-left: 2.0em !important;
 }
 .master {
@@ -519,8 +519,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/mastercard.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 	margin-left: 2.0em !important;
 }
 .others p {
@@ -565,8 +565,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	height: 49px;
 	padding: 0px 18% 0 6% !important;
 	border-radius: 8px !important;
-	-webkit-border-radius:8px !important;
-	-moz-border-radius:8px !important;
+	-webkit-border-radius: 8px !important;
+	-moz-border-radius: 8px !important;
 	text-shadow: none !important;
 	color: #fff !important;
 	font-family: quicksand-Light !important;
@@ -595,8 +595,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	height: 49px;
 	padding: 0px !important;
 	border-radius: 8px;
-	-webkit-border-radius:8px;
-	-moz-border-radius:8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
 	text-align: center;
 	font-family: quicksand-Light !important;
 	text-shadow: none !important;
@@ -624,8 +624,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	height: 49px;
 	padding: 0px 18% 0 6% !important;
 	border-radius: 8px !important;
-	-webkit-border-radius:8px !important;
-	-moz-border-radius:8px !important;
+	-webkit-border-radius: 8px !important;
+	-moz-border-radius: 8px !important;
 	text-shadow: none !important;
 	color: #fff !important;
 	font-family: quicksand-Light !important;
@@ -654,8 +654,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	height: 49px;
 	padding: 0px !important;
 	border-radius: 8px;
-	-webkit-border-radius:8px;
-	-moz-border-radius:8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
 	text-align: center;
 	font-family: quicksand-Light !important;
 	text-shadow: none !important;
@@ -684,15 +684,15 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/cart_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 }
 .ui-field-contain .ui-select .ui-btn {
 	background: rgba(252,252,253,0.5) !important;
 	border: 0px !important;
 	border-radius: 8px !important;
-	-webkit-border-radius:8px !important;
-	-moz-border-radius:8px !important;
+	-webkit-border-radius: 8px !important;
+	-moz-border-radius: 8px !important;
 	height: 49px !important;
 	text-align: left;
 	color: #fff;
@@ -706,8 +706,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	width: 45px !important;
 	height: 25px !important;
 	border-radius: 0px !important;
-	-webkit-border-radius:0px !important;
-	-moz-border-radius:0px !important;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
 	box-shadow: none !important;
 }
 .ui-selectmenu {
@@ -754,8 +754,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/pay_bg.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 }
 .cancelpay {
 	width: 93px;
@@ -763,8 +763,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/cancel_icon.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 }
 .payBtn {
 	float: left;
@@ -796,8 +796,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: url(../images/home_icon.png) no-repeat center rgba(255,255,255,0.3) !important;
 	border: 0px !important;
 	border-radius: 100px !important;
-	-webkit-border-radius:100px !important;
-	-moz-border-radius:100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
 }
 /*============================================= Media Player Page Styles ===================================*/
 #mediaPlayer {
@@ -853,8 +853,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background: #011e2b;
 	float: right;
 	border-radius: 100px;
-	-webkit-border-radius:100px;
-	-moz-border-radius:100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
 	margin: 3px 0 0 13px;
 }
 .playerHeadinner {
@@ -886,7 +886,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 .controls {
 	width: 50%;
 	margin: 3% auto;
-	height: 40px !important;
+	height: 62px !important;
 	margin-bottom: 0px;
 }
 .controls div {
@@ -941,39 +941,39 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	border: 0 !important;
 	outline: none;
 }
-.suffle{
+.suffle {
 	width: 40px !important;
 	height: 30px !important;
 	background: url(../images/controlBtns/Shuffle.png) no-repeat !important;
 	opacity: 1 !important;
 	border: 0 !important;
 	outline: none;
-	}
-.replay{
+}
+.replay {
 	width: 40px !important;
 	height: 30px !important;
 	background: url(../images/controlBtns/repeat.png) no-repeat !important;
 	opacity: 1 !important;
 	border: 0 !important;
 	outline: none;
-	}
+}
 .controls1 div:nth-child(1) {
 	background: none !important;
 	border: 0px !important;
 	float: left;
-	margin-left:2%;
+	margin-left: 2%;
 }
 .controls1 div:nth-child(2) {
 	background: none !important;
 	border: 0px !important;
 	float: right;
 }
-.controls1{ 
-width: 82%;
-margin: 2% auto;
-height: 55px;
-margin-bottom: 0px;
-	}
+.controls1 {
+	width: 82%;
+	margin: 2% auto;
+	height: 55px;
+	margin-bottom: 0px;
+}
 .songDetails {
 	text-align: center;
 	font-family: quicksand-Book !important;
@@ -1089,38 +1089,39 @@ input[disabled='disabled'] {
 	margin-top: 3px;
 	margin-right: 20px;
 }
-.ui-slider {
+/*.ui-slider {
 	float: left;
 	width: 100%;
 }
+
+div.ui-slider {
+	float: left;
+	width: 67%;
+	margin: 0px !important;
+	float: right;
+}*/
+.ui-slider-track .ui-btn.ui-slider-handle {
+	opacity: 1;
+	background:#011e2b;
+}
 .ui-slider-track {
-	background: url(../images/equalizer.png) repeat-x !important;
+	background: #d9dfde !important;
 	height: 10px !important;
 	border: 0px !important;
 	border-radius: 0px !important;
 	-webkit-border-radius:0px !important;
 	-moz-border-radius:0px !important;
 }
-.ui-slider-bg {
-	background: url(../images/slider_over.png) repeat-x !important;
+.ui-slider-track, .ui-slider-switch {
+	margin: 0px !important;
+}.ui-slider-bg {
+	background: #088973!important;
 	border-radius: 0px !important;
 	-webkit-border-radius:0px !important;
 	-moz-border-radius:0px !important;
 }
-.ui-slider-track .ui-btn.ui-slider-handle {
-	opacity: 0;
-}
 input.ui-input-text.ui-slider-input {
 	display: none !important;
-}
-div.ui-slider {
-	float: left;
-	width: 67%;
-	margin: 0px !important;
-	float: right;
-}
-.ui-slider-track, .ui-slider-switch {
-	margin: 0px !important;
 }
 .knobText {
 	height: 50px;
@@ -1179,7 +1180,9 @@ div.ui-slider {
 	background: #146ea0;
 	cursor: pointer;
 }
-.ui-btn-hidden{ outline:none !important;}
+.ui-btn-hidden {
+	outline: none !important;
+}
 /*============================================= Media Queries ===================================*/
 @media (min-width:320px) and (max-width:400px) {
 .playerHeadinner {
@@ -1254,7 +1257,7 @@ div.ui-slider {
 	float: left;
 	width: 100%;
 }
-.ui-slider-track {
+/*.ui-slider-track {
 	background: url(../images/equalizer.png) repeat-x !important;
 	height: 10px !important;
 	border: 0px !important;
@@ -1270,18 +1273,18 @@ div.ui-slider {
 }
 .ui-slider-track .ui-btn.ui-slider-handle {
 	opacity: 0;
-}
+}}*/
 input.ui-input-text.ui-slider-input {
 	display: none !important;
 }
-div.ui-slider {
+/*div.ui-slider {
 	float: left;
 	width: 100%;
 	margin: 0px !important;
-}
+}*/
 .ui-slider-track, .ui-slider-switch {
-	margin: 0px !important;
-}
+	margin: 0px !important;}
+
 .songOverlay {
 	top: 0.7em !important;
 }
@@ -1301,13 +1304,32 @@ div.ui-slider {
 }
 .artistandSong {
 	text-indent: 10%;
-	width:61%;
+	width: 61%;
 }
-.artistImg{ width:39%;}
-.songOverlay .artistandSong h5{ font-size:9pt !important;}
-.songOverlay .artistandSong h4{ font-size:10pt;}
-.songHover .artistandSong h5{ font-size:9pt !important; margin-top:22px;}
-.songHover .artistandSong h4{ font-size:10pt;}
+.artistImg {
+	width: 39%;
+}
+.songOverlay .artistandSong h5 {
+	font-size: 9pt !important;
+}
+.songOverlay .artistandSong h4 {
+	font-size: 10pt;
+}
+.songHover .artistandSong h5 {
+	font-size: 9pt !important;
+	margin-top: 22px;
+}
+.songHover .artistandSong h4 {
+	font-size: 10pt;
+}
+.profileImg {
+	margin-left: 5px;
+}
+}
+@media(min-width:320px) and (max-width:339px) {
+.controls1 {
+	height: 57px !important;
+}
 }
 @media( min-width:331px) and (max-width:350px) {
 .songOverlay {
@@ -1327,6 +1349,17 @@ div.ui-slider {
 }
 .artistandSong {
 	text-indent: 20%;
+}
+.controls1 {
+	width: 82%;
+	margin: 2% auto;
+	height: 57px !important;
+	margin-bottom: 0px;
+}
+.controls {
+	margin: 3% auto;
+	height: 73px !important;
+	margin-bottom: 0px;
 }
 }
  @media( min-width:351px) and (max-width:380px) {
@@ -1351,7 +1384,7 @@ div.ui-slider {
 }
  @media( min-width:381px) and (max-width:400px) {
 #songsLibrary {
-min-height: 613px !important;
+	min-height: 613px !important;
 }
 .songOverlay {
 	top: 1.1em !important;
@@ -1464,10 +1497,14 @@ min-height: 613px !important;
 	margin: 0 0 0 0;
 }
 }
-@media (min-width:419px) and (max-width:499px){
-	.controls div:nth-child(2){ margin-left:29% !important;}
-	#songsLibrary{ min-height:650px !important;}
-	}
+@media (min-width:419px) and (max-width:499px) {
+.controls div:nth-child(2) {
+	margin-left: 29% !important;
+}
+#songsLibrary {
+	min-height: 650px !important;
+}
+}
 @media (min-width:431px) and (max-width:450px) {
 .songOverlay {
 	top: 0.85em !important;
@@ -1695,12 +1732,12 @@ min-height: 613px !important;
 }
 }
 @media (min-width:601px) and (max-width:620px) {
-	.songOverlay {
+.songOverlay {
 	top: 0.85em !important;
 }
-	}
+}
 @media (min-width:621px) and (max-width:640px) {
-	.songOverlay {
+.songOverlay {
 	top: 1.1em !important;
 }
-	}
+}
