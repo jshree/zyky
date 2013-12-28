@@ -136,26 +136,6 @@ $(document).ready(function(){
 		 $('.playSmall img').css({'height': songHover1 +'px'});
 		 $('.cart img').css({'height': songHover1 +'px'});
 	});
-	
-//	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
-//
-//// Update media position every second
-//var mediaTimer = setInterval(function () {
-//    // get media position
-//    my_media.getCurrentPosition(
-//        // success callback
-//        function (position) {
-//            if (position > -1) {
-//                console.log((position) + " sec");
-//            }
-//        },
-//        // error callback
-//        function (e) {
-//            console.log("Error getting pos=" + e);
-//        }
-//    );
-//}, 1000);
-//
 });
 
 //=============================================================================
@@ -164,33 +144,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 //	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
- function playAudio(src) {
-            if (my_media == null) {
-                // Create Media object from src
-                my_media = new Media(src, onSuccess, onError);
-            } // else play current audio
-            // Play audio
-            my_media.play();
-
-            // Update my_media position every second
-            if (mediaTimer == null) {
-                mediaTimer = setInterval(function() {
-                    // get my_media position
-                    my_media.getCurrentPosition(
-                        // success callback
-                        function(position) {
-                            if (position > -1) {
-                                setAudioPosition((position) + " sec");
-                            }
-                        },
-                        // error callback
-                        function(e) {
-                            console.log("Error getting pos=" + e);
-                            setAudioPosition("Error: " + e);
-                        }
-                    );
-                }, 1000);
-            }
- }
+    my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
+    my_media.play();
 }
 
