@@ -144,7 +144,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	alert('playing');
 	//playAudio("http://dev.wiredelta.com:12001/sample.mp3");
-	var my_media = new Media(src, onSuccess, onError);
+	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
 	my_media.play();
 }
 
