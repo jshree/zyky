@@ -140,7 +140,6 @@ $(document).ready(function(){
 
 //=============================================================================
 document.addEventListener("deviceready", onDeviceReady, false);
-
 function onDeviceReady() {
 	        alert('playing');
             playAudio("http://dev.wiredelta.com:12001/sample.mp3");
