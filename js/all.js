@@ -139,12 +139,13 @@ $(document).ready(function(){
 });
 
 //=============================================================================
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-$('#mediaPlayer').on('pageshow', function(){
-    var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
-	my_media.play();
+$('#mediaPlayer').on('pageinit', function(event){
+	alert('mediaPlayer');
+   // var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
+//	my_media.play();
 });
-}
+//document.addEventListener("deviceready", onDeviceReady, false);
+//
+//function onDeviceReady() {
+//
+//}
