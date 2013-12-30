@@ -140,16 +140,23 @@ $(document).ready(function(){
 
 //=============================================================================
 document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-	        alert('playing');
-            playAudio("http://dev.wiredelta.com:12001/sample.mp3");
-        }
-        function playAudio(src) {
-            // Create Media object from src
-           var my_media = new Media(src, onSuccess, onError);
-		   alert('playing second time');
-            // Play audio
-            my_media.play();
-		}
-           
 
+function onDeviceReady() {
+	alert('playing');
+	//playAudio("http://dev.wiredelta.com:12001/sample.mp3");
+	var my_media = new Media(src, onSuccess, onError);
+	my_media.play();
+}
+
+//function playAudio(src) {
+//	alert('playing second time');
+//	var my_media = new Media(src, onSuccess, onError);
+//	my_media.play();
+//}
+function onSuccess() {
+	alert("playAudio():Audio Success");
+}
+function onError(error) {
+	alert('code: '    + error.code    + '\n' +
+	'message: ' + error.message + '\n');
+}
