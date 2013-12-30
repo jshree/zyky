@@ -143,11 +143,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
             playAudio("http://dev.wiredelta.com:12001/sample.mp3");
-		    console.log('playing');
+			alert('playing');
         }
         function playAudio(src) {
             // Create Media object from src
            var my_media = new Media(src, onSuccess, onError);
+		   alert('playing second time');
             // Play audio
             my_media.play();
 		}
