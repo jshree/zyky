@@ -139,23 +139,25 @@ $(document).ready(function(){
 });
 
 //=============================================================================
-//function onDeviceReady() {
-////	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
-////console.log('working');
-//}
 document.addEventListener("deviceready", onDeviceReady, false);
+
 function onDeviceReady() {
-	        alert();
-            playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+            playAudio("http://dev.wiredelta.com:12001/sample.mp3");
         }
+
+        // Audio player
+        //
+        var my_media = null;
+        var mediaTimer = null;
+
         // Play audio
+        //
         function playAudio(src) {
             // Create Media object from src
-            var my_media = new Media(src, onSuccess, onError);
+            my_media = new Media(src, onSuccess, onError);
 
             // Play audio
             my_media.play();
-
 		}
            
 
