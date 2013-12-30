@@ -139,24 +139,10 @@ $(document).ready(function(){
 });
 
 //=============================================================================
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-	alert('playing');
-	alert(eval(prompt('Eval:')));
-	//playAudio("http://dev.wiredelta.com:12001/sample.mp3");
 	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
-	alert(my_media);
 	my_media.play();
-}
-//function playAudio(src) {
-//	alert('playing second time');
-//	var my_media = new Media(src, onSuccess, onError);
-//	my_media.play();
-//}
-function onSuccess() {
-	alert('Audio started to play');
-}
-function onError(){
-	alert('this function is running');
 }
