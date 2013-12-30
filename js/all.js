@@ -139,11 +139,15 @@ $(document).ready(function(){
 });
 
 //=============================================================================
-document.addEventListener("deviceready", onDeviceReady, false);sssssss
-	function onDeviceReady() {
-    	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
-		my_media.play();
-	}
-$('#mediaPlayer').live('pageshow', function(event){
-   alert('mediaPlayer');
-});
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
+	my_media.play();
+}
+
+function onSuccess() {
+	alert('Audio started to play');
+}
+function onError(){
+	alert('this function is running');
+}
