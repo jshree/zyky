@@ -140,11 +140,9 @@ $(document).ready(function(){
 
 //=============================================================================
 $('#mediaPlayer').live('pageshow', function(event){
-    var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
-	my_media.play();
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+    	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
+		my_media.play();
+	}
 });
-//document.addEventListener("deviceready", onDeviceReady, false);
-//
-//function onDeviceReady() {
-//
-//}
