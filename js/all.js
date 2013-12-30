@@ -139,7 +139,7 @@ $(document).ready(function(){
 });
 
 //=============================================================================
-$('#mediaPlayer').on('pageinit', function(event){
+$('#mediaPlayer').live('pageshow', function(event){
 	alert('mediaPlayer');
    // var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
 //	my_media.play();
