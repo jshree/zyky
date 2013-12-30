@@ -124,7 +124,6 @@ $(document).ready(function(){
 			$('.cart').css({'height': song1 +'px'});
 			$('.playSmall img').css({'height': song1 +'px'});
 			$('.cart img').css({'height': song1 +'px'});
-			document.addEventListener("deviceready", onDeviceReady, false);
 		 });
 		 
 	 $(window).resize(function(){
@@ -144,8 +143,9 @@ $(document).ready(function(){
 ////	var my_media = new Media('http://dev.wiredelta.com:12001/sample.mp3', onSuccess, onError);
 ////console.log('working');
 //}
-
+document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
+	        alert();
             playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
         }
         // Play audio
