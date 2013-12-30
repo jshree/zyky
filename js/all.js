@@ -158,6 +158,7 @@ function onDeviceReady() {
 
             // Play audio
             my_media.play();
+			console.log('playing');
 		}
            
 
