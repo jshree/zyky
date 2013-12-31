@@ -141,6 +141,8 @@ color:#fff !important;
 	border: 0px;
 	margin: 0px;
 }
+.forgotPassword a{color:#fff !important; text-shadow:none !important; text-decoration:none !important; font-weight:normal; font-family:quicksand-Light;
+ font-size:12pt;}
 input:-moz-placeholder {
 color:white;
 }
