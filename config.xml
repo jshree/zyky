@@ -40,6 +40,10 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="show-splash-screen-spinner" value="false" />
 	
+	<gap:plugin name="nl.x-services.plugins.launchmyapp">
+	<param:name="URL_SCHEME" value="zyky" />
+	</gap:plugin>
+	
 	    <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
 		<icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
 		<icon gap:density="hdpi" gap:platform="android" src="res/icon/android/icon-72-hdpi.png" />
