@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="com.wiredelta.zyky" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.wiredelta.zyky" version="0.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Zyky</name>
     <description>
         Zyky is Music App, which allows local artists to sell their music through the app.
@@ -40,6 +40,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="show-splash-screen-spinner" value="false" />
 	
+	<gap:plugin name="org.apache.cordova.media" version="0.2.3" />
 
 	    <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
 		<icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />

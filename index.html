@@ -14,6 +14,94 @@
 <script src="js/underscore-min.js" type="text/javascript"></script>
 <script src="js/backbone-min.js" type="text/javascript"></script>
 <script src="js/script.js" type="text/javascript"></script>
+<script>
+// Wait for device API libraries to load //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // device APIs are available //
+        function onDeviceReady() {
+        }
+
+        // Audio player //
+        var my_media = null;
+        var mediaTimer = null;
+		
+		function openMedia(music){
+			window.location.href="#mediaPlayer";
+			//localstorage for music link
+			localStorage.music_url=music;
+			//set attr for mus_link id.
+			$('#mus_link').attr("value",localStorage.music_url);
+
+			}
+        // Play audio//
+        function playAudio() {
+			
+			var src =$('#mus_link').val();
+            // Create Media object from src
+            my_media = new Media(src, onSuccess, onError);
+
+            // Play audio
+            my_media.play();
+
+            // Update my_media position every second
+            if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > -1) {
+                                setAudioPosition((position) + " sec");
+                            }
+                        },
+                        // error callback
+                        function(e) {
+                            console.log("Error getting pos=" + e);
+                            setAudioPosition("Error: " + e);
+                        }
+                    );
+                }, 1000);
+            }
+        }
+
+        // Pause audio
+        //
+        function pauseAudio() {
+            if (my_media) {
+                my_media.pause();
+            }
+        }
+
+        // Stop audio
+        //
+        function stopAudio() {
+            if (my_media) {
+                my_media.stop();
+            }
+            clearInterval(mediaTimer);
+            mediaTimer = null;
+        }
+
+        // onSuccess Callback
+        //
+        function onSuccess() {
+            console.log("playAudio():Audio Success");
+        }
+
+        // onError Callback
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                  'message: ' + error.message + '\n');
+        }
+
+        // Set audio position
+        //
+        function setAudioPosition(position) {
+            document.getElementById('timeElapsed').innerHTML = position;
+        }
+</script>
 </head>
 
 <body>
@@ -424,12 +512,13 @@
         </div>
         <div class="SongTimeBox" style="height:60px;">
          <input id="slider1" type="range" name="slider" value="5" min="0" max="100" data-highlight="true">
-         <div class="timeElapsed" style="float:left;">0:00</div>
+         <div class="timeElapsed" id="timeElapsed" style="float:left;">0:00</div>
          <div class="timeRemaining" style="float:right;">4:05</div>
         </div>
+         <input type="hidden" id="mus_link" value=""/>
         <div class="controls">
           <input type="button" class="previous" value="&#160;">
-          <input type="button" class="play" value="&#160;" style="background:url(images/controlBtns/Play.png) no-repeat;">
+          <input type="button" class="play" onClick="playAudio()" value="&#160;" style="background:url(images/controlBtns/Play.png) no-repeat;">
           <input type="button" class="next" value="&#160;">
         </div>
         <div class="controls1">
@@ -473,7 +562,8 @@
 <!-- Media Player ends Here-->
 
 <script type="text/template" id="song-template">
-
+	
+	<a href="#" data-role="none" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
 	<div class="song one"> <img src="<%= album.image  %>" alt="">
       <div class="songOverlay">
         <div class="artistandSong">
@@ -482,7 +572,7 @@
         </div>
         <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
       </div>
-	  
+	  </a>
       <div class="songHover">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
