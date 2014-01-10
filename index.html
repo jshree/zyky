@@ -43,6 +43,18 @@
 
             // Play audio
             my_media.play();
+			if (!playing) {
+                      my_media.play();
+					  
+						playing = true;
+						 navigator.notification.alert('playing..!');
+			}
+			else {
+				my_media.pause();
+				playing = false;
+				 navigator.notification.alert('music paused..!');
+			}
+				
 
             // Update my_media position every second
             if (mediaTimer == null) {
