@@ -18,6 +18,8 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+/*==flickers and flashes during or at the end of a transition we suggest the following workaround =====*/
+.ui-page { -webkit-backface-visibility: hidden; }
 /*============================================= Login page styles ===================================*/
 #login, #signup {
 	background: url(../images/background.png)no-repeat !important;
