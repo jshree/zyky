@@ -21,7 +21,7 @@ img {
 /*==flickers and flashes during or at the end of a transition we suggest the following workaround =====*/
 .ui-page { -webkit-backface-visibility: hidden; }
 /*============================================= Login page styles ===================================*/
-#login, #signup {
+#login, #signup, #search {
 	background: url(../images/background.png)no-repeat !important;
 	background-size: cover !important;
 }
@@ -1186,6 +1186,47 @@ input.ui-input-text.ui-slider-input {
 }
 .ui-btn-hidden {
 	outline: none !important;
+}
+/*============================================= search page Styles ==============================*/
+
+.SearchLogo{ text-align:center;}
+#searchContent .ui-input-search, div.ui-input-text {
+	width: 80%;
+	margin: 30px auto !important;
+	background: rgba(255,255,255,0.5) !important;
+	border:0px;
+}
+.searchContent .searchBtn{ width:83% !important; background:rgba(50,80,86,0.85) !important; height:50px; display:block; margin:0 auto; text-align:center; border-radius:10px; color:#fff !important; text-shadow:none; font-weight:normal !important; line-height:50px; text-decoration:none !important; font-family: quicksand-Light !important;}
+.hitlist {
+	background-image: url(../images/hitlist_icon1.png) !important;
+	background-color: rgba(252,252,253,0.5) !important;
+	background-position: center /*left 27px*/ !important;
+	background-repeat: no-repeat !important;
+	z-index: 9 !important;
+	width: 90px !important;
+	height: 90px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
+	outline: none !important;
+	float: right;
+	margin: 5% 20% 0 50% !important;
+	border: 0px !important;
+}
+.free {
+	background-image: url(../images/nodeIcon.png)!important;
+	background-position: center /*left 23px*/ !important;
+	background-repeat: no-repeat !important;
+	background-color: rgba(252,252,253,0.5) !important;
+	z-index: 9 !important;
+	width: 90px !important;
+	height: 90px !important;
+	border-radius: 100px !important;
+	-webkit-border-radius: 100px !important;
+	-moz-border-radius: 100px !important;
+	outline: none !important;
+	margin: 5% 50% 0 20% !important;
+	border: 0px !important;
 }
 /*============================================= Media Queries ===================================*/
 @media (min-width:320px) and (max-width:400px) {
