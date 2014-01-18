@@ -295,7 +295,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 }
 /*========================================  Background for all after login page styles ======================================*/
 
-#songsLibrary,#hitList,#freeList, #purchase, #visa, #masterCard, #mobileMoney, #mPesa, #download {
+#songsLibrary,#hitList,#freeList, #searchTrack, #purchase, #visa, #masterCard, #mobileMoney, #mPesa, #download {
 	background: url(../images/background2.png)no-repeat !important;
 	background-size: cover !important;
 	padding-bottom: 25px;

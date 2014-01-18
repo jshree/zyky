@@ -14,6 +14,7 @@
 <script src="js/underscore-min.js" type="text/javascript"></script>
 <script src="js/backbone-min.js" type="text/javascript"></script>
 <script src="js/script.js" type="text/javascript"></script>
+<script src="js/filter.js" type="text/javascript"></script>
 <script>
 // Wait for device API libraries to load //
         document.addEventListener("deviceready", onDeviceReady, false);
@@ -278,11 +279,71 @@
   <div data-role="none" class="hit-temp">
   <!--playlist rendering-->
   </div>
-
     
   </div>
 </div>
 <!--Hit Songs Library ends Here--> 
+
+<!-- Searc Page Starts Here-->
+<div data-role="page" id="search">
+  <div data-theme="g" data-role="header" class="header"><h3> ZYKY </h3>
+  </div>
+  <div data-role="content" class="loginContent searchContent"> 
+	<div class="SearchLogo">
+     <img src="images/searchLogo.png" alt="">
+    </div>
+    <div data-role="none" id="searchField">
+     <input type="text" class="email" placeholder="Search" id="keyWord" />
+     </div>
+     <a href="#searchTrack" class="searchBtn">SEARCH SONGS</a>
+     <div class="signupbox" style="margin-top:40px;"> <a data-role="button" href="#hitList" onClick="hitList()" class="hitlist" ></a>
+      <label style="color:#fff; text-shadow:none; margin: 1% 26% 0 0%;">HIT LIST</label>
+    </div>
+    <div class="signinbox" style="margin-top:40px; margin-bottom:30px;"> <a data-role="button" href="#freeList" onClick="freeList()" class="free"></a>
+      <label style="color:#fff; text-shadow:none; margin: 1% 0 0 19%;">FREE MUSIC</label>
+    </div>
+    </div>
+  </div>
+</div><!-- Search Page ends Here-->
+
+<!-- Search Songs List Page Starts Here-->
+<div data-role="page" id="searchTrack">
+  <div data-role="panel" id="loginDetails" data-theme="a" data-position="left" data-display="overlay">
+    <div data-theme="g" data-role="header" class="header header2">
+      <h3>ZYKY</h3>
+    </div>
+    <div data-role="content">
+      <div class="profileDetails">
+        <div class="profileImage"><img src="images/profileImg.png" alt=""></div>
+        <br/>
+        <div class="profileName">
+          <h4>Greyson Sterling</h4>
+          <h5>San Francisco, CA</h5>
+        </div>
+      </div>
+      <div class="profileFeatures">
+        <p><a href="#hitList" onClick="hitList()"><img src="images/hitlist_icon.png" alt=""> Hit List</a></p>
+        <p><a href="#freeList" onClick="freeList()"><img src="images/freemusic_icon.png" alt=""> Free Music</a></p>
+        <p><a href="#search"><img src="images/findmusic_icon.png" alt=""> Find Music</a></p>
+        <p><a href="#"><img src="images/user_icon.png" alt=""> User</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <div data-theme="g" data-role="header" class="header"> <a data-role="button" href="#loginDetails" class="ui-btn-left more" data-transition="slide"></a>
+    <h3> Search Results </h3>
+  </div>
+  <div data-role="content">
+  
+  <div data-role="none" class="search-song">
+  <!--playlist rendering-->
+ 
+  </div>
+
+    
+  </div>
+</div><!-- Search Songs List ends Here--> 
+
 
 <!-- purchase Page Starts Here-->
 <div data-role="page" id="purchase">
@@ -300,9 +361,9 @@
         </div>
       </div>
       <div class="profileFeatures">
-        <p><a href="#"><img src="images/hitlist_icon.png" alt=""> Hit List</a></p>
-        <p><a href="#"><img src="images/freemusic_icon.png" alt=""> Free Music</a></p>
-        <p><a href="#"><img src="images/findmusic_icon.png" alt=""> Find Music</a></p>
+        <p><a href="#hitList" onClick="hitList()"><img src="images/hitlist_icon.png" alt=""> Hit List</a></p>
+        <p><a href="#freeList" onClick="freeList()"><img src="images/freemusic_icon.png" alt=""> Free Music</a></p>
+        <p><a href="#search"><img src="images/findmusic_icon.png" alt=""> Find Music</a></p>
         <p><a href="#"><img src="images/user_icon.png" alt=""> User</a></p>
       </div>
     </div>
@@ -483,27 +544,6 @@
 </div>
 <!-- Download Page ends Here--> 
 
-<!-- Searc Page Starts Here-->
-<div data-role="page" id="search">
-  <div data-theme="g" data-role="header" class="header"><h3> ZYKY </h3>
-  </div>
-  <div data-role="content" class="loginContent searchContent"> 
-	<div class="SearchLogo">
-     <img src="images/searchLogo.png" alt="">
-    </div>
-     <input name="" placeholder="Search" value="" type="text" class="email">
-     <a href="#" class="searchBtn">SEARCH SONGS</a>
-     <div class="signupbox" style="margin-top:40px;"> <a data-role="button" href="#hitList" onClick="hitList()" class="hitlist" ></a>
-      <label style="color:#fff; text-shadow:none; margin: 1% 26% 0 0%;">HIT LIST</label>
-    </div>
-    <div class="signinbox" style="margin-top:40px; margin-bottom:30px;"> <a data-role="button" href="#freeList" onClick="freeList()" class="free"></a>
-      <label style="color:#fff; text-shadow:none; margin: 1% 0 0 19%;">FREE MUSIC</label>
-    </div>
-    </div>
-  </div>
-</div><!-- Search Page ends Here--> 
-
-
 <!-- Media Player Page Starts Here-->
 <div data-role="page" id="mediaPlayer">
   <div data-theme="g" data-role="header" class="header">
@@ -576,6 +616,7 @@
 </div>
 <!-- Media Player ends Here-->
 
+<!-- song list rendering-->
 <script type="text/template" id="song-template">
 	
 	<a href="#" data-role="none" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
@@ -602,6 +643,8 @@
     </div>
    
 </script>
+
+<!--free list rendering-->
 <script type="text/template" id="free-template">
 
 	<div class="song one"> <img src="<%= album.image  %>" alt="">
@@ -628,7 +671,37 @@
     </div>
    
 </script>
+
+<!--hit song list rendering-->
 <script type="text/template" id="hit-template">
+
+	<div class="song one"> <img src="<%= album.image  %>" alt="">
+	<a href="#" onclick="onloc('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')" data-role="none">
+      <div class="songOverlay">
+        <div class="artistandSong">
+           <h5>Artist: <%= artist.name  %></h5>
+		   <h4><%= title %></h4>
+        </div>
+        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+      </div>
+	  </a>
+      <div class="songHover">
+        <div class="artistandSong">
+          <h5>Artist: <%= artist.name  %></h5>
+		  <h4><%= title %></h4>
+        </div>
+        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="songFeatures">
+          <div class="playSmall"><a href="#mediaPlayer"><img src="images/playBtnSmall.png" alt=""></a></div>
+          <div class="cart"><a href="#purchase"><img src="images/cartsmall.png" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+   
+</script>
+
+<!--search song list rendering-->
+<script type="text/template" id="track-template">
 
 	<div class="song one"> <img src="<%= album.image  %>" alt="">
 	<a href="#" onclick="onloc('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')" data-role="none">
