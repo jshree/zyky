@@ -104,6 +104,15 @@
         function setAudioPosition(position) {
             document.getElementById('timeElapsed').innerHTML = position;
         }
+		
+		function loginFB(url){
+			
+			window.plugins.childBrowser.showWebPage(url);
+			
+			window.plugins.childBrowser.onLocationChange = function (url) {
+				alert('childBrowser has loaded ' + url);
+				};
+			}
 </script>
 </head>
 
@@ -113,7 +122,7 @@
   <div data-theme="g" data-role="header" class="header"><h3> LOG IN </h3>
   </div>
   <div data-role="content" class="loginContent"> 
-  <a data-role="button" href="#" onClick="window.plugins.childBrowser.showWebPage('http://wiredelta.com:12001/auth/auth/facebook');" class="facebook_sign_up"> <span>Sign in with Facebook</span> </a>
+  <a data-role="button" href="#" onClick="loginFB('http://wiredelta.com:12001/auth/auth/facebook')" class="facebook_sign_up"> <span>Sign in with Facebook</span> </a>
     <h3>OR</h3>
   </div>
   <form class="loginform">
