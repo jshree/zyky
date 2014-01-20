@@ -109,9 +109,14 @@
 			
 			window.plugins.childBrowser.showWebPage(url);
 			
-			window.plugins.childBrowser.onLocationChange = function (url) {
-				alert('childBrowser has loaded ' + url);
-				};
+			window.plugins.childBrowser.onLocationChange = function(locationLink){
+        if (locationLink == "http://wiredelta.com:12001/#_=_") {
+                window.plugins.childBrowser.close();
+        }
+ }
+			//window.plugins.childBrowser.onLocationChange = function (url) {
+//				alert('childBrowser has loaded ' + url);
+//				};
 			}
 </script>
 </head>
