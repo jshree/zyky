@@ -12,7 +12,7 @@
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
 	
-    <feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1"/>
+    
 	
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.SplashScreen" />
@@ -42,6 +42,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="show-splash-screen-spinner" value="false" />
 	
+	<gap:plugin name="com.phonegap.plugins.childbrowser" />
 	
 
 	    <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
