@@ -19,7 +19,9 @@ img {
 	height: auto;
 }
 /*==flickers and flashes during or at the end of a transition we suggest the following workaround =====*/
-.ui-page { -webkit-backface-visibility: hidden; }
+.ui-page {
+	-webkit-backface-visibility: hidden;
+}
 /*============================================= Login page styles ===================================*/
 #login, #signup, #search {
 	background: url(../images/background.png)no-repeat !important;
@@ -41,7 +43,9 @@ img {
 .header {
 	height: 72px;
 	border-bottom: 1px solid rgba(252,252,253,0.5);
+	
 }
+.fixedhead{ background:#042A33 !important;}
 .more {
 	background: url(../images/moreBtn.png) no-repeat !important;
 	top: 20px !important;
@@ -143,8 +147,14 @@ color:#fff !important;
 	border: 0px;
 	margin: 0px;
 }
-.forgotPassword a{color:#fff !important; text-shadow:none !important; text-decoration:none !important; font-weight:normal; font-family:quicksand-Light;
- font-size:12pt;}
+.forgotPassword a {
+	color: #fff !important;
+	text-shadow: none !important;
+	text-decoration: none !important;
+	font-weight: normal;
+	font-family: quicksand-Light;
+	font-size: 12pt;
+}
 input:-moz-placeholder {
 color:white;
 }
@@ -295,7 +305,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 }
 /*========================================  Background for all after login page styles ======================================*/
 
-#songsLibrary,#hitList,#freeList, #searchTrack, #purchase, #visa, #masterCard, #mobileMoney, #mPesa, #download {
+#songsLibrary, #hitList, #freeList, #searchTrack, #purchase, #visa, #masterCard, #mobileMoney, #mPesa, #download {
 	background: url(../images/background2.png)no-repeat !important;
 	background-size: cover !important;
 	padding-bottom: 25px;
@@ -427,6 +437,11 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	float: left;
 	margin-right: 30px;
 	margin-left: 20px;
+}
+.close {
+	float: right;
+	margin-top: -69px;
+	margin-right: 10px;
 }
 /*============================================= Purchase Page Styles ===================================*/
 .purchase h4 {
@@ -807,7 +822,6 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 #mediaPlayer {
 	background: url(../images/background3.png) no-repeat !important;
 	background-size: cover !important;
-	min-height: 964px !important;
 }
 #mediaPlayer .header {
 	border: 0px !important;
@@ -818,7 +832,6 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 }
 #mediaPlayer .ui-content {
 	padding: 0px !important;
-	min-height: 660px;
 	overflow-x: visible !important;
 }
 .playerHead {
@@ -1106,23 +1119,24 @@ div.ui-slider {
 }*/
 .ui-slider-track .ui-btn.ui-slider-handle {
 	opacity: 1;
-	background:#011e2b;
+	background: #011e2b;
 }
 .ui-slider-track {
 	background: #d9dfde !important;
 	height: 10px !important;
 	border: 0px !important;
 	border-radius: 0px !important;
-	-webkit-border-radius:0px !important;
-	-moz-border-radius:0px !important;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
 }
 .ui-slider-track, .ui-slider-switch {
 	margin: 0px !important;
-}.ui-slider-bg {
+}
+.ui-slider-bg {
 	background: #088973!important;
 	border-radius: 0px !important;
-	-webkit-border-radius:0px !important;
-	-moz-border-radius:0px !important;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
 }
 input.ui-input-text.ui-slider-input {
 	display: none !important;
@@ -1189,14 +1203,30 @@ input.ui-input-text.ui-slider-input {
 }
 /*============================================= search page Styles ==============================*/
 
-.SearchLogo{ text-align:center;}
+.SearchLogo {
+	text-align: center;
+}
 #searchContent .ui-input-search, div.ui-input-text {
 	width: 80%;
 	margin: 30px auto !important;
 	background: rgba(255,255,255,0.5) !important;
-	border:0px;
+	border: 0px;
 }
-.searchContent .searchBtn{ width:83% !important; background:rgba(50,80,86,0.85) !important; height:50px; display:block; margin:0 auto; text-align:center; border-radius:10px; color:#fff !important; text-shadow:none; font-weight:normal !important; line-height:50px; text-decoration:none !important; font-family: quicksand-Light !important;}
+.searchContent .searchBtn {
+	width: 83% !important;
+	background: rgba(50,80,86,0.85) !important;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 10px;
+	color: #fff !important;
+	text-shadow: none;
+	font-weight: normal !important;
+	line-height: 50px;
+	text-decoration: none !important;
+	font-family: quicksand-Light !important;
+}
 .hitlist {
 	background-image: url(../images/hitlist_icon1.png) !important;
 	background-color: rgba(252,252,253,0.5) !important;
@@ -1248,9 +1278,6 @@ input.ui-input-text.ui-slider-input {
 	min-height: 250px;
 	padding: 3%;
 	padding-bottom: 0px !important;
-}
-#mediaPlayer {
-	min-height: 804px !important;
 }
 .knobControls div div canvas {
 	width: 95px !important;
@@ -1328,8 +1355,8 @@ input.ui-input-text.ui-slider-input {
 	margin: 0px !important;
 }*/
 .ui-slider-track, .ui-slider-switch {
-	margin: 0px !important;}
-
+	margin: 0px !important;
+}
 .songOverlay {
 	top: 0.7em !important;
 }
@@ -1451,9 +1478,6 @@ input.ui-input-text.ui-slider-input {
 }
 }
 @media (min-width:401px) and (max-width:500px) {
-#mediaPlayer {
-	min-height: 844px !important;
-}
 .playerHeadinner {
 	width: 74% !important;
 	margin: 0 auto;
@@ -1738,9 +1762,6 @@ input.ui-input-text.ui-slider-input {
 .knobControls div div:nth-child(3) div {
 	left: inherit !important;
 	right: 41px !important;
-}
-#mediaPlayer {
-	min-height: 1100px !important;
 }
 .knobText p:first-child {
 	left: 3.2%
