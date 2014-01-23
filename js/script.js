@@ -198,3 +198,52 @@ song.fetch({
 
 
 }
+
+/*
+signin
+----------------------------------------------------------------
+*/
+
+function signIn(){
+	
+	var email=$('#email').val();
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	var password=$('#pwd').val();
+	
+	if(email==""){
+		$('#signRes').html('Enter your Mail ID');
+		$('#email').focus();
+		}
+	else if(reg.test(email) == false)
+      {
+            $("#signRes").html('Enter a valid Mail ID.');
+            $("#email").focus();
+      }
+	else if(password==""){
+		$('#signRes').html('Enter your Password');
+		$('#pwd').focus();
+		}
+		else{
+			
+			var dataString='email='+ email + '&password=' +  password;
+    		
+            $.ajax({
+            url  : 'http://wiredelta.com:12001/tokens.json',
+            data: dataString,
+            type : "POST",
+            dataType: 'json',
+			error: function(error) 
+			{
+			var jsonResponse = JSON.parse(error.responseText);
+			$('#signRes').html(jsonResponse.message);
+			},
+            success : function(res){
+				navigator.notification.alert(res.token, null, 'Token', 'OK');
+				location.href='#songsLibrary';		
+            }
+			
+			
+        });
+		
+			}
+	}

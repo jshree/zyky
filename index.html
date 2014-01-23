@@ -129,13 +129,15 @@
   <div data-role="content" class="loginContent"> 
   <a data-role="button" href="#" onClick="loginFB('http://wiredelta.com:12001/auth/auth/facebook')" class="facebook_sign_up"> <span>Sign in with Facebook</span> </a>
     <h3>OR</h3>
+    
   </div>
+  <div data-role="none" id="signRes" align="center"></div>
   <form class="loginform">
     <div data-role="fieldcontain">
-      <input name="" placeholder="Email" value="" type="text" class="email">
+      <input  placeholder="Email" id="email" value="" type="text" class="email">
     </div>
     <div data-role="fieldcontain">
-      <input name="" placeholder="Password" value="" type="password" class="password">
+      <input  placeholder="Password" id="pwd" value="" type="password" class="password">
     </div>
     <div class="forgotPassword">
      <a href="#">Forgot Password ?</a>
@@ -143,7 +145,7 @@
     <div class="signupbox"> <a data-role="button" href="#signup" class="signup" data-transition="fade"></a>
       <label>Sign Up</label>
     </div>
-    <div class="signinbox"> <a data-role="button" href="#songsLibrary" class="signin"></a>
+    <div class="signinbox"> <a data-role="button" href="#" onClick="signIn()" class="signin"></a>
       <label>Sign In</label>
     </div>
   </form>
