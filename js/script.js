@@ -238,7 +238,8 @@ function signIn(){
 			$('#signRes').html(jsonResponse.message);
 			},
             success : function(res){
-				navigator.notification.alert(res.token, null, 'Token', 'OK');
+				localStorage.user_token=res.token;
+				//navigator.notification.alert(res.token, null, 'Token', 'OK');
 				location.href='#songsLibrary';		
             }
 			

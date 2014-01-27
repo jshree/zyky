@@ -107,7 +107,7 @@
 		
 		function loginFB(url){
 			
-			window.plugins.childBrowser.showWebPage(url);
+			window.plugins.childBrowser.showWebPage(url, { showLocationBar: false });
 			
 			window.plugins.childBrowser.onLocationChange = function(locationLink){
         	if (locationLink == "http://wiredelta.com:12001/#_=_") {
