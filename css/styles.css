@@ -1197,13 +1197,14 @@ input.ui-input-text.ui-slider-input {
 .playSmall {
 	width: 100%;
 	position: relative;
-	background: #79a7d9;
+	border-bottom:2px solid #000;
+	background: rgba(163, 167, 146, 0.61);
 	cursor: pointer;
 }
 .cart {
 	width: 100%;
 	position: relative;
-	background: #146ea0;
+	background: rgba(163, 167, 146, 0.61);
 	cursor: pointer;
 }
 .ui-btn-hidden {
