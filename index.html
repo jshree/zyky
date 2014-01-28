@@ -118,7 +118,7 @@
 		//Purchase songs with childbrowser plugin
 		function openCart(cartUrl){
 			
-			window.plugins.childBrowser.showWebPage(cartUrl, { showLocationBar: false });
+			window.plugins.childBrowser.showWebPage(cartUrl, { showLocationBar: true });
 			window.plugins.childBrowser.onLocationChange = function(locationLink){
 				if (locationLink == "http://wiredelta.com:12001/tracks/mine") {
 					window.plugins.childBrowser.close();
