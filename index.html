@@ -117,8 +117,9 @@
 		
 		//Purchase songs with childbrowser plugin
 		function openCart(cartUrl){
+			var token=cartUrl + $('#tokenId').val();
 			
-			window.plugins.childBrowser.showWebPage(cartUrl, { showLocationBar: true });
+			window.plugins.childBrowser.showWebPage(token, { showLocationBar: true });
 			window.plugins.childBrowser.onLocationChange = function(locationLink){
 				if (locationLink == "http://wiredelta.com:12001/tracks/mine") {
 					window.plugins.childBrowser.close();
@@ -154,6 +155,7 @@
       <label>Sign Up</label>
     </div>
     <div class="signinbox"> <a data-role="button" href="#" onClick="signIn()" class="signin"></a>
+    <input type="hidden" id="tokenId" value="0"/>
       <label>Sign In</label>
     </div>
   </form>
@@ -659,7 +661,7 @@
 				</a>
 			</div>
 			<div class="cart">
-				<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy')">
+				<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
 				<img src="images/cartsmall.png" alt="">
 				</a>
 			</div>
@@ -687,7 +689,7 @@
 				</a>
 			</div>
 			<div class="cart">
-				<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy')">
+				<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
 				<img src="images/cartsmall.png" alt="">
 				</a>
 			</div>
@@ -714,7 +716,7 @@
 				</a>
 			</div>
 			<div class="cart">
-				<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy')">
+				<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
 				<img src="images/cartsmall.png" alt="">
 				</a>
 			</div>
@@ -742,7 +744,7 @@
 				</a>
 			</div>
 			<div class="cart">
-				<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy')">
+				<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
 				<img src="images/cartsmall.png" alt="">
 				</a>
 			</div>
