@@ -41,15 +41,15 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="show-splash-screen-spinner" value="false" />
-	<preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
 	
 	<gap:plugin name="com.phonegap.plugins.childbrowser" />
 	
 
-	    <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
-		<icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
-		<icon gap:density="hdpi" gap:platform="android" src="res/icon/android/icon-72-hdpi.png" />
-		<icon gap:density="xhdpi" gap:platform="android" src="res/icon/android/icon-96-xhdpi.png" />
+	 <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
+	 <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
+	 <icon gap:density="hdpi" gap:platform="android" src="res/icon/android/icon-72-hdpi.png" />
+	 <icon gap:density="xhdpi" gap:platform="android" src="res/icon/android/icon-96-xhdpi.png" />
 
         <gap:splash gap:density="ldpi" gap:platform="android" src="res/screen/android/screen-ldpi-portrait.png" />
         <gap:splash gap:density="mdpi" gap:platform="android" src="res/screen/android/screen-mdpi-portrait.png" />
@@ -68,7 +68,7 @@
 	<icon src="res/icon/ios/icon-120.png" gap:platform="ios" width="120" height="120" />
         <icon src="res/icon/ios/icon-144.png" gap:platform="ios" width="144" height="144" />
 	<icon src="res/icon/ios/icon-152.png" gap:platform="ios" width="152" height="152" />
-	<icon src="res/icon/ios/icon-1024.png" gap:platform="ios" width="152" height="152" />
+	<icon src="res/icon/ios/icon-1024.png" gap:platform="ios" width="1024" height="1024" />
 
     <icon src="icon-57.png" />
     <access origin="*" />
