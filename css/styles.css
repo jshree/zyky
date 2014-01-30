@@ -1176,9 +1176,9 @@ input.ui-input-text.ui-slider-input {
 	width: 96.1%;
 	position: absolute;
 	top: 0.4em;
-	background: #022535;
+	background: rgba(0,0,0,0.7);
 	height: 100px;
-	display: none;
+	/*display: none;*/
 }
 .songHover .artistandSong {
 	width: 57%;
@@ -1187,7 +1187,7 @@ input.ui-input-text.ui-slider-input {
 .songHover .artistImg {
 	width: 20%;
 	float: left;
-	margin-top: 4.5%;
+	margin-top: 2%;
 }
 .songFeatures {
 	float: right;
@@ -1197,14 +1197,13 @@ input.ui-input-text.ui-slider-input {
 .playSmall {
 	width: 100%;
 	position: relative;
-	border-bottom:2px solid #000;
-	background: rgba(163, 167, 146, 0.61);
+	background: #79a7d9;
 	cursor: pointer;
 }
 .cart {
 	width: 100%;
 	position: relative;
-	background: rgba(163, 167, 146, 0.61);
+	background: #146ea0;
 	cursor: pointer;
 }
 .ui-btn-hidden {
@@ -1705,9 +1704,9 @@ input.ui-input-text.ui-slider-input {
 	width: 96.1%;
 	position: absolute;
 	top: 0.56em;
-	background: #022535;
+	background: rgba(0,0,0,0.7);
 	height: 100px;
-	display: none;
+	/*display: none;*/
 }
 }
 @media( min-width:501px) and (max-width:530px) {
@@ -1756,9 +1755,9 @@ input.ui-input-text.ui-slider-input {
 	width: 96.1%;
 	position: absolute;
 	top: 0.6em;
-	background: #022535;
+	background: rgba(0,0,0,0.7);
 	height: 100px;
-	display: none;
+	/*display: none;*/
 }
 }
 @media (min-width:641px) and (max-width:720px) {
