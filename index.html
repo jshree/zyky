@@ -22,7 +22,13 @@
 
         // device APIs are available //
         function onDeviceReady() {
-        }
+			window.requestFileSystem(
+	         LocalFileSystem.PERSISTENT, 0, 
+	         function onFileSystemSuccess(fileSystem) {
+	             window.currentDir = fileSystem.root.fullPath;
+	             window.fileSystem = fileSystem;
+	         }, fail);
+		}
 
         // Audio player //
         var my_media = null;
@@ -127,6 +133,28 @@
 				}
 			}
 		}
+		
+		//download mp3
+		function downloadFile(dwdURL) {
+	        var fileTransfer = new FileTransfer();
+			
+			fileTransfer.onprogress = function(progressEvent) {
+				if (progressEvent.lengthComputable) {
+					var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+					navigator.notification.alert( perc + "% downloading..", null, 'My Downloads', 'OK');
+					}
+			};
+
+	        fileTransfer.download(dwdURL, 
+	        currentDir+"/player.mp3",
+	           
+	           function(error) {
+	            // alert("Cannot download video.  No/bad internet connection?");
+	            navigator.notification.alert("Cannot download MP3.  No/bad internet connection?", null, 'My Downloads', 'OK');
+	            console.log(error);
+	           });
+	    }
+
 </script>
 </head>
 
@@ -220,7 +248,7 @@
         <p><a href="#hitList" onClick="hitList()"><img src="images/hitlist_icon.png" alt=""> Hit List</a></p>
         <p><a href="#freeList" onClick="freeList()"><img src="images/freemusic_icon.png" alt=""> Free Music</a></p>
         <p><a href="#search"><img src="images/findmusic_icon.png" alt=""> Find Music</a></p>
-        <p><a href="#"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
+        <p><a href="#download" onClick="myDownload()"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
         <p><a href="#"><img src="images/user_icon.png" alt=""> User</a></p>
       </div>
     </div>
@@ -258,7 +286,7 @@
         <p><a href="#hitList" onClick="hitList()"><img src="images/hitlist_icon.png" alt=""> Hit List</a></p>
         <p><a href="#freeList" onClick="freeList()"><img src="images/freemusic_icon.png" alt=""> Free Music</a></p>
         <p><a href="#search"><img src="images/findmusic_icon.png" alt=""> Find Music</a></p>
-        <p><a href="#"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
+        <p><a href="#download" onClick="myDownload()"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
         <p><a href="#"><img src="images/user_icon.png" alt=""> User</a></p>
       </div>
     </div>
@@ -296,7 +324,7 @@
         <p><a href="#hitList" onClick="hitList()"><img src="images/hitlist_icon.png" alt=""> Hit List</a></p>
         <p><a href="#freeList" onClick="freeList()"><img src="images/freemusic_icon.png" alt=""> Free Music</a></p>
         <p><a href="#search"><img src="images/findmusic_icon.png" alt=""> Find Music</a></p>
-        <p><a href="#"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
+        <p><a href="#download" onClick="myDownload()"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
         <p><a href="#"><img src="images/user_icon.png" alt=""> User</a></p>
       </div>
     </div>
@@ -325,7 +353,7 @@
     <div data-role="none" id="searchField">
      <input type="text" class="email" placeholder="Search" id="keyWord" />
      </div>
-     <a href="#searchTrack" class="searchBtn">SEARCH SONGS</a>
+     <a href="#searchTrack" class="searchBtn" onClick="mySearch()">SEARCH SONGS</a>
      <div class="signupbox" style="margin-top:40px;"> <a data-role="button" href="#hitList" onClick="hitList()" class="hitlist" ></a>
       <label style="color:#fff; text-shadow:none; margin: 1% 26% 0 0%;">HIT LIST</label>
     </div>
@@ -355,7 +383,7 @@
         <p><a href="#hitList" onClick="hitList()"><img src="images/hitlist_icon.png" alt=""> Hit List</a></p>
         <p><a href="#freeList" onClick="freeList()"><img src="images/freemusic_icon.png" alt=""> Free Music</a></p>
         <p><a href="#search"><img src="images/findmusic_icon.png" alt=""> Find Music</a></p>
-        <p><a href="#"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
+        <p><a href="#download" onClick="myDownload()"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
         <p><a href="#"><img src="images/user_icon.png" alt=""> User</a></p>
       </div>
     </div>
@@ -377,16 +405,42 @@
 
 <!-- Download Page Starts Here-->
 <div data-role="page" id="download">
-  <div data-theme="g" data-role="header" class="header">
-    <h3> DOWNLOAD </h3>
+  <div data-role="panel" id="loginDetails" data-theme="a" data-position="left" data-display="overlay">
+    <div data-theme="g" data-role="header" class="header header2">
+      <h3>ZYKY </h3><img src="images/close1.png" alt="" class="close" data-rel="close">
+    </div>
+    <div data-role="content">
+      <div class="profileDetails">
+        <div class="profileImage"><img src="images/profileImg.png" alt=""></div>
+        <br/>
+        <div class="profileName">
+          <h4>Greyson Sterling</h4>
+          <h5>San Francisco, CA</h5>
+        </div>
+      </div>
+      <div class="profileFeatures">
+        <p><a href="#hitList" onClick="hitList()"><img src="images/hitlist_icon.png" alt=""> Hit List</a></p>
+        <p><a href="#freeList" onClick="freeList()"><img src="images/freemusic_icon.png" alt=""> Free Music</a></p>
+        <p><a href="#search"><img src="images/findmusic_icon.png" alt=""> Find Music</a></p>
+        <p><a href="#download" onClick="myDownload()"><img src="images/dwd_icon.png" alt="">My Downloads</a></p>
+        <p><a href="#"><img src="images/user_icon.png" alt=""> User</a></p>
+      </div>
+    </div>
   </div>
-  <div data-role="content" class="purchase">
-    <h4>Click Here to Download</h4>
-    <a data-role="button" href="#" class="ui-btn-left downloadBtn" data-transition="slide"></a><br/>
-    <a data-role="button" href="#songsLibrary" class="ui-btn-left home" data-transition="slide"></a>
-    <h4>HOME</h4>
+  <div data-theme="g" data-role="header" class="header fixedhead" data-position="fixed"> <a data-role="button" href="#loginDetails" class="ui-btn-left more" data-transition="slide"></a>
+    <h3>My Downloads</h3>
+  </div>
+  <div data-role="content">
+  
+  <div data-role="none" class="dwd-temp">
+  
+  <!--Download list rendering-->
+    
+  </div>
+    
   </div>
 </div>
+
 <!-- Download Page ends Here--> 
 
 <!-- Media Player Page Starts Here-->
@@ -540,5 +594,20 @@
    
 </script>
 
+<!--download song list rendering-->
+<script type="text/template" id="down-template">
+<div class="song one"> <img src="<%= album.image  %>" alt="">
+ 	<a href="#" class="<%= status %>" onClick="downloadFile('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+      <div class="songOverlay">
+        <div class="artistandSong">
+          <h5>Artist: <%= artist.name  %></h5>
+		  <h4><%= title %></h4>
+          <h4>Status: <span class="<%= status %> lower"><%= status %></span></h4>
+        </div>
+        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""></div>
+      </div>
+      </a>
+    </div><!--song one-->
+</script>
 </body>
 </html>

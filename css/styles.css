@@ -826,6 +826,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	-webkit-border-radius: 100px !important;
 	-moz-border-radius: 100px !important;
 }
+
 /*============================================= Media Player Page Styles ===================================*/
 #mediaPlayer {
 	background: url(../images/background3.png) no-repeat !important;
@@ -1193,6 +1194,18 @@ input.ui-input-text.ui-slider-input {
 	float: right;
 	background: #fff;
 	width: 20%;
+}
+ .PENDING {
+	cursor: default !important;
+    pointer-events: none;
+	color:#F00;	
+	}
+.COMPLETED {
+	color:#0F0;
+	
+	}
+.lower{
+	text-transform:lowercase;
 }
 .playSmall {
 	width: 100%;

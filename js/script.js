@@ -74,6 +74,7 @@ var song_list_view = Backbone.View.extend({
     },
 
     render: function() {
+		this.$el.empty();
         _.each(this.collection.models, function(data) {
             this.$el.append(new song_view({
                 model: data
@@ -141,6 +142,7 @@ var song_list_view = Backbone.View.extend({
     },
 
     render: function() {
+		this.$el.empty();
         _.each(this.collection.models, function(data) {
             this.$el.append(new song_view({
                 model: data
@@ -249,3 +251,161 @@ function signIn(){
 		
 			}
 	}
+	
+	
+//search songs using keyword
+
+function mySearch(){
+	
+//a (table) view to render the list of songs
+var song_list_view = Backbone.View.extend({
+    el: $('.search-song'),
+    initialize: function() {
+		
+       
+		this.collection.bind("add", this.render, this);
+		
+    },
+
+    render: function() {
+		this.$el.empty();//empty previous results
+        _.each(this.collection.models, function(data) {
+			
+            this.$el.append(new song_view({
+				
+                model: data
+            }).render().el);
+        }, this);
+        return this;
+    },
+	
+	onClose: function(){
+		this.model.unbind("add", this.render);
+		}
+});
+
+//a (row) view to render each songs
+var song_view = Backbone.View.extend({
+   // tagName: "tr",
+    template: _.template($("#track-template").html()),
+
+    render: function() {
+		
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    }
+});
+
+var List = Backbone.Model.extend({
+	
+});
+
+//search keyword
+var query=$('#keyWord').val();
+var token=$('#tokenId').val();
+var SongCollection = Backbone.Collection.extend({
+	
+	
+    model: List,
+	
+    url: "http://wiredelta.com:12001/tracks/search.json?search="+query+"&user_token="+token,
+	
+    parse: function(res) {
+	
+        console.log('response inside parse' + res);
+		console.log("http://wiredelta.com:12001/tracks/search.json?search="+query+"&user_token="+token);
+        return res;
+    }
+
+});
+
+/*
+Use this code to fetch from the server and render the collection
+----------------------------------------------------------------
+*/
+var song = new SongCollection();
+
+song.fetch({
+	
+    success: function() {
+        console.log(song.toJSON());
+        new song_list_view({collection: song}).render();
+    },
+    error: function() {
+        console.log('Failed to fetch!');
+    }
+});
+
+
+}
+
+
+//hit list json
+function myDownload(){
+//a (table) view to render the list of songs
+var song_list_view = Backbone.View.extend({
+    el: $('.dwd-temp'),
+    initialize: function() {
+        this.collection.bind("add", this.render, this);
+    },
+
+    render: function() {
+		this.$el.empty();
+        _.each(this.collection.models, function(data) {
+            this.$el.append(new song_view({
+                model: data
+            }).render().el);
+        }, this);
+        return this;
+    }
+});
+
+//a (row) view to render each songs
+var song_view = Backbone.View.extend({
+    //tagName: "tr",
+    template: _.template($("#down-template").html()),
+
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    }
+});
+
+var List = Backbone.Model.extend({
+});
+
+var token=$('#tokenId').val();
+
+var SongCollection = Backbone.Collection.extend({
+	
+	
+    model: List,
+    url: "http://wiredelta.com:12001/tracks/mine.json?user_token="+token,
+	
+    parse: function(res) {
+		
+        console.log('response inside parse' + res);
+        return res;
+    }
+
+});
+
+/*
+Use this code to fetch from the server and render the collection
+----------------------------------------------------------------
+*/
+var song = new SongCollection();
+
+song.fetch({
+    success: function() {
+        console.log(song.toJSON());
+        new song_list_view({collection: song}).render();
+    },
+    error: function() {
+        console.log('Failed to fetch!');
+    }
+});
+
+
+
+}
