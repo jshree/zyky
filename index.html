@@ -196,32 +196,33 @@
     <h3> SIGN UP </h3>
   </div>
   <div data-role="content">
+  <div data-role="none" id="regStatus" align="center"></div>
     <form class="signupform">
       <div data-role="fieldcontain">
-        <input name="" placeholder="Name" value="" type="text" class="textbox">
+        <input type="text" class="textbox" id="name" placeholder="Name">
       </div>
       <div data-role="fieldcontain">
-        <input name="" placeholder="Email" value="" type="text" class="textbox">
+        <input type="text" class="textbox" id="mail" placeholder="Email">
       </div>
       <div data-role="fieldcontain">
-        <input name="" placeholder="Password" value="" type="text" class="textbox">
+        <input type="text" class="textbox" id="password" placeholder="Password">
       </div>
       <div data-role="fieldcontain">
-        <input name="" placeholder="Confirm Password" value="" type="text" class="textbox">
+        <input type="text" class="textbox" id="confirm-password" placeholder="Confirm Password">
       </div>
       <div data-role="fieldcontain">
-        <input name="" placeholder="Phone Number" value="" type="text" class="textbox">
+        <input type="text" class="textbox" id="phone" placeholder="Phone Number">
       </div>
       <div data-role="fieldcontain">
-        <input name="" placeholder="State" value="" type="text" class="textbox">
+        <input type="text" class="textbox" id="state" placeholder="State" >
       </div>
       <div data-role="fieldcontain">
-        <input name="" placeholder="Country" value="" type="text" class="textbox">
+        <input type="text" class="textbox" id="country" placeholder="Country">
       </div>
-      <div class="signupbox"> <a data-role="button" href="#songsLibrary" class="confirm" data-transition="pop"></a>
+      <div class="signupbox"> <a data-role="button" href="#" class="confirm" onClick="signUp()"></a>
         <label>SUBMIT</label>
       </div>
-      <div class="signinbox"> <a data-role="button" href="#login" class="cancel" data-transition="pop"></a>
+      <div class="signinbox"> <a data-role="button" href="#login" class="cancel"></a>
         <label>CANCEL</label>
       </div>
     </form>
@@ -432,11 +433,11 @@
   </div>
   <div data-role="content">
   
-  <div data-role="none" class="dwd-temp">
-  
-  <!--Download list rendering-->
-    
-  </div>
+      <div data-role="none" class="mydownload">
+      
+      <!--Download list rendering-->
+        
+      </div>
     
   </div>
 </div>
@@ -467,7 +468,7 @@
         <div class="SongTimeBox" style="height:60px;">
          <input id="slider1" type="range" name="slider" value="5" min="0" max="100" data-highlight="true">
          <div class="timeElapsed" id="timeElapsed" style="float:left;">0:00</div>
-         <div class="timeRemaining" style="float:right;">4:05</div>
+         <div class="timeRemaining" style="float:right;"></div>
         </div>
          <input type="hidden" id="mus_link" value=""/>
         <div class="controls">
@@ -476,8 +477,8 @@
           <input type="button" class="next" value="&#160;">
         </div>
         <div class="controls1">
-         <input type="button" class="suffle" value="&#160;">
-         <input type="button" class="replay" value="&#160;">
+        <!-- <input type="button" class="suffle" value="&#160;">
+         <input type="button" class="replay" value="&#160;">-->
         </div>
       </div>
     </div>
@@ -491,12 +492,24 @@
 <!-- song list rendering-->
 <script type="text/template" id="song-template">
 	<div class="song one"> <img src="<%= album.image  %>" alt="">
+		<div class="songOverlay">
+			<div class="artistandSong">
+				<h5>Artist: <%= artist.name  %></h5>
+				<h4><%= title %></h4>
+			</div>
+			<div class="artistImg">
+				<img src="<%= artist.image  %>" alt="">
+			</div>
+		</div><!--\songOverlay-->
+		
 		<div class="songHover">
+		 <a href="#" class="songHide">
 			<div class="artistandSong">
 				<h5>Artist: <%= artist.name  %></h5>
 				<h4><%= title %></h4>
 			</div>
 			<div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+			</a>
 			<div class="songFeatures">
 				<div class="playSmall">
 					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
@@ -517,12 +530,24 @@
 <script type="text/template" id="free-template">
 
 	<div class="song one"> <img src="<%= album.image  %>" alt="">
+		<div class="songOverlay">
+			<div class="artistandSong">
+				<h5>Artist: <%= artist.name  %></h5>
+				<h4><%= title %></h4>
+			</div>
+			<div class="artistImg">
+				<img src="<%= artist.image  %>" alt="">
+			</div>
+		</div><!--\songOverlay-->
+		
 		<div class="songHover">
+			<a href="#" class="songHide">
 			<div class="artistandSong">
 				<h5>Artist: <%= artist.name  %></h5>
 				<h4><%= title %></h4>
 			</div>
 			<div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+			</a>
 			<div class="songFeatures">
 				<div class="playSmall">
 					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
@@ -544,12 +569,24 @@
 <script type="text/template" id="hit-template">
 
 	<div class="song one"> <img src="<%= album.image  %>" alt="">
+		<div class="songOverlay">
+			<div class="artistandSong">
+				<h5>Artist: <%= artist.name  %></h5>
+				<h4><%= title %></h4>
+			</div>
+			<div class="artistImg">
+				<img src="<%= artist.image  %>" alt="">
+			</div>
+		</div><!--\songOverlay-->
+		
 		<div class="songHover">
+		<a href="#" class="songHide">
 			<div class="artistandSong">
 				<h5>Artist: <%= artist.name  %></h5>
 				<h4><%= title %></h4>
 			</div>
 			<div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+			</a>
 			<div class="songFeatures">
 				<div class="playSmall">
 					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
@@ -571,12 +608,24 @@
 <script type="text/template" id="track-template">
 
 	<div class="song one"> <img src="<%= album.image  %>" alt="">
+		<div class="songOverlay">
+			<div class="artistandSong">
+				<h5>Artist: <%= artist.name  %></h5>
+				<h4><%= title %></h4>
+			</div>
+			<div class="artistImg">
+				<img src="<%= artist.image  %>" alt="">
+			</div>
+		</div><!--\songOverlay-->
+		
 		<div class="songHover">
+		<a href="#" class="songHide">
 			<div class="artistandSong">
 				<h5>Artist: <%= artist.name  %></h5>
 				<h4><%= title %></h4>
 			</div>
 			<div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+			</a>
 			<div class="songFeatures">
 				<div class="playSmall">
 					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
@@ -595,16 +644,16 @@
 </script>
 
 <!--download song list rendering-->
-<script type="text/template" id="down-template">
-<div class="song one"> <img src="<%= album.image  %>" alt="">
+<script type="text/template" id="download-template">
+<div class="song one"> <img src="<%= track.album.image  %>" alt="">
  	<a href="#" class="<%= status %>" onClick="downloadFile('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
       <div class="songOverlay">
         <div class="artistandSong">
-          <h5>Artist: <%= artist.name  %></h5>
-		  <h4><%= title %></h4>
+          <h5>Artist: <%= track.artist.name  %></h5>
+		  <h4><%= track.title %></h4>
           <h4>Status: <span class="<%= status %> lower"><%= status %></span></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""></div>
+        <div class="artistImg"> <img src="<%= track.artist.image  %>" alt=""></div>
       </div>
       </a>
     </div><!--song one-->

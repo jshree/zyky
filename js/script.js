@@ -2,8 +2,13 @@ $(window).load(function(){
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
     el: $('.song-temp'),
+	events: {
+        'click .song': 'insideMenuHandler',
+		'click .songHide': 'outsideMenuHandler',
+       
+    },
     initialize: function() {
-        this.collection.bind("add", this.render, this);
+        this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
     },
 
     render: function() {
@@ -13,7 +18,17 @@ var song_list_view = Backbone.View.extend({
             }).render().el);
         }, this);
         return this;
-    }
+    },
+	insideMenuHandler: function(e) {
+		$(e.currentTarget).children('.songHover').show();
+		return false;
+		
+	},
+	outsideMenuHandler: function(e) {
+		 $('.songHover').hide();
+		return false;
+		
+	}
 });
 
 //a (row) view to render each songs
@@ -63,14 +78,20 @@ song.fetch({
 
 });//]]>  
 
+/////////////////////////////////////////////////////////////////////////////////////////
 
 //free list json
 function freeList(){
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
     el: $('.free-temp'),
+	events: {
+        'click .song': 'insideMenuHandler',
+		'click .songHide': 'outsideMenuHandler',
+       
+    },
     initialize: function() {
-        this.collection.bind("add", this.render, this);
+        this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
     },
 
     render: function() {
@@ -81,7 +102,17 @@ var song_list_view = Backbone.View.extend({
             }).render().el);
         }, this);
         return this;
-    }
+    },
+	insideMenuHandler: function(e) {
+		$(e.currentTarget).children('.songHover').show();
+		return false;
+		
+	},
+	outsideMenuHandler: function(e) {
+		 $('.songHover').hide();
+		return false;
+		
+	}
 });
 
 //a (row) view to render each songs
@@ -132,11 +163,14 @@ song.fetch({
 
 }
 
-//hit list json
-function hitList(){
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//download list json
+function myDownload(){
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
-    el: $('.hit-temp'),
+    el: $('.mydownload'),
+	
     initialize: function() {
         this.collection.bind("add", this.render, this);
     },
@@ -150,6 +184,92 @@ var song_list_view = Backbone.View.extend({
         }, this);
         return this;
     }
+	
+});
+
+//a (row) view to render each songs
+var song_view = Backbone.View.extend({
+    //tagName: "tr",
+    template: _.template($("#download-template").html()),
+
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    }
+});
+
+var List = Backbone.Model.extend({
+});
+
+var token=$('#tokenId').val();
+var SongCollection = Backbone.Collection.extend({
+	
+	
+    model: List,
+    url: "http://wiredelta.com:12001/tracks/mine.json?user_token="+token,
+	
+    parse: function(res) {
+		
+        console.log('response inside parse' + res);
+        return res;
+    }
+
+});
+
+/*
+Use this code to fetch from the server and render the collection
+----------------------------------------------------------------
+*/
+var song = new SongCollection();
+
+song.fetch({
+    success: function() {
+        console.log(song.toJSON());
+        new song_list_view({collection: song}).render();
+    },
+    error: function() {
+        console.log('Failed to fetch!');
+    }
+});
+
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+//hit list json
+function hitList(){
+//a (table) view to render the list of songs
+var song_list_view = Backbone.View.extend({
+    el: $('.hit-temp'),
+	events: {
+        'click .song': 'insideMenuHandler',
+		'click .songHide': 'outsideMenuHandler',
+       
+    },
+    initialize: function() {
+        this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
+    },
+
+    render: function() {
+		this.$el.empty();
+        _.each(this.collection.models, function(data) {
+            this.$el.append(new song_view({
+                model: data
+            }).render().el);
+        }, this);
+        return this;
+    },
+	insideMenuHandler: function(e) {
+		$(e.currentTarget).children('.songHover').show();
+		return false;
+		
+	},
+	outsideMenuHandler: function(e) {
+		 $('.songHover').hide();
+		return false;
+		
+	}
 });
 
 //a (row) view to render each songs
@@ -201,10 +321,9 @@ song.fetch({
 
 }
 
-/*
-signin
-----------------------------------------------------------------
-*/
+//////////////////////////////////////////////////////////////////////////////////////////
+
+/*signin*/
 
 function signIn(){
 	
@@ -252,7 +371,8 @@ function signIn(){
 			}
 	}
 	
-	
+//////////////////////////////////////////////////////////////////////////////////////////	
+
 //search songs using keyword
 
 function mySearch(){
@@ -260,10 +380,15 @@ function mySearch(){
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
     el: $('.search-song'),
+	events: {
+        'click .song': 'insideMenuHandler',
+		'click .songHide': 'outsideMenuHandler',
+       
+    },
     initialize: function() {
 		
        
-		this.collection.bind("add", this.render, this);
+		this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
 		
     },
 
@@ -279,9 +404,16 @@ var song_list_view = Backbone.View.extend({
         return this;
     },
 	
-	onClose: function(){
-		this.model.unbind("add", this.render);
-		}
+	insideMenuHandler: function(e) {
+		$(e.currentTarget).children('.songHover').show();
+		return false;
+		
+	},
+	outsideMenuHandler: function(e) {
+		 $('.songHover').hide();
+		return false;
+		
+	}
 });
 
 //a (row) view to render each songs
@@ -340,72 +472,75 @@ song.fetch({
 }
 
 
-//hit list json
-function myDownload(){
-//a (table) view to render the list of songs
-var song_list_view = Backbone.View.extend({
-    el: $('.dwd-temp'),
-    initialize: function() {
-        this.collection.bind("add", this.render, this);
-    },
+//////////////////////////////////////////////////////////////////////////////////////////
 
-    render: function() {
-		this.$el.empty();
-        _.each(this.collection.models, function(data) {
-            this.$el.append(new song_view({
-                model: data
-            }).render().el);
-        }, this);
-        return this;
-    }
-});
+/*signup*/
 
-//a (row) view to render each songs
-var song_view = Backbone.View.extend({
-    //tagName: "tr",
-    template: _.template($("#down-template").html()),
-
-    render: function() {
-        this.$el.html(this.template(this.model.toJSON()));
-        return this;
-    }
-});
-
-var List = Backbone.Model.extend({
-});
-
-var token=$('#tokenId').val();
-
-var SongCollection = Backbone.Collection.extend({
+function signUp(){
+	var name=$('#name').val();
+	var email=$('#mail').val();
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	var password=$('#password').val();
+	var confirm_password=$('#confirm-password').val();
+	var phone=$('#phone').val();
+	var state=$('#state').val();
+	var country=$('#country').val();
 	
-	
-    model: List,
-    url: "http://wiredelta.com:12001/tracks/mine.json?user_token="+token,
-	
-    parse: function(res) {
+	if(name==""){
+		$('#regStatus').html('Enter your Name');
+		$('#name').focus();
+		}
+	else if(email==""){
+		$('#regStatus').html('Enter your Mail ID');
+		$('#mail').focus();
+		}
+	else if(reg.test(email) == false)
+      {
+            $("#regStatus").html('Enter a valid Mail ID.');
+            $("#mail").focus();
+      }
+	else if(password==""){
+		$('#regStatus').html('Enter your Password');
+		$('#password').focus();
+		}
+	else if(confirm_password==""){
+		$('#regStatus').html('Enter your Confirm Password');
+		$('#password').focus();
+		}
+	else if(phone==""){
+		$('#regStatus').html('Enter your Phone number');
+		$('#phone').focus();
+		}
+	else if(state==""){
+		$('#regStatus').html('Enter your State');
+		$('#state').focus();
+		}
+	else if(country==""){
+		$('#regStatus').html('Enter your Country');
+		$('#country').focus();
+		}
+		else{
+			
+			var dataString='name='+ name +'&email='+ email + '&password=' +  password + '&password_confirmation=' +  confirm_password+ '&phone=' +  phone + '&state=' +  state + '&country=' +  country;
+    		
+            $.ajax({
+            url  : 'http://wiredelta.com:12001/user/register',
+            data: dataString,
+            type : "POST",
+            dataType: 'json',
+			error: function(err) 
+			{
+			var jsonResponse = JSON.parse(err.responseText);
+			$('#regStatus').html(jsonResponse.error);
+			},
+            success : function(res){
+				navigator.notification.alert('Register compelted. please login.!', null, 'Success', 'OK');
+				location.href='#login';		
+            }
+			
+			
+        });
 		
-        console.log('response inside parse' + res);
-        return res;
-    }
-
-});
-
-/*
-Use this code to fetch from the server and render the collection
-----------------------------------------------------------------
-*/
-var song = new SongCollection();
-
-song.fetch({
-    success: function() {
-        console.log(song.toJSON());
-        new song_list_view({collection: song}).render();
-    },
-    error: function() {
-        console.log('Failed to fetch!');
-    }
-});
-
-
-
-}
+			}
+	}
+	

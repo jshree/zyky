@@ -163,6 +163,14 @@ color:#fff !important;
 	font-family: quicksand-Light;
 	font-size: 12pt;
 }
+#regStatus {
+	color: #fff !important;
+	text-shadow: none !important;
+	text-decoration: none !important;
+	font-weight: normal;
+	font-family: quicksand-Light;
+	font-size: 12pt;
+}
 input:-moz-placeholder {
 color:white;
 }
@@ -1177,9 +1185,9 @@ input.ui-input-text.ui-slider-input {
 	width: 96.1%;
 	position: absolute;
 	top: 0.4em;
-	background: rgba(0,0,0,0.7);
+	background: #022535;
 	height: 100px;
-	/*display: none;*/
+	display: none;
 }
 .songHover .artistandSong {
 	width: 57%;
@@ -1717,9 +1725,9 @@ input.ui-input-text.ui-slider-input {
 	width: 96.1%;
 	position: absolute;
 	top: 0.56em;
-	background: rgba(0,0,0,0.7);
+	background: #022535;
 	height: 100px;
-	/*display: none;*/
+	display: none;
 }
 }
 @media( min-width:501px) and (max-width:530px) {
@@ -1768,9 +1776,9 @@ input.ui-input-text.ui-slider-input {
 	width: 96.1%;
 	position: absolute;
 	top: 0.6em;
-	background: rgba(0,0,0,0.7);
+	background: #022535;
 	height: 100px;
-	/*display: none;*/
+	display: none;
 }
 }
 @media (min-width:641px) and (max-width:720px) {
