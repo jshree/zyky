@@ -4,11 +4,10 @@ var song_list_view = Backbone.View.extend({
     el: $('.song-temp'),
 	events: {
         'click .song': 'insideMenuHandler',
-		'click .songHide': 'outsideMenuHandler',
        
     },
     initialize: function() {
-        this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
+        this.collection.bind("add","insideMenuHandler", this.render, this);
     },
 
     render: function() {
@@ -20,6 +19,7 @@ var song_list_view = Backbone.View.extend({
         return this;
     },
 	insideMenuHandler: function(e) {
+		$('.songHover').hide();
 		$(e.currentTarget).children('.songHover').show();
 		var song = $('.song img').height()+2;
 			var song1 = ($('.song img').height()+3)/2;
@@ -29,11 +29,6 @@ var song_list_view = Backbone.View.extend({
 			$('.cart').css({'height': song1 +'px'});
 			$('.playSmall img').css({'height': song1 +'px'});
 			$('.cart img').css({'height': song1 +'px'});
-		return false;
-		
-	},
-	outsideMenuHandler: function(e) {
-		 $('.songHover').hide();
 		return false;
 		
 	}
@@ -95,11 +90,10 @@ var song_list_view = Backbone.View.extend({
     el: $('.free-temp'),
 	events: {
         'click .song': 'insideMenuHandler',
-		'click .songHide': 'outsideMenuHandler',
-       
+		
     },
     initialize: function() {
-        this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
+        this.collection.bind("add","insideMenuHandler", this.render, this);
     },
 
     render: function() {
@@ -112,6 +106,7 @@ var song_list_view = Backbone.View.extend({
         return this;
     },
 	insideMenuHandler: function(e) {
+		$('.songHover').hide();
 		$(e.currentTarget).children('.songHover').show();
 		var song = $('.song img').height()+2;
 			var song1 = ($('.song img').height()+3)/2;
@@ -121,6 +116,7 @@ var song_list_view = Backbone.View.extend({
 			$('.cart').css({'height': song1 +'px'});
 			$('.playSmall img').css({'height': song1 +'px'});
 			$('.cart img').css({'height': song1 +'px'});
+			
 		return false;
 		
 	},
@@ -188,11 +184,10 @@ var song_list_view = Backbone.View.extend({
     el: $('.mydownload'),
 	events: {
         'click .COMPLETED': 'insideMenuHandler',
-		'click .songHide': 'outsideMenuHandler',
        
     },
     initialize: function() {
-        this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
+        this.collection.bind("add","insideMenuHandler", this.render, this);
     },
 
     render: function() {
@@ -205,6 +200,7 @@ var song_list_view = Backbone.View.extend({
         return this;
     },
 	insideMenuHandler: function(e) {
+		$('.songHover').hide();
 		$(e.currentTarget).children('.songHover').show();
 		var song = $('.song img').height()+2;
 			var song1 = ($('.song img').height()+3)/2;
@@ -214,12 +210,7 @@ var song_list_view = Backbone.View.extend({
 			$('.cart').css({'height': song1 +'px'});
 			$('.playSmall img').css({'height': song1 +'px'});
 			$('.cart img').css({'height': song1 +'px'});
-
-		return false;
-		
-	},
-	outsideMenuHandler: function(e) {
-		 $('.songHover').hide();
+			$(e.currentTarget).siblings().find('.songHover').hide();
 		return false;
 		
 	}
@@ -245,7 +236,7 @@ var SongCollection = Backbone.Collection.extend({
 	
 	
     model: List,
-    url: "http://wiredelta.com:12001/tracks/mine.json?user_token="+token,
+    url: "http://wiredelta.com:12001/tracks/mine.json?user_token=asKyKD1qNrkDWuZSBZCx",
 	
     parse: function(res) {
 		
@@ -283,11 +274,10 @@ var song_list_view = Backbone.View.extend({
     el: $('.hit-temp'),
 	events: {
         'click .song': 'insideMenuHandler',
-		'click .songHide': 'outsideMenuHandler',
        
     },
     initialize: function() {
-        this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
+        this.collection.bind("add","insideMenuHandler", this.render, this);
     },
 
     render: function() {
@@ -300,6 +290,7 @@ var song_list_view = Backbone.View.extend({
         return this;
     },
 	insideMenuHandler: function(e) {
+		$('.songHover').hide();
 		$(e.currentTarget).children('.songHover').show();
 		var song = $('.song img').height()+2;
 			var song1 = ($('.song img').height()+3)/2;
@@ -309,11 +300,6 @@ var song_list_view = Backbone.View.extend({
 			$('.cart').css({'height': song1 +'px'});
 			$('.playSmall img').css({'height': song1 +'px'});
 			$('.cart img').css({'height': song1 +'px'});
-		return false;
-		
-	},
-	outsideMenuHandler: function(e) {
-		 $('.songHover').hide();
 		return false;
 		
 	}
@@ -429,13 +415,12 @@ var song_list_view = Backbone.View.extend({
     el: $('.search-song'),
 	events: {
         'click .song': 'insideMenuHandler',
-		'click .songHide': 'outsideMenuHandler',
        
     },
     initialize: function() {
 		
        
-		this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
+		this.collection.bind("add","insideMenuHandler", this.render, this);
 		
     },
 
@@ -452,6 +437,7 @@ var song_list_view = Backbone.View.extend({
     },
 	
 	insideMenuHandler: function(e) {
+		$('.songHover').hide();
 		$(e.currentTarget).children('.songHover').show();
 		var song = $('.song img').height()+2;
 			var song1 = ($('.song img').height()+3)/2;
@@ -461,11 +447,6 @@ var song_list_view = Backbone.View.extend({
 			$('.cart').css({'height': song1 +'px'});
 			$('.playSmall img').css({'height': song1 +'px'});
 			$('.cart img').css({'height': song1 +'px'});
-		return false;
-		
-	},
-	outsideMenuHandler: function(e) {
-		 $('.songHover').hide();
 		return false;
 		
 	}
