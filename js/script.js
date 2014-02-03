@@ -521,7 +521,7 @@ function signUp(){
 		}
 		else{
 			
-			var dataString='name='+ name +'&email='+ email + '&password=' +  password + '&password_confirmation=' +  confirm_password+ '&phone=' +  phone + '&state=' +  state + '&country=' +  country;
+			var dataString='user[name]='+ name +'&user[email]='+ email + '&user[password]=' +  password + '&user[password_confirmation]=' +  confirm_password+ '&user[phone]=' +  phone + '&user[state]=' +  state + '&user[country]=' +  country;
     		
             $.ajax({
             url  : 'http://wiredelta.com:12001/user/register',
@@ -534,7 +534,7 @@ function signUp(){
 			$('#regStatus').html(jsonResponse.error);
 			},
             success : function(res){
-				navigator.notification.alert('Register compelted. please login.!', null, 'Success', 'OK');
+				navigator.notification.alert('Thanks.Please login.!', null, 'Success', 'OK');
 				location.href='#login';		
             }
 			
