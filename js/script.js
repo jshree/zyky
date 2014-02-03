@@ -236,7 +236,7 @@ var SongCollection = Backbone.Collection.extend({
 	
 	
     model: List,
-    url: "http://wiredelta.com:12001/tracks/mine.json?user_token=asKyKD1qNrkDWuZSBZCx",
+    url: "http://wiredelta.com:12001/tracks/mine.json?user_token="+token,
 	
     parse: function(res) {
 		
