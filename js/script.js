@@ -21,6 +21,14 @@ var song_list_view = Backbone.View.extend({
     },
 	insideMenuHandler: function(e) {
 		$(e.currentTarget).children('.songHover').show();
+		var song = $('.song img').height()+2;
+			var song1 = ($('.song img').height()+3)/2;
+			$('.songHover').css({'height': song + 'px'});
+			$('.songFeatures').css({'height': song + 'px'});
+			$('.playSmall').css({'height': song1 +'px'});
+			$('.cart').css({'height': song1 +'px'});
+			$('.playSmall img').css({'height': song1 +'px'});
+			$('.cart img').css({'height': song1 +'px'});
 		return false;
 		
 	},
@@ -105,6 +113,14 @@ var song_list_view = Backbone.View.extend({
     },
 	insideMenuHandler: function(e) {
 		$(e.currentTarget).children('.songHover').show();
+		var song = $('.song img').height()+2;
+			var song1 = ($('.song img').height()+3)/2;
+			$('.songHover').css({'height': song + 'px'});
+			$('.songFeatures').css({'height': song + 'px'});
+			$('.playSmall').css({'height': song1 +'px'});
+			$('.cart').css({'height': song1 +'px'});
+			$('.playSmall img').css({'height': song1 +'px'});
+			$('.cart img').css({'height': song1 +'px'});
 		return false;
 		
 	},
@@ -170,9 +186,13 @@ function myDownload(){
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
     el: $('.mydownload'),
-	
+	events: {
+        'click .COMPLETED': 'insideMenuHandler',
+		'click .songHide': 'outsideMenuHandler',
+       
+    },
     initialize: function() {
-        this.collection.bind("add", this.render, this);
+        this.collection.bind("add","insideMenuHandler","outsideMenuHandler", this.render, this);
     },
 
     render: function() {
@@ -183,7 +203,26 @@ var song_list_view = Backbone.View.extend({
             }).render().el);
         }, this);
         return this;
-    }
+    },
+	insideMenuHandler: function(e) {
+		$(e.currentTarget).children('.songHover').show();
+		var song = $('.song img').height()+2;
+			var song1 = ($('.song img').height()+3)/2;
+			$('.songHover').css({'height': song + 'px'});
+			$('.songFeatures').css({'height': song + 'px'});
+			$('.playSmall').css({'height': song1 +'px'});
+			$('.cart').css({'height': song1 +'px'});
+			$('.playSmall img').css({'height': song1 +'px'});
+			$('.cart img').css({'height': song1 +'px'});
+
+		return false;
+		
+	},
+	outsideMenuHandler: function(e) {
+		 $('.songHover').hide();
+		return false;
+		
+	}
 	
 });
 
@@ -262,6 +301,14 @@ var song_list_view = Backbone.View.extend({
     },
 	insideMenuHandler: function(e) {
 		$(e.currentTarget).children('.songHover').show();
+		var song = $('.song img').height()+2;
+			var song1 = ($('.song img').height()+3)/2;
+			$('.songHover').css({'height': song + 'px'});
+			$('.songFeatures').css({'height': song + 'px'});
+			$('.playSmall').css({'height': song1 +'px'});
+			$('.cart').css({'height': song1 +'px'});
+			$('.playSmall img').css({'height': song1 +'px'});
+			$('.cart img').css({'height': song1 +'px'});
 		return false;
 		
 	},
@@ -406,6 +453,14 @@ var song_list_view = Backbone.View.extend({
 	
 	insideMenuHandler: function(e) {
 		$(e.currentTarget).children('.songHover').show();
+		var song = $('.song img').height()+2;
+			var song1 = ($('.song img').height()+3)/2;
+			$('.songHover').css({'height': song + 'px'});
+			$('.songFeatures').css({'height': song + 'px'});
+			$('.playSmall').css({'height': song1 +'px'});
+			$('.cart').css({'height': song1 +'px'});
+			$('.playSmall img').css({'height': song1 +'px'});
+			$('.cart img').css({'height': song1 +'px'});
 		return false;
 		
 	},
