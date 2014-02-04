@@ -33,6 +33,7 @@
         // Audio player //
         var my_media = null;
         var mediaTimer = null;
+		var playing = false;
 		
 		function openMedia(music){
 			window.location.href="#mediaPlayer";
@@ -48,6 +49,8 @@
 			var src =$('#mus_link').val();
             // Create Media object from src
             my_media = new Media(src, onSuccess, onError);
+			
+			if(playing===false){
 
             // Play audio
             my_media.play();
@@ -61,7 +64,7 @@
                         // success callback
                         function(position) {
                             if (position > -1) {
-                                setAudioPosition((position) + " sec");
+                                setAudioPosition(Utility.formatTime(position));
                             }
                         },
                         // error callback
@@ -71,7 +74,28 @@
                         }
                     );
                 }, 1000);
+				var counter = 0;
+				var timerDuration = setInterval(
+				function() {
+					counter++;
+					if (counter > 20)
+					{
+						clearInterval(timerDuration);
+					}
+					var duration = my_media.getDuration();
+					if (duration > -1)
+					{
+						clearInterval(timerDuration);
+						setAudioDuration(Utility.formatTime(duration));
+						//$('.timeRemaining').text(Utility.formatTime(duration));
+						$('#slider1').attr('max', Math.round(duration));
+						$('#slider1').slider('refresh');
+					}
+            },100);
             }
+			}else{
+				 my_media.pause();
+				}
         }
 
         // Pause audio
@@ -90,7 +114,36 @@
             }
             clearInterval(mediaTimer);
             mediaTimer = null;
+			Playing = false;
+      		resetLayout();
         }
+		//reset layout
+		function resetLayout() {
+			setAudioPosition(Utility.formatTime(0));
+			updateSliderPosition(0);
+		}
+		//update slider position
+		function updateSliderPosition(seconds) {
+			var $slideTime = $('#timeRemaining');
+			if (seconds < $slideTime.attr('min'))
+			$slider.val($slideTime.attr('min'));
+			else if (seconds > $slideTime.attr('max'))
+			$slider.val($slideTime.attr('max'));
+			else
+			$slideTime.val(Math.round(seconds));
+			$slideTime.slider('refresh');
+		}
+		$('#slider1').on('slidestop', function(event) {
+         seekPosition(event.target.value);
+      });
+		//audio seek
+		function seekPosition(seconds) {
+			if (my_media === null)
+			return;
+			my_media.seekTo(seconds * 1000);
+			updateSliderPosition(seconds);
+		}
+   
 
         // onSuccess Callback
         //
@@ -109,6 +162,12 @@
         //
         function setAudioPosition(position) {
             document.getElementById('timeElapsed').innerHTML = position;
+		
+        }
+		// Set audio duration
+        //
+        function setAudioDuration(duration) {
+            document.getElementById('timeRemaining').innerHTML = duration;
         }
 		
 		//fb login with childbrowser plugin
@@ -466,9 +525,9 @@
           <h4>David Guetta</h4>
         </div>
         <div class="SongTimeBox" style="height:60px;">
-         <input id="slider1" type="range" name="slider" value="5" min="0" max="100" data-highlight="true">
+         <input id="slider1" data-role="none" type="range"  name="slider" value="0" min="0" max="100" data-highlight="true" style="width:100%;">
          <div class="timeElapsed" id="timeElapsed" style="float:left;">0:00</div>
-         <div class="timeRemaining" style="float:right;"></div>
+         <div class="timeRemaining" style="float:right;">0:00</div>
         </div>
          <input type="hidden" id="mus_link" value=""/>
         <div class="controls">
