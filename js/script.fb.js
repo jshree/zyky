@@ -71,9 +71,11 @@
                 FB.login(
                          function(response) {
                          if (response.session) {
-                         alert('logged in');
+							 console.log(response);
+                        navigator.notification.alert( response, null, 'Response', 'OK');
+						
                          } else {
-                         alert('not logged in');
+                          navigator.notification.alert( 'not logged in', null, 'Response', 'OK');
                          }
                          },
                          { scope: "email" }
