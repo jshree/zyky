@@ -23,6 +23,17 @@
 
         // device APIs are available //
         function onDeviceReady() {
+			
+			window.requestFileSystem(
+	         LocalFileSystem.PERSISTENT, 0, 
+	         function onFileSystemSuccess(fileSystem) {
+	             window.currentDir = fileSystem.root.fullPath;
+	             window.fileSystem = fileSystem;
+	         }, fail);
+			 
+		}
+		
+		function signFb(){
 			//Config Plugin
 			var config = {
 				app_id      : '250634401767441',
@@ -41,8 +52,17 @@
 			//Callback Login
 			function _onLogin( event ){     
 				alert('status > '+event.status); // 1 - success, 0 - error
+				
+				console.log(event.status);
+				
 				alert('data > '+event.data); //Object response (id, name, email, etc);
+				
+				console.log(event.data);
+				
 				alert('token > '+event.token); // token user login
+				
+				console.log(event.token);
+				
 				alert('message > '+event.message);  
 			}
 			
@@ -51,18 +71,14 @@
 				alert('status > '+event.status); // 1 - success, 0 - error
 				alert('message > '+event.message);
 			}
-			window.requestFileSystem(
-	         LocalFileSystem.PERSISTENT, 0, 
-	         function onFileSystemSuccess(fileSystem) {
-	             window.currentDir = fileSystem.root.fullPath;
-	             window.fileSystem = fileSystem;
-	         }, fail);
-			 
-		}
+			
+			}
 			//Function callback response
 			function _callback( event ){
 				alert('_callback status > '+event.status);
+				console.log(event.status);
 				alert('_callback data > '+event.data);
+				console.log(event.data);
 				alert('_callback message > '+event.message);
 			}
 			
@@ -272,7 +288,7 @@
   <div data-theme="g" data-role="header" class="header"><h3> LOG IN </h3>
   </div>
   <div data-role="content" class="loginContent"> 
-  <a data-role="button" href="#" onClick="_onLogin()" class="facebook_sign_up"> <span>Sign in with Facebook</span> </a>
+  <a data-role="button" href="#" onClick="signFb()" class="facebook_sign_up"> <span>Sign in with Facebook</span> </a>
     <h3>OR</h3>
     
   </div>
