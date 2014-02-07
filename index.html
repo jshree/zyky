@@ -53,17 +53,40 @@
 			function _onLogin( event ){     
 				alert('status > '+event.status); // 1 - success, 0 - error
 				
-				console.log(event.status);
+				console.log(event.data.email);
 				
 				alert('data > '+event.data); //Object response (id, name, email, etc);
 				
-				console.log(event.data);
+				console.log(event.data.id);
 				
 				alert('token > '+event.token); // token user login
 				
-				console.log(event.token);
+				console.log(event.data.name);
 				
-				alert('message > '+event.message);  
+				alert('message > '+event.message);
+				
+				var email=event.data.email;
+				var uid=event.data.id;
+				var name=event.data.name;
+				
+				var dataString='user[email]='+ email + '&user[uid]=' +  uid + '&user[name]=' +  name;
+				$.ajax({
+					url  : 'http://wiredelta.com:12001/user/facebook',
+					data: dataString,
+					type : "POST",
+					dataType: 'json',
+					error: function(err) 
+					{
+						/*var jsonResponse = JSON.parse(err.responseText);
+						$('#regStatus').html(jsonResponse.error);*/
+						alert(err);
+						},
+					success : function(res){
+						navigator.notification.alert(res.token, null, 'Success', 'OK');
+            }
+			
+			
+        });  
 			}
 			
 			//Callback Logout
