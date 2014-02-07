@@ -24,6 +24,8 @@
         // device APIs are available //
         function onDeviceReady() {
 			
+			document.addEventListener("backbutton", onBackKeyPress, false);
+			
 			window.requestFileSystem(
 	         LocalFileSystem.PERSISTENT, 0, 
 	         function onFileSystemSuccess(fileSystem) {
@@ -71,18 +73,16 @@
 			
 			//Callback Logout
 			function _onLogout( event ){
-				alert('status > '+event.status); // 1 - success, 0 - error
-				alert('message > '+event.message);
+				//alert('status > '+event.status); // 1 - success, 0 - error
+				//alert('message > '+event.message);
 			}
 			
 			}
 			//Function callback response
 			function _callback( event ){
-				alert('_callback status > '+event.status);
-				console.log(event.status);
-				alert('_callback data > '+event.data);
-				console.log(event.data);
-				alert('_callback message > '+event.message);
+				//alert('_callback status > '+event.status);
+//				alert('_callback data > '+event.data);
+//				alert('_callback message > '+event.message);
 			}
 			
 			//Config Object FB API
@@ -95,7 +95,19 @@
 			
 			//Get FB API
 			$(document).FaceGap('fb_api', _fb); 
-		
+			
+			function onBackKeyPress() {
+				
+            /* If the current page is the login page, disable the button completely (aka do nothing) */
+           if($.mobile.activePage.is('#login')){
+			   e.preventDefault();
+		   }
+
+            /* Else, execute log off code */
+            else {
+                //
+            }
+		}
           
 
         // Audio player //

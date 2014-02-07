@@ -471,7 +471,6 @@ var List = Backbone.Model.extend({
 //search keyword
 var query=$('#keyWord').val();
 var token=$('#tokenId').val();
-$( ".search-song:empty" ).text( "Was empty!" ).css( "background", "rgb(255,220,200)" );
 var SongCollection = Backbone.Collection.extend({
 	
 	
