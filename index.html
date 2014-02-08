@@ -24,7 +24,15 @@
         // device APIs are available //
         function onDeviceReady() {
 			
-			document.addEventListener("backbutton", onBackKeyPress, false);
+			document.addEventListener("backbutton", function(e){
+				if($.mobile.activePage.is('#login')){
+					//e.preventDefault();
+					navigator.app.exitApp();
+				}
+				else {
+					navigator.app.backHistory();
+				}
+			}, false);
 			
 			window.requestFileSystem(
 	         LocalFileSystem.PERSISTENT, 0, 
@@ -95,19 +103,6 @@
 			
 			//Get FB API
 			$(document).FaceGap('fb_api', _fb); 
-			
-			function onBackKeyPress() {
-				
-            /* If the current page is the login page, disable the button completely (aka do nothing) */
-           if($.mobile.activePage.is('#login')){
-			   e.preventDefault();
-		   }
-
-            /* Else, execute log off code */
-            else {
-                //
-            }
-		}
           
 
         // Audio player //
