@@ -124,16 +124,10 @@
 			var src =$('#mus_link').val();
             // Create Media object from src
             my_media = new Media(src, onSuccess, onError);
-			
-			if(!my_media){
-				my_media.play();
+			my_media.play();
 				
-				alert('play');
-				}
-				else{
-					my_media.pause();
-					alert('pause');
-					}
+			
+				
 			
         }
 
