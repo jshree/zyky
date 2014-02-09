@@ -108,7 +108,7 @@
         // Audio player //
         var my_media = null;
         var mediaTimer = null;
-		var playing = false;
+		var isPlaying = false;
 		
 		function openMedia(music){
 			window.location.href="#mediaPlayer";
@@ -124,10 +124,15 @@
 			var src =$('#mus_link').val();
             // Create Media object from src
             my_media = new Media(src, onSuccess, onError);
+			if(isPlaying === false)
+			{
 			my_media.play();
-				
+			}
+				else{
 			
-				
+				my_media.pause();
+				}
+				 isPlaying = !isPlaying;
 			
         }
 
