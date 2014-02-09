@@ -125,52 +125,13 @@
             // Create Media object from src
             my_media = new Media(src, onSuccess, onError);
 			
-			if(playing===false){
-
-            // Play audio
-            my_media.play();
-			
-
-            // Update my_media position every second
-            if (mediaTimer == null) {
-                mediaTimer = setInterval(function() {
-                    // get my_media position
-                    my_media.getCurrentPosition(
-                        // success callback
-                        function(position) {
-                            if (position > -1) {
-                                setAudioPosition(Utility.formatTime(position));
-                            }
-                        },
-                        // error callback
-                        function(e) {
-                            console.log("Error getting pos=" + e);
-                            setAudioPosition("Error: " + e);
-                        }
-                    );
-                }, 1000);
-				var counter = 0;
-				var timerDuration = setInterval(
-				function() {
-					counter++;
-					if (counter > 20)
-					{
-						clearInterval(timerDuration);
-					}
-					var duration = my_media.getDuration();
-					if (duration > -1)
-					{
-						clearInterval(timerDuration);
-						setAudioDuration(Utility.formatTime(duration));
-						//$('.timeRemaining').text(Utility.formatTime(duration));
-						$('#slider1').attr('max', Math.round(duration));
-						$('#slider1').slider('refresh');
-					}
-            },100);
-            }
-			}else{
-				 my_media.pause();
+			if(playing==false){
+				my_media.play();
 				}
+				else{
+					my_media.pause();
+					}
+			
         }
 
         // Pause audio
