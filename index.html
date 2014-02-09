@@ -125,11 +125,13 @@
             // Create Media object from src
             my_media = new Media(src, onSuccess, onError);
 			
-			if(!my_media == null){
-				my_media.play();
+			if(my_media){
+				my_media.pause();
+				alert('play');
 				}
 				else{
-					my_media.pause();
+					my_media.play();
+					alert('pause');
 					}
 			
         }
