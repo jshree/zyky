@@ -1298,6 +1298,7 @@ input.ui-input-text.ui-slider-input {
 .profilePicture .profileImage{ margin:0 auto;}
 .userProfile h2{ width:100%; text-align:center; font-weight:normal; color:#fff; text-shadow:none; font-family: quicksand-Book !important; margin-top:5px; float:left;}
 .userProfile h2 img{ width:25px;}
+.userProfile h2 .ui-input-text{ display:none;}
 .userIcons img{ width:30px;}
 .detailsPanel{ float:left; width:100% !important;}
 .detailsPanel ul{ margin:0 auto; width:90%;}
@@ -1307,7 +1308,7 @@ input.ui-input-text.ui-slider-input {
 .details p{ float:left; margin:0px; font-family: quicksand-Book !important; text-shadow:none; color:#fff; font-size:13px;}
 .details h3 { float:left; margin:0px; font-weight:normal; font-family: quicksand-Book !important; font-size:16px;}
 .edit { cursor:pointer;}
-.details .ui-input-text { padding-left:0px; margin-left:0px !important; margin-right:0px !important; height:40px; display:none; margin-top:5px !important;}
+.details .ui-input-text { padding-left:0px; margin-left:0px !important; margin-right:0px !important; height:40px; display:none; margin-top:5px !important; margin-bottom:0px !important;}
 .userProfile .searchBtn {
 	width: 83% !important;
 	background: rgba(50,80,86,0.85) !important;
