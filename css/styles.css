@@ -69,7 +69,7 @@ img {
 	border: 0px !important;
 }
 .loginContent {
-	padding: 69px 0 0 0 !important;
+	padding: 19px 0 0 0 !important;
 }
 .facebook_sign_up {
 	width: 274px;
@@ -131,8 +131,9 @@ color:#fff !important;
 }
 .loginform {
 	text-align: center;
-	padding-bottom: 160px;
+	padding-bottom: 110px;
 }
+/*#loginDetails{  overflow: scroll;  -webkit-overflow-scrolling: touch;}*/
 .loginform .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text {
 	height: 58px;
 	background: rgba(255,255,255,0.5) !important;
@@ -141,6 +142,8 @@ color:#fff !important;
 	-webkit-border-radius: 8px !important;
 	-moz-border-radius: 8px !important;
 	border: 0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
 }
 .loginform .ui-field-contain, fieldset.ui-field-contain {
 	padding: 0.8em 1em;
@@ -203,8 +206,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background-position: center /*left 27px*/ !important;
 	background-repeat: no-repeat !important;
 	z-index: 9 !important;
-	width: 90px !important;
-	height: 90px !important;
+	width: 70px !important;
+	height: 70px !important;
 	border-radius: 100px !important;
 	-webkit-border-radius: 100px !important;
 	-moz-border-radius: 100px !important;
@@ -219,8 +222,8 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	background-repeat: no-repeat !important;
 	background-color: rgba(252,252,253,0.5) !important;
 	z-index: 9 !important;
-	width: 90px !important;
-	height: 90px !important;
+	width: 70px !important;
+	height: 70px !important;
 	border-radius: 100px !important;
 	-webkit-border-radius: 100px !important;
 	-moz-border-radius: 100px !important;
@@ -234,7 +237,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 .loginform label {
 	color: #fff;
 	text-shadow: none;
-	font-size: 14pt;
+	font-size: 15px;
 	text-transform: uppercase;
 	font-weight: normal;
 }
@@ -313,7 +316,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 }
 .signupbox label {
 	float: right;
-	margin: 1% 24% 0 0;
+	margin: 1% 23% 0 0;
 }
 .signinbox label {
 	float: left;
