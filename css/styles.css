@@ -23,7 +23,7 @@ img {
 	-webkit-backface-visibility: hidden;
 }
 /*============================================= Login page styles ===================================*/
-#login, #signup, #search {
+#login, #signup, #search, #user {
 	background: url(../images/background.png)no-repeat !important;
 	background-size: cover !important;
 }
@@ -1290,6 +1290,40 @@ input.ui-input-text.ui-slider-input {
 	margin: 5% 50% 0 20% !important;
 	border: 0px !important;
 }
+
+/*============================================= User profile page ===============================*/
+
+.userProfile{ overflow:visible !important;}
+.profilePicture{ width:100%; float:left;}
+.profilePicture .profileImage{ margin:0 auto;}
+.userProfile h2{ width:100%; text-align:center; font-weight:normal; color:#fff; text-shadow:none; font-family: quicksand-Book !important; margin-top:5px; float:left;}
+.userProfile h2 img{ width:25px;}
+.userIcons img{ width:30px;}
+.detailsPanel{ float:left; width:100% !important;}
+.detailsPanel ul{ margin:0 auto; width:90%;}
+.detailsPanel ul li{ width:100%; float:left; margin-bottom:20px;}
+.userIcons { float:left; width:20%; position:relative;}
+.details{ float:left; width:80%; position:relative;}
+.details p{ float:left; margin:0px; font-family: quicksand-Book !important; text-shadow:none; color:#fff; font-size:13px;}
+.details h3 { float:left; margin:0px; font-weight:normal; font-family: quicksand-Book !important; font-size:16px;}
+.edit { cursor:pointer;}
+.details .ui-input-text { padding-left:0px; margin-left:0px !important; margin-right:0px !important; height:40px; display:none; margin-top:5px !important;}
+.userProfile .searchBtn {
+	width: 83% !important;
+	background: rgba(50,80,86,0.85) !important;
+	height: 50px;
+	display: none;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 10px;
+	color: #fff !important;
+	text-shadow: none;
+	font-weight: normal !important;
+	line-height: 50px;
+	text-decoration: none !important;
+	font-family: quicksand-Light !important;
+	clear:both;
+	margin-bottom:20px;}
 /*============================================= Media Queries ===================================*/
 @media (min-width:320px) and (max-width:400px) {
 .playerHeadinner {
