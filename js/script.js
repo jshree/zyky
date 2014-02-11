@@ -78,34 +78,110 @@ song.fetch({
     }
 });
 
-
-});//]]>  
-
 /////////////////////////////////////////////////////////////////////////////////////////
 
-//free list json
-function freeList(){
 //a (table) view to render the list of songs
-var song_list_view = Backbone.View.extend({
-    el: $('.free-temp'),
+var hit_list_view = Backbone.View.extend({
+    el: $('.hit-temp'),
 	events: {
-        'click .song': 'insideMenuHandler',
-		
+        'click .song': 'insideHandler',
+       
     },
     initialize: function() {
-        this.collection.bind("add","insideMenuHandler", this.render, this);
+        this.collection.bind("add","insideHandler", this.render, this);
     },
 
     render: function() {
 		this.$el.empty();
-        _.each(this.collection.models, function(data) {
-            this.$el.append(new song_view({
-                model: data
+        _.each(this.collection.models, function(hitData) {
+            this.$el.append(new hit_view({
+                model: hitData
             }).render().el);
         }, this);
         return this;
     },
-	insideMenuHandler: function(e) {
+	insideHandler: function(e) {
+		$('.songHover').hide();
+		$(e.currentTarget).children('.songHover').show();
+		var song = $('.song img').height()+2;
+			var song1 = ($('.song img').height()+3)/2;
+			$('.songHover').css({'height': song + 'px'});
+			$('.songFeatures').css({'height': song + 'px'});
+			$('.playSmall').css({'height': song1 +'px'});
+			$('.cart').css({'height': song1 +'px'});
+			$('.playSmall img').css({'height': song1 +'px'});
+			$('.cart img').css({'height': song1 +'px'});
+		return false;
+		
+	}
+});
+
+//a (row) view to render each songs
+var hit_view = Backbone.View.extend({
+    //tagName: "tr",
+    template: _.template($("#hit-template").html()),
+
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    }
+});
+
+var hitList = Backbone.Model.extend({
+});
+
+
+var hitCollection = Backbone.Collection.extend({
+	
+	
+    model: hitList,
+    url: "http://wiredelta.com:12001/tracks/hit.json",
+	
+    parse: function(res) {
+		
+        console.log('response inside parse' + res);
+        return res;
+    }
+
+});
+
+/*
+Use this code to fetch from the server and render the collection
+----------------------------------------------------------------
+*/
+var hit = new hitCollection();
+
+hit.fetch({
+    success: function() {
+        console.log(hit.toJSON());
+        new hit_list_view({collection: hit}).render();
+    },
+    error: function() {
+        console.log('Failed to fetch!');
+    }
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//a (table) view to render the free list of songs
+var free_list_view = Backbone.View.extend({
+    el: $('.free-temp'),
+	events: {
+        'click .song': 'insideMenu',
+	},
+    initialize: function() {
+        this.collection.bind("add","insideMenu", this.render, this);
+    },
+
+    render: function() {
+		this.$el.empty();
+        _.each(this.collection.models, function(freeData) {
+            this.$el.append(new free_song_view({
+                model: freeData
+            }).render().el);
+        }, this);
+        return this;
+    },
+	insideMenu: function(e) {
 		$('.songHover').hide();
 		$(e.currentTarget).children('.songHover').show();
 		var song = $('.song img').height()+2;
@@ -119,16 +195,11 @@ var song_list_view = Backbone.View.extend({
 			
 		return false;
 		
-	},
-	outsideMenuHandler: function(e) {
-		 $('.songHover').hide();
-		return false;
-		
 	}
 });
 
 //a (row) view to render each songs
-var song_view = Backbone.View.extend({
+var free_song_view = Backbone.View.extend({
     //tagName: "tr",
     template: _.template($("#free-template").html()),
 
@@ -138,14 +209,14 @@ var song_view = Backbone.View.extend({
     }
 });
 
-var List = Backbone.Model.extend({
+var freeList = Backbone.Model.extend({
 });
 
 
-var SongCollection = Backbone.Collection.extend({
+var freeCollection = Backbone.Collection.extend({
 	
 	
-    model: List,
+    model: freeList,
     url: "http://wiredelta.com:12001/tracks/free.json",
 	
     parse: function(res) {
@@ -160,12 +231,100 @@ var SongCollection = Backbone.Collection.extend({
 Use this code to fetch from the server and render the collection
 ----------------------------------------------------------------
 */
-var song = new SongCollection();
+var free = new freeCollection();
 
-song.fetch({
+free.fetch({
     success: function() {
-        console.log(song.toJSON());
-        new song_list_view({collection: song}).render();
+        console.log(free.toJSON());
+        new free_list_view({collection: free}).render();
+    },
+    error: function() {
+        console.log('Failed to fetch!');
+    }
+});
+
+
+});//]]>  
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//free list json
+function freeList(){
+//a (table) view to render the free list of songs
+var free_list_view = Backbone.View.extend({
+    el: $('.free-temp'),
+	events: {
+        'click .song': 'insideMenu',
+	},
+    initialize: function() {
+        this.collection.bind("add","insideMenu", this.render, this);
+    },
+
+    render: function() {
+		this.$el.empty();
+        _.each(this.collection.models, function(freeData) {
+            this.$el.append(new free_song_view({
+                model: freeData
+            }).render().el);
+        }, this);
+        return this;
+    },
+	insideMenu: function(e) {
+		$('.songHover').hide();
+		$(e.currentTarget).children('.songHover').show();
+		var song = $('.song img').height()+2;
+			var song1 = ($('.song img').height()+3)/2;
+			$('.songHover').css({'height': song + 'px'});
+			$('.songFeatures').css({'height': song + 'px'});
+			$('.playSmall').css({'height': song1 +'px'});
+			$('.cart').css({'height': song1 +'px'});
+			$('.playSmall img').css({'height': song1 +'px'});
+			$('.cart img').css({'height': song1 +'px'});
+			
+		return false;
+		
+	}
+});
+
+//a (row) view to render each songs
+var free_song_view = Backbone.View.extend({
+    //tagName: "tr",
+    template: _.template($("#free-template").html()),
+
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    }
+});
+
+var freeList = Backbone.Model.extend({
+});
+
+
+var freeCollection = Backbone.Collection.extend({
+	
+	
+    model: freeList,
+    url: "http://wiredelta.com:12001/tracks/free.json",
+	
+    parse: function(res) {
+		
+        console.log('response inside parse' + res);
+        return res;
+    }
+
+});
+
+/*
+Use this code to fetch from the server and render the collection
+----------------------------------------------------------------
+*/
+var free = new freeCollection();
+
+free.fetch({
+    success: function() {
+        console.log(free.toJSON());
+        new free_list_view({collection: free}).render();
     },
     error: function() {
         console.log('Failed to fetch!');
@@ -270,26 +429,26 @@ song.fetch({
 //hit list json
 function hitList(){
 //a (table) view to render the list of songs
-var song_list_view = Backbone.View.extend({
+var hit_list_view = Backbone.View.extend({
     el: $('.hit-temp'),
 	events: {
-        'click .song': 'insideMenuHandler',
+        'click .song': 'insideHandler',
        
     },
     initialize: function() {
-        this.collection.bind("add","insideMenuHandler", this.render, this);
+        this.collection.bind("add","insideHandler", this.render, this);
     },
 
     render: function() {
 		this.$el.empty();
-        _.each(this.collection.models, function(data) {
-            this.$el.append(new song_view({
-                model: data
+        _.each(this.collection.models, function(hitData) {
+            this.$el.append(new hit_view({
+                model: hitData
             }).render().el);
         }, this);
         return this;
     },
-	insideMenuHandler: function(e) {
+	insideHandler: function(e) {
 		$('.songHover').hide();
 		$(e.currentTarget).children('.songHover').show();
 		var song = $('.song img').height()+2;
@@ -306,7 +465,7 @@ var song_list_view = Backbone.View.extend({
 });
 
 //a (row) view to render each songs
-var song_view = Backbone.View.extend({
+var hit_view = Backbone.View.extend({
     //tagName: "tr",
     template: _.template($("#hit-template").html()),
 
@@ -316,14 +475,14 @@ var song_view = Backbone.View.extend({
     }
 });
 
-var List = Backbone.Model.extend({
+var hitList = Backbone.Model.extend({
 });
 
 
-var SongCollection = Backbone.Collection.extend({
+var hitCollection = Backbone.Collection.extend({
 	
 	
-    model: List,
+    model: hitList,
     url: "http://wiredelta.com:12001/tracks/hit.json",
 	
     parse: function(res) {
@@ -338,12 +497,12 @@ var SongCollection = Backbone.Collection.extend({
 Use this code to fetch from the server and render the collection
 ----------------------------------------------------------------
 */
-var song = new SongCollection();
+var hit = new hitCollection();
 
-song.fetch({
+hit.fetch({
     success: function() {
-        console.log(song.toJSON());
-        new song_list_view({collection: song}).render();
+        console.log(hit.toJSON());
+        new hit_list_view({collection: hit}).render();
     },
     error: function() {
         console.log('Failed to fetch!');
