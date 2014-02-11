@@ -114,6 +114,24 @@ $(document).ready(function(){
 	 $('.songHover').mouseleave(function(){
 			  $('.songHover').hide();
 		 });
+	
+	 $( "#play" ).bind( "click", function() {
+		 
+		 $('#play').attr('class','ui-disabled ui-btn  ui-shadow ui-btn-corner-all');
+		 $('#pause').attr('class','ui-btn  ui-shadow ui-btn-corner-all');
+		  $('#stop').attr('class','ui-btn  ui-shadow ui-btn-corner-all');
+		 });
+		 
+	 $( "#pause" ).bind( "click", function() {
+		 
+		 $('#pause').attr('class','ui-disabled ui-btn  ui-shadow ui-btn-corner-all');
+		 $('#play').attr('class','ui-btn  ui-shadow ui-btn-corner-all');
+		 });
+	$( "#stop" ).bind( "click", function() {
+		  $('#stop').attr('class','ui-disabled ui-btn  ui-shadow ui-btn-corner-all');
+		 $('#pause').attr('class','ui-disabled ui-btn  ui-shadow ui-btn-corner-all');
+		 $('#play').attr('class','ui-btn  ui-shadow ui-btn-corner-all');
+		 });
 	  
 	 $(window).load(function(){
 		  	var song = $('.song img').height();
@@ -124,6 +142,9 @@ $(document).ready(function(){
 			$('.cart').css({'height': song1 +'px'});
 			$('.playSmall img').css({'height': song1 +'px'});
 			$('.cart img').css({'height': song1 +'px'});
+			
+			$('#pause').attr('class','ui-disabled ui-btn  ui-shadow ui-btn-corner-all');
+			$('#stop').attr('class','ui-disabled ui-btn  ui-shadow ui-btn-corner-all');
 		 });
 		 
 	 $(window).resize(function(){

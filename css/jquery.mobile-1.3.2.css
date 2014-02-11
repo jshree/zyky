@@ -325,7 +325,7 @@
 	color: #2489ce /*{c-body-link-active}*/;
 }
 .ui-btn-up-c {
-	border: 1px solid #ccc /*{c-bup-border}*/;
+	/*border: 1px solid #ccc ;*/
 	font-weight: bold;
 	color: #222 /*{c-bup-color}*/;
 	text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #fff /*{c-bup-shadow-color}*/;
@@ -334,7 +334,7 @@
 	color: #2f3e46 /*{c-bup-color}*/;
 }
 .ui-btn-hover-c {
-	border: 1px solid #bbb /*{c-bhover-border}*/;
+	/*border: 1px solid #bbb;*/
 	font-weight: bold;
 	color: #222 /*{c-bhover-color}*/;
 	text-shadow: 0 /*{c-bhover-shadow-x}*/ 1px /*{c-bhover-shadow-y}*/ 0 /*{c-bhover-shadow-radius}*/ #fff /*{c-bhover-shadow-color}*/;
