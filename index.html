@@ -655,156 +655,30 @@
 <!-- song list rendering-->
 <script type="text/template" id="song-template">
 	<div class="song one"> <img src="<%= album.image  %>" alt="">
-		<div class="songOverlay">
-			<div class="artistandSong">
-				<h5>Artist: <%= artist.name  %></h5>
-				<h4><%= title %></h4>
-			</div>
-			<div class="artistImg">
-				<img src="<%= artist.image  %>" alt="">
-			</div>
-		</div><!--\songOverlay-->
-		
-		<div class="songHover">
-		
-			<div class="artistandSong">
-				<h5>Artist: <%= artist.name  %></h5>
-				<h4><%= title %></h4>
-			</div>
-			<div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
-			
-			<div class="songFeatures">
-				<div class="playSmall">
-					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
-					<img src="images/playBtnSmall.png" alt="">
-					</a>
-				</div>
-				<div class="cart">
-					<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
-					<img src="images/cartsmall.png" alt="">
-					</a>
-				</div>
-			</div><!--\songFeatures-->
-		</div><!--\songHover-->
-    </div><!--\song one-->
+      <div class="songOverlay">
+        <div class="artistandSong">
+          <h5>Artist: <%= artist.name  %></h5>
+          <h4><%= title %></h4>
+        </div>
+        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+      </div>
+      <div class="songHover">
+        <div class="artistandSong">
+          <h5>Artist: <%= artist.name  %></h5>
+          <h4><%= title %></h4>
+        </div>
+        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="songFeatures">
+          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+          <img src="images/playBtnSmall.png" alt=""></a></div>
+          <div class="cart"><a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
+          <img src="images/cartsmall.png" alt=""></a></div>
+        </div>
+      </div>
+    </div>
 </script>
 
-<!--free list rendering-->
-<script type="text/template" id="free-template">
 
-	<div class="song one"> <img src="<%= album.image  %>" alt="">
-		<div class="songOverlay">
-			<div class="artistandSong">
-				<h5>Artist: <%= artist.name  %></h5>
-				<h4><%= title %></h4>
-			</div>
-			<div class="artistImg">
-				<img src="<%= artist.image  %>" alt="">
-			</div>
-		</div><!--\songOverlay-->
-		
-		<div class="songHover">
-			
-			<div class="artistandSong">
-				<h5>Artist: <%= artist.name  %></h5>
-				<h4><%= title %></h4>
-			</div>
-			<div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
-			
-			<div class="songFeatures">
-				<div class="playSmall">
-					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
-					<img src="images/playBtnSmall.png" alt="">
-					</a>
-				</div>
-				<div class="cart">
-					<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
-					<img src="images/cartsmall.png" alt="">
-					</a>
-				</div>
-			</div><!--\songFeatures-->
-		</div><!--\songHover-->
-    </div><!--\song one-->
-   
-</script>
-
-<!--hit song list rendering-->
-<script type="text/template" id="hit-template">
-
-	<div class="song one"> <img src="<%= album.image  %>" alt="">
-		<div class="songOverlay">
-			<div class="artistandSong">
-				<h5>Artist: <%= artist.name  %></h5>
-				<h4><%= title %></h4>
-			</div>
-			<div class="artistImg">
-				<img src="<%= artist.image  %>" alt="">
-			</div>
-		</div><!--\songOverlay-->
-		
-		<div class="songHover">
-	
-			<div class="artistandSong">
-				<h5>Artist: <%= artist.name  %></h5>
-				<h4><%= title %></h4>
-			</div>
-			<div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
-		
-			<div class="songFeatures">
-				<div class="playSmall">
-					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
-					<img src="images/playBtnSmall.png" alt="">
-					</a>
-				</div>
-				<div class="cart">
-					<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
-					<img src="images/cartsmall.png" alt="">
-					</a>
-				</div>
-			</div><!--\songFeatures-->
-		</div><!--\songHover-->
-    </div><!--\song one-->
-   
-</script>
-
-<!--search song list rendering-->
-<script type="text/template" id="track-template">
-
-	<div class="song one"> <img src="<%= album.image  %>" alt="">
-		<div class="songOverlay">
-			<div class="artistandSong">
-				<h5>Artist: <%= artist.name  %></h5>
-				<h4><%= title %></h4>
-			</div>
-			<div class="artistImg">
-				<img src="<%= artist.image  %>" alt="">
-			</div>
-		</div><!--\songOverlay-->
-		
-		<div class="songHover">
-		
-			<div class="artistandSong">
-				<h5>Artist: <%= artist.name  %></h5>
-				<h4><%= title %></h4>
-			</div>
-			<div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
-		
-			<div class="songFeatures">
-				<div class="playSmall">
-					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
-					<img src="images/playBtnSmall.png" alt="">
-					</a>
-				</div>
-				<div class="cart">
-					<a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
-					<img src="images/cartsmall.png" alt="">
-					</a>
-				</div>
-			</div><!--\songFeatures-->
-		</div><!--\songHover-->
-    </div><!--\song one-->
-   
-</script>
 
 <!--download song list rendering-->
 <script type="text/template" id="download-template">
