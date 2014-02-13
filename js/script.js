@@ -272,17 +272,17 @@ var song_list_view = Backbone.View.extend({
         return this;
     },
 	insideMenuHandler: function(e) {
-		$('.songHover').hide();
+		$('.show').hide();
+		$(e.currentTarget).children('.songHover').addClass('show');
 		$(e.currentTarget).children('.songHover').show();
-		var song = $('.song img').height()+2;
-			var song1 = ($('.song img').height()+3)/2;
+		var song = $(e.currentTarget).children('.one img').height()+2;
+		var song1 = ($(e.currentTarget).children('.one img').height()+3)/2;
 			$('.songHover').css({'height': song + 'px'});
 			$('.songFeatures').css({'height': song + 'px'});
 			$('.playSmall').css({'height': song1 +'px'});
 			$('.cart').css({'height': song1 +'px'});
 			$('.playSmall img').css({'height': song1 +'px'});
 			$('.cart img').css({'height': song1 +'px'});
-			$(e.currentTarget).siblings().find('.songHover').hide();
 		return false;
 		
 	}
