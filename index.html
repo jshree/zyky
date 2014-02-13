@@ -150,17 +150,22 @@
 				
 			// Get duration
 			var counter = 0;
-			var timerDur = setInterval(function() {
-				counter = counter + 100;
-				if (counter > 2000) {
-					clearInterval(timerDur);
-				}
-				var dur = my_media.getDuration();
-				if (dur > 0) {
-					clearInterval(timerDur);
-					document.getElementById('timeRemaining').innerHTML = Utility.formatTime(dur);
-				}
-		   }, 100);
+			 var timerDuration = setInterval(
+				function() {
+				   counter++;
+				   if (counter > 20)
+					  clearInterval(timerDuration);
+	
+				   var duration =  my_media.getDuration();
+				   if (duration > -1)
+				   {
+					  clearInterval(timerDuration);
+					  setAudioDuration(Utility.formatTime(duration));
+					  
+				   }
+				   else
+					  setAudioDuration('Unknown');
+				},100);
             }
 		}
 
@@ -584,7 +589,7 @@
         <div class="SongTimeBox" style="height:60px;">
          <input id="slider1" data-role="none" type="range"  name="slider" value="0" min="0" max="100" data-highlight="true" style="width:100%;">
          <div class="timeElapsed" id="timeElapsed" style="float:left;">0:00</div>
-         <div class="timeRemaining" style="float:right;">0:00</div>
+         <div class="timeRemaining" id="timeRemaining" style="float:right;">0:00</div>
         </div>
          <input type="hidden" id="mus_link" value=""/>
         
