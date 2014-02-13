@@ -156,16 +156,21 @@
 				   if (counter > 20)
 					  clearInterval(timerDuration);
 	
-				   var duration = my_media.getDuration();
-				   console.log(duration);
-				   alert(duration);
-				   if (duration > -1)
-				   {
-					  clearInterval(timerDuration);
-					  document.getElementById('timeRemaining').innerHTML=duration;
-				   }
-				   else
-					 document.getElementById('timeRemaining').innerHTML='0:00';
+				   my_media.getDuration(
+				   		function(duration) {
+                            if (duration > -1) {
+                                clearInterval(timerDuration);
+								alert(duration);
+								document.getElementById('timeRemaining').innerHTML=duration;
+                            }
+                        },
+                        // error callback
+                        function(e) {
+                            console.log("Error getting pos=" + e);
+                            document.getElementById('timeRemaining').innerHTML=e;
+                        }
+				   
+				   );
 				},100);
 		}
 
