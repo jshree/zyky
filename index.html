@@ -110,12 +110,11 @@
 		function openMedia(music){
 			
 			//localstorage for music link
-			//localStorage.music_url=music;
+			localStorage.music_url=music;
 			//set attr for mus_link id.
-			//$('#mus_link').attr("value",localStorage.music_url);
+			$('#mus_link').attr("value",localStorage.music_url);
 			
 			window.location.href="#mediaPlayer";
-			playAudio(music);
 		}
 		
 		// Audio player //
@@ -123,9 +122,9 @@
         var mediaTimer = null;
 		
         // Play audio//
-        function playAudio(src) {
+        function playAudio() {
 			
-		//	var src =$('#mus_link').val();
+			var src =$('#mus_link').val();
             // Create Media object from src
             my_media = new Media(src, onSuccess, onError);
 			my_media.play();
