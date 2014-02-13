@@ -105,31 +105,52 @@
 			$(document).FaceGap('fb_api', _fb); 
           
 
-        // Audio player //
+        
+		
+		function openMedia(music){
+			
+			//localstorage for music link
+			//localStorage.music_url=music;
+			//set attr for mus_link id.
+			//$('#mus_link').attr("value",localStorage.music_url);
+			
+			window.location.href="#mediaPlayer";
+			playAudio(music);
+		}
+		
+		// Audio player //
         var my_media = null;
         var mediaTimer = null;
 		
-		function openMedia(music){
-			window.location.href="#mediaPlayer";
-			//localstorage for music link
-			localStorage.music_url=music;
-			//set attr for mus_link id.
-			$('#mus_link').attr("value",localStorage.music_url);
-
-			}
-			
         // Play audio//
-        function playAudio() {
+        function playAudio(src) {
 			
-			var src =$('#mus_link').val();
+		//	var src =$('#mus_link').val();
             // Create Media object from src
             my_media = new Media(src, onSuccess, onError);
-			
 			my_media.play();
+			// Update my_media position every second
+            if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > -1) {
+                                setAudioPosition((position) + " sec");
+                            }
+                        },
+                        // error callback
+                        function(e) {
+                            console.log("Error getting pos=" + e);
+                            setAudioPosition("Error: " + e);
+                        }
+                    );
+                }, 1000);
+            }
 		}
 
         // Pause audio
-        //
         function pauseAudio() {
             if (my_media) {
                 my_media.pause();
@@ -137,43 +158,16 @@
         }
 
         // Stop audio
-        //
-        function stopAudio() {
+     	function stopAudio() {
             if (my_media) {
                 my_media.stop();
             }
-            
-        }
-		//reset layout
-		function resetLayout() {
-			setAudioPosition(Utility.formatTime(0));
-			updateSliderPosition(0);
+			clearInterval(mediaTimer);
+            mediaTimer = null;
 		}
-		//update slider position
-		function updateSliderPosition(seconds) {
-			var $slideTime = $('#timeRemaining');
-			if (seconds < $slideTime.attr('min'))
-			$slider.val($slideTime.attr('min'));
-			else if (seconds > $slideTime.attr('max'))
-			$slider.val($slideTime.attr('max'));
-			else
-			$slideTime.val(Math.round(seconds));
-			$slideTime.slider('refresh');
-		}
-		$('#slider1').on('slidestop', function(event) {
-         seekPosition(event.target.value);
-      });
-		//audio seek
-		function seekPosition(seconds) {
-			if (my_media === null)
-			return;
-			my_media.seekTo(seconds * 1000);
-			updateSliderPosition(seconds);
-		}
-   
-
+		
+		
         // onSuccess Callback
-        //
         function onSuccess() {
             console.log("playAudio():Audio Success");
         }
