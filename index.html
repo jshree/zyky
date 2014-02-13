@@ -148,24 +148,20 @@
                     );
                 }, 1000);
 				
+			
 			// Get duration
 			var counter = 0;
-			 var timerDuration = setInterval(
-				function() {
-				   counter++;
-				   if (counter > 20)
-					  clearInterval(timerDuration);
-	
-				   var duration =  my_media.getDuration();
-				   if (duration > -1)
-				   {
-					  clearInterval(timerDuration);
-					  setAudioDuration(Utility.formatTime(duration));
-					  
-				   }
-				   else
-					  setAudioDuration('Unknown');
-				},100);
+			var timerDur = setInterval(function() {
+				counter = counter + 100;
+				if (counter > 2000) {
+					clearInterval(timerDur);
+				}
+				var dur = my_media.getDuration();
+				if (dur > 0) {
+					clearInterval(timerDur);
+					setAudioDuration(Utility.formatTime(dur));
+				}
+		   }, 100);
             }
 		}
 
