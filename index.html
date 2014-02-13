@@ -159,7 +159,7 @@
 				var dur = my_media.getDuration();
 				if (dur > 0) {
 					clearInterval(timerDur);
-					setAudioDuration(Utility.formatTime(dur));
+					document.getElementById('timeRemaining').innerHTML =(dur);
 				}
 		   }, 100);
             }
