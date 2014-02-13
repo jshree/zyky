@@ -149,21 +149,24 @@
                 }, 1000);
 			
             }
-			// Get duration
 			var counter = 0;
-			var timerDur = setInterval(function() {
-				counter = counter + 100;
-				if (counter > 2000) {
-					clearInterval(timerDur);
-				}
-				var dur = my_media.getDuration();
-				if (dur > 0) {
-					clearInterval(timerDur);
-					document.getElementById('timeRemaining').innerHTML =(dur);
-					console.log(dur);
-					alert(dur);
-				}
-		   }, 100);
+			 var timerDuration = setInterval(
+				function() {
+				   counter++;
+				   if (counter > 20)
+					  clearInterval(timerDuration);
+	
+				   var duration = my_media.getDuration();
+				   console.log(duration);
+				   alert(duration);
+				   if (duration > -1)
+				   {
+					  clearInterval(timerDuration);
+					  document.getElementById('timeRemaining').innerHTML=duration;
+				   }
+				   else
+					 document.getElementById('timeRemaining').innerHTML='0:00';
+				},100);
 		}
 
         // Pause audio
