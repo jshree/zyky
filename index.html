@@ -33,7 +33,6 @@
 	         }, fail);
 			
 			down(currentDir);
-			alert(currentDir);
 			//document.addEventListener("backbutton", function(e){
 //				if($.mobile.activePage.is('#login')){
 //					//e.preventDefault();
@@ -236,6 +235,9 @@
 		function down(sample) {
 	       alert(sample);
 			console.log(sample);
+	    }
+		 function fail(evt) {
+	        console.log(evt.target.error.code);
 	    }
 
 </script>
