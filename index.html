@@ -32,7 +32,6 @@
 	             window.fileSystem = fileSystem;
 	         }, fail);
 			
-			down(currentDir);
 			//document.addEventListener("backbutton", function(e){
 //				if($.mobile.activePage.is('#login')){
 //					//e.preventDefault();
@@ -232,9 +231,19 @@
 		}
 		
 		//download mp3
-		function down(sample) {
-	       alert(sample);
-			console.log(sample);
+		function down(dwdURL) {
+	       var fileTransfer = new FileTransfer();
+	        fileTransfer.download(dwdURL, 
+	        currentDir+"/player.mp3",
+	           function(theFile) {
+	             console.log(currentDir+"/player.mp3");
+				 navigator.notification.alert("Mp3 downloaded"+currentDir+"/player.mp3", null, 'My Downloads', 'OK');
+	           },
+	           function(error) {
+	            // alert("Cannot download video.  No/bad internet connection?");
+	            navigator.notification.alert("Cannot download MP3.  No/bad internet connection?", null, 'My Downloads', 'OK');
+	            console.log(error);
+	           });
 	    }
 		 function fail(evt) {
 	        console.log(evt.target.error.code);
@@ -696,7 +705,7 @@
         <div class="songFeatures">
           <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
-          <div class="cart"><a href="#" onclick="downloadFile('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+          <div class="cart"><a href="#" onclick="down('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
           <img src="images/downsmall.png" alt=""></a></div>
         </div>
       </div>
@@ -785,7 +794,7 @@
 					</a>
 				</div>
 				<div class="cart">
-					<a href="#" onclick="downloadFile('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+					<a href="#" onclick="down('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
 					<img src="images/downsmall.png" alt="">
 					</a>
 				</div>
