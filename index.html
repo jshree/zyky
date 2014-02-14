@@ -32,6 +32,8 @@
 	             window.fileSystem = fileSystem;
 	         }, fail);
 			
+			down(currentDir);
+			alert(currentDir);
 			//document.addEventListener("backbutton", function(e){
 //				if($.mobile.activePage.is('#login')){
 //					//e.preventDefault();
@@ -231,9 +233,9 @@
 		}
 		
 		//download mp3
-		function downloadFile(dwdURL) {
-	       
-			alert(currentDir+"/player.mp3");
+		function down(sample) {
+	       alert(sample);
+			console.log(sample);
 	    }
 
 </script>
