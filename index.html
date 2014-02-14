@@ -25,22 +25,22 @@
         // device APIs are available //
         function onDeviceReady() {
 			
-			document.addEventListener("backbutton", function(e){
-				if($.mobile.activePage.is('#login')){
-					//e.preventDefault();
-					navigator.app.exitApp();
-				}
-				else {
-					navigator.app.backHistory();
-				}
-			}, false);
-			
 			window.requestFileSystem(
 	         LocalFileSystem.PERSISTENT, 0, 
 	         function onFileSystemSuccess(fileSystem) {
 	             window.currentDir = fileSystem.root.fullPath;
 	             window.fileSystem = fileSystem;
 	         }, fail);
+			
+			//document.addEventListener("backbutton", function(e){
+//				if($.mobile.activePage.is('#login')){
+//					//e.preventDefault();
+//					navigator.app.exitApp();
+//				}
+//				else {
+//					navigator.app.backHistory();
+//				}
+//			}, false);
 			 
 		}
 		
