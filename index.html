@@ -76,6 +76,7 @@
 						localStorage.user_token=res.token;
 						$('#tokenId').attr("value",localStorage.user_token);
 						location.href='#songsLibrary';
+            $('#login').hide();
 					}
 				});
 			}
@@ -152,19 +153,6 @@
                         }
                     );
                 }, 1000);
-			// Get duration
-			var counter = 0;
-			var timerDur = setInterval(function() {
-				counter = counter + 100;
-				if (counter > 2000) {
-					clearInterval(timerDur);
-				}
-				var dur = my_media.getDuration();
-				if (dur > 0) {
-					clearInterval(timerDur);
-					document.getElementById('timeRemaining').innerHTML = (dur) + " sec";
-				}
-		   }, 100);
             }
 			
 		}
@@ -210,15 +198,6 @@
             document.getElementById('timeRemaining').innerHTML = duration;
         }
 		
-		//fb login with childbrowser plugin
-		function loginFB(url){
-			window.plugins.childBrowser.showWebPage(url, { showLocationBar: false });
-			window.plugins.childBrowser.onLocationChange = function(locationLink){
-				if (locationLink == "http://wiredelta.com:12001/#_=_") {
-					window.plugins.childBrowser.close();
-				}
-			}
-		}
 		
 		//Purchase songs with childbrowser plugin
 		function openCart(cartUrl){

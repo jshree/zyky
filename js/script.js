@@ -378,8 +378,10 @@ function signIn(){
             success : function(res){
 				localStorage.user_token=res.token;
 				$('#tokenId').attr("value",localStorage.user_token);
+
 				//navigator.notification.alert(res.token, null, 'Token', 'OK');
-				location.href='#songsLibrary';		
+				location.href='#songsLibrary';
+				$('#login').hide();	
             }
 			
 			
