@@ -108,12 +108,15 @@
 
         
 		
-		function openMedia(music){
+		function openMedia(music, mname, mtitle, mimage){
 			
 			//localstorage for music link
 			localStorage.music_url=music;
 			//set attr for mus_link id.
 			$('#mus_link').attr("value",localStorage.music_url);
+      $('.musicName').html(mname);
+      $('.musicTitle').html(mtitle);
+      $('.musicCover').attr("src",mimage);
 			
 			window.location.href="#mediaPlayer";
 		}
@@ -575,11 +578,11 @@
   </div>
   <div data-role="content">
     <div class="playerMain">
-      <div class="coverArt"><img src="images/cover_art.png" alt=""></div>
+      <div class="coverArt"><img src="images/cover_art.png" alt="" class="musicCover"></div>
       <div class="playerControls">
         <div class="songDetails">
-          <h4>Titanium (Featuring Sia)</h4>
-          <h4>David Guetta</h4>
+          <h4 class="musicName">Titanium (Featuring Sia)</h4>
+          <h4 class="musicTitle">David Guetta</h4>
         </div>
         <div class="SongTimeBox" style="height:60px;">
          <input id="slider1" data-role="none" type="range"  name="slider" value="0" min="0" max="100" data-highlight="true" style="width:100%;">
@@ -677,7 +680,7 @@
         </div>
         <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
         <div class="songFeatures">
-          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= artist.name  %>','<%= title %>','<%= album.image  %>')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
           <div class="cart"><a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
           <img src="images/cartsmall.png" alt=""></a></div>
@@ -703,7 +706,7 @@
         </div>
         <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
         <div class="songFeatures">
-          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= artist.name  %>','<%= title %>','<%= album.image  %>')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
           <div class="cart"><a href="#" onclick="down('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
           <img src="images/downsmall.png" alt=""></a></div>
@@ -730,7 +733,7 @@
         </div>
         <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
         <div class="songFeatures">
-          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= artist.name  %>','<%= title %>','<%= album.image  %>')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
           <div class="cart"><a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
           <img src="images/cartsmall.png" alt=""></a></div>
@@ -757,7 +760,7 @@
         </div>
         <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
         <div class="songFeatures">
-          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+          <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= artist.name  %>','<%= title %>','<%= album.image  %>')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
           <div class="cart"><a href="#" onclick="openCart('http://wiredelta.com:12001/tracks/<%= id %>/buy?user_token=')">
           <img src="images/cartsmall.png" alt=""></a></div>
@@ -789,7 +792,7 @@
 			
 			<div class="songFeatures">
 				<div class="playSmall">
-					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
+					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= track.artist.name  %>','<%= track.title %>','<%= track.album.image  %>')">
 					<img src="images/playBtnSmall.png" alt="">
 					</a>
 				</div>
