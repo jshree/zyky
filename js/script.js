@@ -555,7 +555,7 @@ function signUp(){
 			$('#regStatus').html(jsonResponse.error);
 			},
             success : function(res){
-				navigator.notification.alert('Thanks.Please login!', null, 'Success', 'OK');
+				navigator.notification.alert('Thanks. Please login', null, 'Success', 'OK');
 				location.href='#login';		
             }
 			
