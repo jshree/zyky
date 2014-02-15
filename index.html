@@ -33,9 +33,8 @@
 	         }, fail);
 		//back button behaviour
         document.addEventListener("backbutton", function (e) {
-            if( $('.ui-page').attr('id') == 'login') {
-				e.preventDefault();
-				 navigator.app.exitApp();
+            if( $('.ui-page-active').attr('id') == 'login') {
+				window.location.href="#songsLibrary";
 			}
 			else{
 				navigator.app.backHistory();
