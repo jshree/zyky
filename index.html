@@ -76,6 +76,7 @@
 						localStorage.user_token=res.token;
 						$('#tokenId').attr("value",localStorage.user_token);
 						location.href='#songsLibrary';
+						_onLogout();
            
 					}
 				});
@@ -83,8 +84,9 @@
 			
 			//Callback Logout
 			function _onLogout( event ){
-				//alert('status > '+event.status); // 1 - success, 0 - error
-				//alert('message > '+event.message);
+				console.log('status > '+event.status); // 1 - success, 0 - error
+				console.log('message > '+event.message);
+				
 			}
 			
 			}
