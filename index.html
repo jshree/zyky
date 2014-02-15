@@ -31,16 +31,17 @@
 	             window.currentDir = fileSystem.root.fullPath;
 	             window.fileSystem = fileSystem;
 	         }, fail);
+		//back button behaviour
 			
-			//document.addEventListener("backbutton", function(e){
-//				if($.mobile.activePage.is('#login')){
-//					//e.preventDefault();
-//					navigator.app.exitApp();
-//				}
-//				else {
-//					navigator.app.backHistory();
-//				}
-//			}, false);
+        document.addEventListener("backbutton", function (e) {
+            if($.mobile.activePage.is('#login')){
+				e.preventDefault();
+			}
+			else{
+				navigator.app.backHistory();
+			}
+        }, false );
+			
 			 
 		}
 		
@@ -76,7 +77,6 @@
 						localStorage.user_token=res.token;
 						$('#tokenId').attr("value",localStorage.user_token);
 						location.href='#songsLibrary';
-						$(document).FaceGap('logout');
            
 					}
 				});
@@ -108,6 +108,21 @@
 			//Get FB API
 			$(document).FaceGap('fb_api', _fb); 
           
+		  //back restriction 
+		  
+		  function backLogin(){
+			  
+			  document.addEventListener("backbutton", function(e){
+				if($.mobile.activePage.is('#login')){
+					e.preventDefault();
+					navigator.app.exitApp();
+				}
+				else {
+					navigator.app.backHistory();
+				}
+			}, false);
+			  
+			  }
 
         
 		
