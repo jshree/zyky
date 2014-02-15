@@ -32,13 +32,14 @@
 	             window.fileSystem = fileSystem;
 	         }, fail);
 		//back button behaviour
-			
+		navigator.app.overrideBackbutton();	
         document.addEventListener("backbutton", function (e) {
-            if($.mobile.activePage.is('#login')){
-				e.preventDefault();
+            if( $('.ui-page-active').attr('id') == "login") {
+				 navigator.app.exitApp();
 			}
 			else{
 				navigator.app.backHistory();
+				alert('does not working.!');
 			}
         }, false );
 			
