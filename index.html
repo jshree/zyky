@@ -38,7 +38,7 @@
 				 navigator.app.exitApp();
 			}
 			else{
-				console.log($('.ui-page-active').attr('id') == 'login');
+				console.log($.mobile.activePage[0].id);
 				navigator.app.backHistory();
 			}
         }, false );
