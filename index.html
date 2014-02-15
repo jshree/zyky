@@ -33,12 +33,11 @@
 	         }, fail);
 		//back button behaviour
         document.addEventListener("backbutton", function (e) {
-            if( $.mobile.activePage[0].id) {
+            if( $('.ui-page').attr('id') == 'login') {
 				e.preventDefault();
 				 navigator.app.exitApp();
 			}
 			else{
-				console.log($.mobile.activePage[0].id);
 				navigator.app.backHistory();
 			}
         }, false );
