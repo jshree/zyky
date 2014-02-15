@@ -381,7 +381,6 @@ function signIn(){
 
 				//navigator.notification.alert(res.token, null, 'Token', 'OK');
 				location.href='#songsLibrary';
-				$('#login').hide();	
             }
 			
 			
