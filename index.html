@@ -38,7 +38,7 @@
 				 navigator.app.exitApp();
 			}
 			else{
-				console.log('history');
+				console.log($('.ui-page-active').attr('id') == 'login');
 				navigator.app.backHistory();
 			}
         }, false );
@@ -109,21 +109,7 @@
 			//Get FB API
 			$(document).FaceGap('fb_api', _fb); 
           
-		  //back restriction 
 		  
-		  function backLogin(){
-			  
-			  document.addEventListener("backbutton", function(e){
-				if($.mobile.activePage.is('#login')){
-					e.preventDefault();
-					navigator.app.exitApp();
-				}
-				else {
-					navigator.app.backHistory();
-				}
-			}, false);
-			  
-			  }
 
         
 		
