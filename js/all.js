@@ -90,6 +90,7 @@ $(function($) {
 //=================================== SongLibrary Script Start Here ==============================
 $(document).ready(function(){
 	 $('.song').click(function(){
+		 alert();
 		 $('.show').hide();
 		 $(this).children('.songHover').addClass('show');
 		 $(this).children('.songHover').show();
@@ -156,6 +157,13 @@ $(document).ready(function(){
      	 $('.cart').css({'height': songHover1 +'px'});
 		 $('.playSmall img').css({'height': songHover1 +'px'});
 		 $('.cart img').css({'height': songHover1 +'px'});
+	});
+	
+	$('.edit').click(function(){
+		$(this).hide();
+		$('.details h3, .userProfile h2 span').hide();
+		$('.details .ui-input-text, .userProfile .ui-input-text').show();
+		$('.userProfile .searchBtn').css('display','block');
 	});
 });
 
