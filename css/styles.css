@@ -271,7 +271,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	border: 0px;
 }
 .keyboard_visible {
-	margin-bottom: 375px;
+	/*margin-bottom: 375px;*/
 }
 
 .textbox {
