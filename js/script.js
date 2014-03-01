@@ -1,7 +1,7 @@
 $(window).load(function(){
 
 $('.loginform input').click(function(){
-	$('body').animate({scrollTop: 300});
+	$('body').animate({scrollTop: $('.loginform').offset().top});
 });
 
 //a (table) view to render the list of songs
