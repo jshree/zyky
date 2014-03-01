@@ -1,4 +1,9 @@
 $(window).load(function(){
+
+$('.loginform input').click(function(){
+	$('body').animate({scrollTop: 300});
+});
+
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
     el: $('.song-temp'),
@@ -50,8 +55,6 @@ var List = Backbone.Model.extend({
 
 
 var SongCollection = Backbone.Collection.extend({
-	
-	
     model: List,
     url: "http://www.wiredelta.com:12001/tracks.json",
 	
@@ -132,13 +135,10 @@ var hitList = Backbone.Model.extend({
 
 
 var hitCollection = Backbone.Collection.extend({
-	
-	
     model: hitList,
     url: "http://wiredelta.com:12001/tracks/hit.json",
 	
     parse: function(res) {
-		
         console.log('response inside parse' + res);
         return res;
     }
