@@ -1195,7 +1195,8 @@ input.ui-input-text.ui-slider-input {
 	right: 22px;
 }
 .songHover {
-	width: 96.1%;
+	/*width: 96.1%;*/
+	margin-top: -1px;
 	position: absolute;
 	top: 0.4em;
 	background: #022535;
