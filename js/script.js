@@ -1,6 +1,6 @@
 $(window).load(function(){
 
-$('input').click(function(){
+$('input').focus(function(){
 	$('body').animate({scrollTop: $(this).offset().top - 10});
 });
 
