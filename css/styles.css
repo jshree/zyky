@@ -14,6 +14,11 @@
 	font-family: Lao;
 	src: url(../fonts/Lao%20UI.ttf);
 }
+
+body {
+	background: #0C5457 url('../images/background2.png') no-repeat;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -24,7 +29,7 @@ img {
 }
 /*============================================= Login page styles ===================================*/
 #login, #signup, #search, #user {
-	background: url(../images/background.png)no-repeat !important;
+	background: url(../images/background.png) no-repeat !important;
 	background-size: cover !important;
 }
 .header h3 {
