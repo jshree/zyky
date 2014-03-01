@@ -1,8 +1,13 @@
 $(window).load(function(){
 
 $('input').focus(function(){
+	$(this).parents('form').addClass('keyboard_visible');
 	$('body').animate({scrollTop: $(this).offset().top - 10});
 });
+
+$('input').blur(function(){
+	$(this).parents('form').removeClass('keyboard_visible');
+})
 
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
