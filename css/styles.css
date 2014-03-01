@@ -1216,15 +1216,14 @@ input.ui-input-text.ui-slider-input {
 	background: #fff;
 	width: 20%;
 }
- .PENDING {
+.PENDING {
 	cursor: default !important;
-    pointer-events: none;
+	pointer-events: none;
 	color:#F00;	
-	}
+}
 .COMPLETED {
 	color:#0F0;
-	
-	}
+}
 .lower{
 	text-transform:lowercase;
 }
@@ -1770,7 +1769,8 @@ input.ui-input-text.ui-slider-input {
 	right: 5.4%;
 }
 .songHover {
-	width: 96.1%;
+	/*width: 96.1%;*/
+	margin-top: -1px;
 	position: absolute;
 	top: 0.56em;
 	background: #022535;
