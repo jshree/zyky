@@ -137,6 +137,7 @@ color:#fff !important;
 .loginform {
 	text-align: center;
 	padding-bottom: 110px;
+	margin-bottom: 350px;
 }
 /*#loginDetails{  overflow: scroll;  -webkit-overflow-scrolling: touch;}*/
 .loginform .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text {
@@ -262,7 +263,7 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 /*============================================= Sign Up Page styles ===================================*/
 .signupform {
 	text-align: center;
-	margin: 35px 0 192 px 0;
+	margin: 35px 0 375px 0;
 }
 .signupform .ui-field-contain {
 	padding: 0 6% 0 6%;
