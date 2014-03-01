@@ -51,7 +51,7 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="show-splash-screen-spinner" value="false" />
-    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="android-windowSoftInputMode" value="stateHidden|adjustPan" />
 	
 	<gap:plugin name="com.phonegap.plugins.childbrowser" />
 	
