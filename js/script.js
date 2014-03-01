@@ -7,7 +7,10 @@ $('input').focus(function(){
 
 $('input').blur(function(){
 	$(this).parents('form').removeClass('keyboard_visible');
-})
+});
+
+//$('.loginform').hide();
+setTimeout($('.loginform').fadeIn, 500);
 
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
