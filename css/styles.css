@@ -1817,9 +1817,7 @@ input.ui-input-text.ui-slider-input {
 	right: 5.4%;
 }
 .songHover {
-	width: 96.1%;
 	position: absolute;
-	top: 0.6em;
 	background: #022535;
 	height: 100px;
 	display: none;
