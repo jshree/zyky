@@ -9,6 +9,10 @@ $('input').blur(function(){
 	$(this).parents('form').removeClass('keyboard_visible');
 });
 
+// Enable Phonegap Navigation and same page transition
+$.mobile.phonegapNavigationEnabled = true;
+$.mobile.changePage.defaults.allowSamePageTransition = true;
+
 //a (table) view to render the list of songs
 var song_list_view = Backbone.View.extend({
     el: $('.song-temp'),
