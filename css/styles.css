@@ -348,19 +348,15 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 /*	border: 0px;*/
 }
 .song {
-	width: 96%;
 	height: auto;
 	text-align: center;
 	position: relative;
-	padding: 2%;
+	margin: 10px 0;
 }
 .songOverlay {
 	position: absolute;
-	width: 96.1%;
 	float: left;
 	background: rgba(0,0,0,0.7);
-	/*margin-top:-150px;*/
-	top: 1.7em;
 }
 .artistandSong {
 	float: left;
@@ -1195,12 +1191,8 @@ input.ui-input-text.ui-slider-input {
 	right: 22px;
 }
 .songHover {
-	/*width: 96.1%;*/
-	width: 96%;
 	box-shadow: 2px 2px 2px #000;
-	margin-top: -1px;
 	position: absolute;
-	top: 0.4em;
 	background: #022535;
 	height: 100px;
 	display: none;
