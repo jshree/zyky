@@ -20,7 +20,9 @@
 <script master>
  
  	localStorage.devMode = confirm('Developer Mode?');
- 	
+
+</script>
+<script master>
  	function devAlert(a) {
  		if(localStorage.devMode) alert(JSON.stringify(a));
  	}
@@ -86,12 +88,13 @@
 				} else if (localStorage.user_token) {
 					devAlert('checking userToken: '+localStorage.user_token);
 					$.getJSON('http://wiredelta.com:12001/token/valid.json?user_token='+localStorage.user_token,
-					function(data){
+					function(data) {
 						if(data.success) location.href = '#songsLibrary';
-					}) else {
-						alert('Login Time Out. Kindly relogin on facebook again');
-						$(document).FaceGap('logout');
-					}
+						else {
+							alert('Login Time Out. Kindly relogin on facebook again');
+							$(document).FaceGap('logout');
+						}
+					});
 					return;
 				} else {
 					alert('Login Timeout.  Kindly relogin on facebook again');
