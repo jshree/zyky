@@ -385,8 +385,16 @@ function signIn(){
 			$('#signRes').html(jsonResponse.message);
 		},
             	success : function(res){
+
 			localStorage.user_token=res.token;
-			$('#tokenId').attr("value",localStorage.user_token);
+
+			$('#tokenId').attr("value", localStorage.user_token);
+
+			var username = res.username;
+			var location = res.location;
+			localStorage.songsDownloaded = res.songsDownloaded;
+
+			$('.profileName').html('<h4>'+username+'</h4><h5>'+location+'</h5>');
 
 			//navigator.notification.alert(res.token, null, 'Token', 'OK');
 			$.mobile.changePage('#songsLibrary');
