@@ -75,11 +75,32 @@
 			//Callback Login
 			function _onLogin( event ) {
 				devAlert('onLogin');
-				var email=event.data.email;
-				var uid=event.data.id;
-				var name=event.data.name;
+				devAlert(event);
+				
+				var email,uid,name;
+				
+				if(event.data) {
+					 email=event.data.email;
+					 uid=event.data.id;
+					 name=event.data.name;
+				} else if (localStorage.user_token) {
+					devAlert('checking userToken: '+localStorage.user_token);
+					$.getJSON('http://wiredelta.com:12001/token/valid.json?user_token='+localStorage.user_token,
+					function(data){
+						if(data.success) location.href = '#songsLibrary';
+					}) else {
+						alert('Login Time Out. Kindly relogin on facebook again');
+						$(document).FaceGap('logout');
+					}
+					return;
+				} else {
+					alert('Login Timeout.  Kindly relogin on facebook again');
+					$(document).FaceGap('logout');
+					return;
+				}
 				
 				var dataString='user[email]='+ email + '&user[uid]=' +  uid + '&user[name]=' +  name;
+				
 				devAlert(dataString);
 				$.ajax({
 					url  : 'http://wiredelta.com:12001/user/facebook',
@@ -102,6 +123,7 @@
 
 			//Callback Logout
 			function _onLogout( event ) {
+				devAlert({logout: event});
 				console.log('status > '+event.status); // 1 - success, 0 - error
 				console.log('message > '+event.message);
 				
