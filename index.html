@@ -89,7 +89,9 @@
 					 uid=event.data.id;
 					 name=event.data.name;
 				} else if (localStorage.user_token) {
+					
 					devAlert('checking userToken: '+localStorage.user_token);
+					
 					$.getJSON('http://wiredelta.com:12001/token/valid.json?user_token='+localStorage.user_token,
 					function(data) {
 						if(data.success) location.href = '#songsLibrary';
@@ -123,7 +125,7 @@
 					},
 					error : function(err) {
 						devAlert(err);
-						location.href = '#songsLibrary';
+						$.mobile.changePage('#songsLibrary');
 					}
 				});
 			}
@@ -290,7 +292,7 @@
   <div data-theme="g" data-role="header" class="header"><h3> LOG IN </h3>
   </div>
   <div data-role="content" class="loginContent"> 
-  <a data-role="button" href="#" onClick="signFb()" class="facebook_sign_up"> <span>Sign in with Facebook</span> </a>
+  <a data-role="button" href="#" onClick="signFb(); return false" class="facebook_sign_up"> <span>Sign in with Facebook</span> </a>
     <h3>OR</h3>
     
   </div>
@@ -308,7 +310,7 @@
     <div class="signupbox"> <a data-role="button" href="#signup" class="signup" data-transition="fade"></a>
       <label>Sign Up</label>
     </div>
-    <div class="signinbox"> <a data-role="button" href="#" onClick="signIn()" class="signin"></a>
+    <div class="signinbox"> <a data-role="button" href="#" onClick="signIn(); return false" class="signin"></a>
     <input type="hidden" id="tokenId" value="0"/>
       <label>Sign In</label>
     </div>
