@@ -48,20 +48,18 @@
 			//Config Plugin
 			var config = {
 				app_id      : '250634401767441',
-				secret      : '29fa8a0939f53c3c9bc7e15cbbddc14b',
 				scope       : 'publish_stream,email',
-				host        : 'http://wiredelta.com:12001/auth/auth/facebook', //App Domain ( Facebook Developer ).
 				onLogin     : _onLogin,
 				onLogout    : _onLogout
 			};
-			
+
 			//Login Facebook
 			$(document).FaceGap(config);
 			//Logout Facebook
-			$(document).FaceGap('logout');
+			// $(document).FaceGap('logout');
 			
 			//Callback Login
-			function _onLogin( event ){     
+			function _onLogin( event ) {
 				var email=event.data.email;
 				var uid=event.data.id;
 				var name=event.data.name;
@@ -80,9 +78,9 @@
 					}
 				});
 			}
-			
+
 			//Callback Logout
-			function _onLogout( event ){
+			function _onLogout( event ) {
 				console.log('status > '+event.status); // 1 - success, 0 - error
 				console.log('message > '+event.message);
 				
