@@ -107,18 +107,19 @@
 				
 				var dataString='user[email]='+ email + '&user[uid]=' +  uid + '&user[name]=' +  name;
 				
-				devAlert(dataString);
+				// devAlert(dataString);
+				
 				$.ajax({
 					url  : 'http://wiredelta.com:12001/user/facebook',
-					data: dataString,
+					data : dataString,
 					type : "POST",
 					dataType: 'json',
 					success : function(res){
-						devAlert({success: res});
-						localStorage.user_token=res.token;
+						devAlert({res: res});
+						localStorage.user_token = res.token;
+						// location.href = '#songsLibrary';
+						$.mobile.changePage('#songsLibrary');
 						$('#tokenId').attr("value",localStorage.user_token);
-						location.href = '#songsLibrary';
-           
 					},
 					error : function(err) {
 						devAlert(err);
