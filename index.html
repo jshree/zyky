@@ -34,6 +34,7 @@
         function onDeviceReady() {
 		devAlert('onDeviceReady');
 		
+		/*
 		window.requestFileSystem(
 	         LocalFileSystem.PERSISTENT, 0, 
 	         function onFileSystemSuccess(fileSystem) {
@@ -42,6 +43,7 @@
 	             
 	             window.fileSystem = fileSystem;
 	         }, fail);
+	         */
 		//back button behaviour
         document.addEventListener("backbutton", function (e) {
             if( $('.ui-page-active').attr('id') == 'songsLibrary') {
