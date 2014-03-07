@@ -375,22 +375,22 @@ function signIn(){
 			var dataString='email='+ email + '&password=' +  password;
     		
             $.ajax({
-            url  : 'http://wiredelta.com:12001/tokens.json',
-            data: dataString,
-            type : "POST",
-            dataType: 'json',
-			error: function(error) 
-			{
+            	url  : 'http://wiredelta.com:12001/tokens.json',
+            	data: dataString,
+            	type : "POST",
+            	dataType: 'json',
+		error: function(error) 
+		{
 			var jsonResponse = JSON.parse(error.responseText);
 			$('#signRes').html(jsonResponse.message);
-			},
-            success : function(res){
-				localStorage.user_token=res.token;
-				$('#tokenId').attr("value",localStorage.user_token);
+		},
+            	success : function(res){
+			localStorage.user_token=res.token;
+			$('#tokenId').attr("value",localStorage.user_token);
 
-				//navigator.notification.alert(res.token, null, 'Token', 'OK');
-				location.href='#songsLibrary';
-            }
+			//navigator.notification.alert(res.token, null, 'Token', 'OK');
+			$.mobile.changePage('#songsLibrary');
+		}
 			
 			
         });
