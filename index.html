@@ -22,7 +22,7 @@
  	localStorage.devMode = confirm('Developer Mode?');
  	
  	function devAlert(a) {
- 		if(localStorage.devMode) alert(typeof a, JSON.stringify(a));
+ 		if(localStorage.devMode) alert(JSON.stringify(a));
  	}
 
 // Wait for device API libraries to load //
