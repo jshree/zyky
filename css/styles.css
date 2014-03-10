@@ -353,6 +353,9 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	position: relative;
 	margin: 10px 0;
 }
+.album-img {
+	height: 100px;
+}
 .songOverlay {
 	position: absolute;
 	float: left;
