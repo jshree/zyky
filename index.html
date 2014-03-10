@@ -704,20 +704,20 @@
 
 <!-- song list rendering-->
 <script type="text/template" id="song-template">
-	<div class="song one"> <img src="<%= album.image  %>" alt="">
+	<div class="song one"> <img src="<%= album.image.url  %>" alt="">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
           <h4><%= title %></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="artistImg"> <img src="<%= artist.image.url %>" alt=""> </div>
       </div>
       <div class="songHover">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
           <h4><%= title %></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="artistImg"> <img src="<%= artist.image.url  %>" alt=""> </div>
         <div class="songFeatures">
           <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= artist.name  %>','<%= title %>','<%= album.image  %>')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
