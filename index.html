@@ -730,20 +730,20 @@
 
 <!--free list rendering-->
 <script type="text/template" id="free-template">
-	<div class="song one"> <img src="<%= album.image  %>" alt="">
+	<div class="song one"> <img src="<%= album.image.url  %>" alt="">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
           <h4><%= title %></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="artistImg"> <img src="<%= artist.image.url  %>" alt=""> </div>
       </div>
       <div class="songHover">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
           <h4><%= title %></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="artistImg"> <img src="<%= artist.image.url  %>" alt=""> </div>
         <div class="songFeatures">
           <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= artist.name  %>','<%= title %>','<%= album.image  %>')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
@@ -757,20 +757,20 @@
 
 <!--hit song list rendering-->
 <script type="text/template" id="hit-template">
-	<div class="song one"> <img src="<%= album.image  %>" alt="">
+	<div class="song one"> <img src="<%= album.image.url %>" alt="">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
           <h4><%= title %></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="artistImg"> <img src="<%= artist.image.url %>" alt=""> </div>
       </div>
       <div class="songHover">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
           <h4><%= title %></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="artistImg"> <img src="<%= artist.image.url %>" alt=""> </div>
         <div class="songFeatures">
           <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= artist.name  %>','<%= title %>','<%= album.image  %>')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
@@ -784,20 +784,20 @@
 
 <!--search song list rendering-->
 <script type="text/template" id="track-template">
-	<div class="song one"> <img src="<%= album.image  %>" alt="">
+	<div class="song one"> <img src="<%= album.image.url %>" alt="">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
           <h4><%= title %></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="artistImg"> <img src="<%= artist.image.url  %>" alt=""> </div>
       </div>
       <div class="songHover">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
           <h4><%= title %></h4>
         </div>
-        <div class="artistImg"> <img src="<%= artist.image  %>" alt=""> </div>
+        <div class="artistImg"> <img src="<%= artist.image.url %>" alt=""> </div>
         <div class="songFeatures">
           <div class="playSmall"><a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= artist.name  %>','<%= title %>','<%= album.image  %>')">
           <img src="images/playBtnSmall.png" alt=""></a></div>
@@ -811,14 +811,14 @@
 
 <!--download song list rendering-->
 <script type="text/template" id="download-template">
-<div class="song one <%= status %>"> <img src="<%= track.album.image  %>" alt="">
+<div class="song one <%= status %>"> <img src="<%= track.album.image.url %>" alt="">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= track.artist.name  %></h5>
 		  <h4><%= track.title %></h4>
           <h4>Status: <span class="<%= status %> lower"><%= status %></span></h4>
         </div>
-        <div class="artistImg"> <img src="<%= track.artist.image  %>" alt=""></div>
+        <div class="artistImg"> <img src="<%= track.artist.image.url %>" alt=""></div>
       </div>
 	  
 	  <div class="songHover">
@@ -827,7 +827,7 @@
 				<h5>Artist: <%= track.artist.name  %></h5>
 				<h4><%= track.title %></h4>
 			</div>
-			<div class="artistImg"> <img src="<%= track.artist.image  %>" alt=""> </div>
+			<div class="artistImg"> <img src="<%= track.artist.image.url %>" alt=""> </div>
 			
 			<div class="songFeatures">
 				<div class="playSmall">
