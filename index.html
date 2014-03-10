@@ -32,14 +32,15 @@
 
         // device APIs are available //
         function onDeviceReady() {
-		devAlert('onDeviceReady');
+		//devAlert('onDeviceReady');
 		
 		/*
 		window.requestFileSystem(
 	         LocalFileSystem.PERSISTENT, 0, 
 	         function onFileSystemSuccess(fileSystem) {
 	             window.currentDir = fileSystem.root.fullPath;
-	             devAlert('currentDir: '+currentDir);
+	             
+	            devAlert('currentDir: '+currentDir);
 	             
 	             window.fileSystem = fileSystem;
 	         }, fail);
@@ -60,7 +61,7 @@
 		
 		function signFb() {
 
-			devAlert('signFb: ');
+			//devAlert('signFb: ');
 
 			//Config Plugin
 			var config = {
@@ -71,7 +72,7 @@
 				host	    : 'http://wiredelta.com:12001'
 			};
 
-			devAlert(config);
+			//devAlert(config);
 
 			//Login Facebook
 			$(document).FaceGap(config);
@@ -81,8 +82,8 @@
 
 			//Callback Login
 			function _onLogin( event ) {
-				devAlert('onLogin');
-				devAlert(event);
+				//devAlert('onLogin');
+				//devAlert(event);
 				
 				var email,uid,name;
 				
@@ -92,7 +93,7 @@
 					 name=event.data.name;
 				} else if (localStorage.user_token) {
 					
-					devAlert('checking userToken: '+localStorage.user_token);
+					//devAlert('checking userToken: '+localStorage.user_token);
 					
 					$.getJSON('http://wiredelta.com:12001/token/valid.json?user_token='+localStorage.user_token,
 					function(data) {
@@ -119,7 +120,7 @@
 					type : "POST",
 					dataType: 'json',
 					success : function(res){
-						devAlert({res: res});
+						//devAlert({res: res});
 						localStorage.user_token = res.token;
 			
 						var username = res.username || 'Username';
@@ -132,7 +133,7 @@
 						$('#tokenId').attr("value",localStorage.user_token);
 					},
 					error : function(err) {
-						devAlert(err);
+						//devAlert(err);
 						$.mobile.changePage('#songsLibrary');
 					}
 				});
@@ -140,7 +141,7 @@
 
 			//Callback Logout
 			function _onLogout( event ) {
-				devAlert({logout: event});
+				//devAlert({logout: event});
 				console.log('status > '+event.status); // 1 - success, 0 - error
 				console.log('message > '+event.message);
 				
@@ -832,12 +833,12 @@
 			<div class="songFeatures">
 				<div class="playSmall">
 					<a href="#" onclick="openMedia('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3','<%= track.artist.name  %>','<%= track.title %>','<%= track.album.image  %>')">
-					<img src="images/playBtnSmall.png" alt="">
+					<img src="images/playBtnSmall.png" alt="" style="border:1px solid #ff0">
 					</a>
 				</div>
 				<div class="cart">
 					<a href="#" onclick="down('http://dev.wiredelta.com:12001/tracks/<%= id %>/player.mp3')">
-					<img src="images/downsmall.png" alt="">
+					<img src="images/downsmall.png" alt="" style="border:1px solid #f00">
 					</a>
 				</div>
 			</div><!--\songFeatures-->
