@@ -65,8 +65,8 @@ var List = Backbone.Model.extend({
 
 var SongCollection = Backbone.Collection.extend({
     model: List,
-    url: "http://www.wiredelta.com:12001/tracks.json",
-	
+    url: "http://wiredelta.com:12001/tracks.json?direction=desc&sort=updated_at",
+
     parse: function(res) {
 		
         console.log('response inside parse' + res);
