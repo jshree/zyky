@@ -705,7 +705,7 @@
 
 <!-- song list rendering-->
 <script type="text/template" id="song-template">
-	<div class="song one"> <img src="<%= album.image.url  %>" alt="">
+	<div class="song one"> <img src="<%= album.image.url  %>" alt="" class="album-img">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
@@ -731,7 +731,7 @@
 
 <!--free list rendering-->
 <script type="text/template" id="free-template">
-	<div class="song one"> <img src="<%= album.image.url  %>" alt="">
+	<div class="song one"> <img src="<%= album.image.url  %>" alt="" class="album-img">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
@@ -758,7 +758,7 @@
 
 <!--hit song list rendering-->
 <script type="text/template" id="hit-template">
-	<div class="song one"> <img src="<%= album.image.url %>" alt="">
+	<div class="song one"> <img src="<%= album.image.url %>" alt="" class="album-img">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
@@ -785,7 +785,7 @@
 
 <!--search song list rendering-->
 <script type="text/template" id="track-template">
-	<div class="song one"> <img src="<%= album.image.url %>" alt="">
+	<div class="song one"> <img src="<%= album.image.url %>" alt="" class="album-img">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= artist.name  %></h5>
@@ -812,7 +812,7 @@
 
 <!--download song list rendering-->
 <script type="text/template" id="download-template">
-<div class="song one <%= status %>"> <img src="<%= track.album.image.url %>" alt="">
+<div class="song one <%= status %>"> <img src="<%= track.album.image.url %>" alt="" class="album-img">
       <div class="songOverlay">
         <div class="artistandSong">
           <h5>Artist: <%= track.artist.name  %></h5>
