@@ -83,7 +83,7 @@ var song = new SongCollection();
 
 song.fetch({
     success: function() {
-        console.log(song.toJSON());
+        devAlert(song.toJSON());
         new song_list_view({collection: song}).render();
     },
     error: function() {
