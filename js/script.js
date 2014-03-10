@@ -68,7 +68,7 @@ var SongCollection = Backbone.Collection.extend({
     url: "http://wiredelta.com:12001/tracks.json?direction=desc&sort=updated_at",
 
     parse: function(res) {
-		
+	devAlert(res);
         console.log('response inside parse' + res);
         return res;
     }
