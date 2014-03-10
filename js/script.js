@@ -390,11 +390,11 @@ function signIn(){
 
 			$('#tokenId').attr("value", localStorage.user_token);
 
-			var username = res.username;
+			var name = res.name;
 			var location = res.location;
-			localStorage.songsDownloaded = res.songsDownloaded;
+			localStorage.songsDownloaded = res.downloaded;
 
-			$('.profileName').html('<h4>'+username+'</h4><h5>'+location+'</h5>');
+			$('.profileName').html('<h4>'+name+'</h4><h5>'+location+'</h5>');
 
 			//navigator.notification.alert(res.token, null, 'Token', 'OK');
 			$.mobile.changePage('#songsLibrary');
